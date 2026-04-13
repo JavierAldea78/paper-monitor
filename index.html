@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tech Vigilance</title>
+<style>
+/* ── Theme tokens ─────────────────────────────────────────────────────────── */
+:root {
+  --radius: 8px;
+  --transition: 0.15s ease;
+}
+[data-theme="dark"] {
+  --bg:          #0f172a;
+  --surface:     #1e293b;
+  --surface2:    #334155;
+  --border:      #334155;
+  --border2:     #475569;
+  --text:        #f1f5f9;
+  --text-muted:  #94a3b8;
+  --text-faint:  #64748b;
+  --accent:      #3b82f6;
+  --accent-h:    #2563eb;
+  --accent-dim:  #1d4ed820;
+  --success:     #10b981;
+  --warn:        #f59e0b;
+  --danger:      #ef4444;
+  --shadow:      0 4px 24px #00000040;
+}
+[data-theme="light"] {
+  --bg:          #f8fafc;
+  --surface:     #ffffff;
+  --surface2:    #f1f5f9;
+  --border:      #e2e8f0;
+  --border2:     #cbd5e1;
+  --text:        #0f172a;
+  --text-muted:  #475569;
+  --text-faint:  #94a3b8;
+  --accent:      #2563eb;
+  --accent-h:    #1d4ed8;
+  --accent-dim:  #2563eb15;
+  --success:     #059669;
+  --warn:        #d97706;
+  --danger:      #dc2626;
+  --shadow:      0 4px 24px #00000012;
+}
+
+/* ── Reset & base ─────────────────────────────────────────────────────────── */
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html,body { height:100%; }
+body {
+  background:var(--bg); color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  font-size:14px; line-height:1.5;
+  transition: background var(--transition), color var(--transition);
+}
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; }
+button {
+  cursor:pointer; border:none; border-radius:var(--radius);
+  font-family:inherit; font-size:13px; transition: all var(--transition);
+}
+input,select {
+  font-family:inherit; font-size:13px;
+  background:var(--surface2); border:1px solid var(--border2);
+  color:var(--text); border-radius:var(--radius);
+  padding:7px 10px; outline:none;
+  transition: border-color var(--transition);
+}
+input:focus,select:focus { border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-dim); }
+input::placeholder { color:var(--text-faint); }
+label { font-size:12px; font-weight:600; color:var(--text-muted); letter-spacing:.04em; }
+
+/* ── Login screen ─────────────────────────────────────────────────────────── */
+#login-screen {
+  min-height:100vh; display:flex; align-items:center; justify-content:center;
+  background:var(--bg);
+}
+.login-card {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:16px; padding:40px; width:100%; max-width:380px;
+  box-shadow:var(--shadow);
+}
+.login-logo {
+  display:flex; align-items:center; gap:12px; margin-bottom:32px;
+}
+.login-logo-icon {
+  width:44px; height:44px; background:var(--accent); border-radius:10px;
+  display:flex; align-items:center; justify-content:center; font-size:22px;
+}
+.login-logo h1 { font-size:20px; font-weight:700; }
+.login-logo p  { font-size:12px; color:var(--text-muted); margin-top:2px; }
+.form-group { margin-bottom:16px; }
+.form-group label { display:block; margin-bottom:6px; }
+.form-group input { width:100%; }
+.btn-primary {
+  width:100%; padding:10px; background:var(--accent); color:#fff;
+  font-weight:600; font-size:14px; border-radius:var(--radius); margin-top:8px;
+}
+.btn-primary:hover { background:var(--accent-h); }
+#login-error {
+  color:var(--danger); font-size:12px; margin-top:12px; text-align:center;
+  min-height:16px;
+}
+.login-theme-toggle {
+  position:absolute; top:20px; right:20px;
+}
+
+/* ── App shell ────────────────────────────────────────────────────────────── */
+#app { display:none; flex-direction:column; min-height:100vh; }
+
+/* ── Nav ──────────────────────────────────────────────────────────────────── */
+nav {
+  position:sticky; top:0; z-index:100;
+  background:var(--surface); border-bottom:1px solid var(--border);
+  padding:0 20px; height:56px;
+  display:flex; align-items:center; gap:16px;
+  box-shadow:0 1px 8px #00000020;
+}
+.nav-logo { display:flex; align-items:center; gap:10px; font-weight:700; font-size:15px; }
+.nav-logo-icon {
+  width:32px; height:32px; background:var(--accent); border-radius:7px;
+  display:flex; align-items:center; justify-content:center; font-size:16px;
+}
+.nav-spacer { flex:1; }
+.nav-stats  { font-size:12px; color:var(--text-muted); }
+.btn-icon {
+  background:var(--surface2); color:var(--text); border:1px solid var(--border);
+  width:34px; height:34px; display:flex; align-items:center; justify-content:center;
+  font-size:16px; border-radius:var(--radius);
+}
+.btn-icon:hover { background:var(--border2); }
+.btn-sm {
+  background:var(--surface2); color:var(--text); border:1px solid var(--border);
+  padding:6px 12px; border-radius:var(--radius); font-size:12px;
+}
+.btn-sm:hover { background:var(--border2); }
+
+/* ── Filters bar ──────────────────────────────────────────────────────────── */
+#filters {
+  background:var(--surface); border-bottom:1px solid var(--border);
+  padding:12px 20px; display:flex; flex-wrap:wrap; gap:10px; align-items:center;
+}
+#filters input[type="text"] { min-width:200px; flex:1; }
+#filters input[type="range"] { width:100px; accent-color:var(--accent); cursor:pointer; }
+.filter-group { display:flex; align-items:center; gap:6px; }
+.filter-label { white-space:nowrap; }
+#score-val { font-weight:700; color:var(--accent); min-width:28px; }
+.view-toggle { display:flex; gap:4px; }
+.btn-view {
+  background:var(--surface2); border:1px solid var(--border);
+  color:var(--text-muted); padding:6px 10px; border-radius:var(--radius);
+  font-size:13px;
+}
+.btn-view.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+.btn-export {
+  background:var(--success); color:#fff; padding:6px 14px;
+  border-radius:var(--radius); font-size:12px; font-weight:600;
+}
+.btn-export:hover { opacity:.9; }
+
+/* ── Main content ─────────────────────────────────────────────────────────── */
+#content { flex:1; overflow:hidden; }
+
+/* ── Table view ───────────────────────────────────────────────────────────── */
+#table-view { overflow-x:auto; }
+table { width:100%; border-collapse:collapse; }
+thead { position:sticky; top:0; z-index:10; }
+th {
+  background:var(--surface); border-bottom:2px solid var(--border);
+  padding:10px 12px; text-align:left; font-size:11px; font-weight:700;
+  letter-spacing:.06em; color:var(--text-muted); white-space:nowrap;
+  cursor:pointer; user-select:none;
+}
+th:hover { color:var(--accent); }
+th.sorted { color:var(--accent); }
+th .sort-arrow { margin-left:4px; font-size:10px; }
+td {
+  padding:10px 12px; border-bottom:1px solid var(--border);
+  vertical-align:top; font-size:13px;
+}
+tr:hover td { background:var(--accent-dim); }
+.td-title { max-width:340px; }
+.td-title strong { display:block; line-height:1.35; }
+.td-title .meta { font-size:11px; color:var(--text-muted); margin-top:2px; }
+.td-abstract {
+  max-width:300px; font-size:12px; color:var(--text-muted); line-height:1.4;
+  overflow:hidden; max-height:48px; display:-webkit-box;
+  -webkit-line-clamp:3; -webkit-box-orient:vertical;
+}
+.score-badge {
+  display:inline-flex; align-items:center; justify-content:center;
+  width:36px; height:36px; border-radius:50%; font-weight:700; font-size:13px;
+  border:2px solid;
+}
+
+/* ── Card view ────────────────────────────────────────────────────────────── */
+#card-view {
+  padding:20px;
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap:16px;
+  align-items:start;
+}
+.card {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:12px; padding:18px; transition:box-shadow var(--transition);
+}
+.card:hover { box-shadow:var(--shadow); border-color:var(--border2); }
+.card-header { display:flex; justify-content:space-between; align-items:flex-start; gap:10px; margin-bottom:10px; }
+.card-title { font-size:14px; font-weight:600; line-height:1.4; flex:1; }
+.card-meta { font-size:11px; color:var(--text-muted); margin-bottom:10px; line-height:1.5; }
+.card-tags { display:flex; flex-wrap:wrap; gap:4px; margin-bottom:10px; }
+.card-abstract {
+  font-size:12px; color:var(--text-muted); line-height:1.5;
+  overflow:hidden; max-height:0; transition:max-height 0.3s ease;
+}
+.card-abstract.expanded { max-height:600px; }
+.card-abstract-toggle {
+  font-size:11px; color:var(--accent); cursor:pointer; margin-top:4px;
+  background:none; border:none; padding:0; font-family:inherit;
+}
+.card-footer { display:flex; gap:8px; margin-top:12px; flex-wrap:wrap; }
+.card-link {
+  font-size:11px; padding:4px 10px; border-radius:20px; font-weight:500;
+  background:var(--surface2); color:var(--text-muted); border:1px solid var(--border);
+}
+.card-link:hover { background:var(--accent); color:#fff; border-color:var(--accent); text-decoration:none; }
+
+/* ── Badges ───────────────────────────────────────────────────────────────── */
+.badge {
+  display:inline-block; padding:2px 8px; border-radius:20px; font-size:11px; font-weight:600;
+}
+.badge-domain  { color:#fff; }
+.badge-source  { background:var(--surface2); color:var(--text-muted); border:1px solid var(--border); }
+.badge-tag     { background:var(--accent-dim); color:var(--accent); }
+
+/* ── Pagination ───────────────────────────────────────────────────────────── */
+#pagination {
+  display:flex; align-items:center; justify-content:center; gap:8px;
+  padding:16px; border-top:1px solid var(--border); background:var(--surface);
+  flex-wrap:wrap;
+}
+.page-btn {
+  background:var(--surface2); border:1px solid var(--border);
+  color:var(--text); padding:6px 12px; border-radius:var(--radius); font-size:13px;
+}
+.page-btn:hover { background:var(--border2); }
+.page-btn.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+.page-btn:disabled { opacity:.4; cursor:default; }
+#page-info { font-size:12px; color:var(--text-muted); }
+
+/* ── Empty state ──────────────────────────────────────────────────────────── */
+#empty-state {
+  text-align:center; padding:80px 20px; color:var(--text-muted);
+}
+#empty-state .emoji { font-size:48px; margin-bottom:16px; }
+
+/* ── Loading ──────────────────────────────────────────────────────────────── */
+#loading {
+  text-align:center; padding:80px 20px; color:var(--text-muted);
+}
+.spinner {
+  width:40px; height:40px; border:3px solid var(--border);
+  border-top-color:var(--accent); border-radius:50%; animation:spin .8s linear infinite;
+  margin:0 auto 16px;
+}
+@keyframes spin { to { transform:rotate(360deg); } }
+
+/* ── Responsive ───────────────────────────────────────────────────────────── */
+@media(max-width:640px) {
+  nav { padding:0 12px; gap:8px; }
+  #filters { padding:10px 12px; }
+  #card-view { grid-template-columns:1fr; padding:12px; }
+  td { font-size:12px; padding:8px; }
+  .td-title { max-width:200px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════ LOGIN SCREEN -->
+<div id="login-screen">
+  <button class="btn-icon login-theme-toggle" onclick="toggleTheme()" title="Toggle theme">🌙</button>
+  <div class="login-card">
+    <div class="login-logo">
+      <div class="login-logo-icon">🔬</div>
+      <div>
+        <h1>Tech Vigilance</h1>
+        <p>Brewing &amp; food science monitor</p>
+      </div>
+    </div>
+    <form id="login-form" onsubmit="handleLogin(event)">
+      <div class="form-group">
+        <label for="inp-user">USERNAME</label>
+        <input id="inp-user" type="text" placeholder="username" autocomplete="username" required>
+      </div>
+      <div class="form-group">
+        <label for="inp-pass">PASSWORD</label>
+        <input id="inp-pass" type="password" placeholder="••••••••" autocomplete="current-password" required>
+      </div>
+      <button type="submit" class="btn-primary">Sign in</button>
+      <div id="login-error"></div>
+    </form>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════ MAIN APP -->
+<div id="app">
+
+  <!-- Nav -->
+  <nav>
+    <div class="nav-logo">
+      <div class="nav-logo-icon">🔬</div>
+      Tech Vigilance
+    </div>
+    <div class="nav-spacer"></div>
+    <span class="nav-stats" id="nav-stats"></span>
+    <button class="btn-sm" onclick="exportCSV()">Export CSV</button>
+    <button class="btn-icon" onclick="toggleTheme()" title="Toggle theme" id="theme-btn">🌙</button>
+    <button class="btn-sm" onclick="logout()">Sign out</button>
+  </nav>
+
+  <!-- Filters -->
+  <div id="filters">
+    <input type="text" id="f-search" placeholder="Search title, author, abstract…" oninput="applyFilters()">
+
+    <div class="filter-group">
+      <label class="filter-label">DOMAIN</label>
+      <select id="f-domain" onchange="applyFilters()">
+        <option value="">All domains</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label class="filter-label">YEAR</label>
+      <select id="f-year" onchange="applyFilters()">
+        <option value="">All years</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label class="filter-label">MIN SCORE</label>
+      <input type="range" id="f-score" min="0" max="100" value="0" oninput="onScoreRange()">
+      <span id="score-val">0</span>
+    </div>
+
+    <div class="filter-group">
+      <label class="filter-label">SOURCE</label>
+      <select id="f-source" onchange="applyFilters()">
+        <option value="">All sources</option>
+        <option>PubMed</option>
+        <option>Semantic Scholar</option>
+        <option>Europe PMC</option>
+      </select>
+    </div>
+
+    <div class="view-toggle">
+      <button class="btn-view active" id="btn-table" onclick="setView('table')">☰ Table</button>
+      <button class="btn-view"        id="btn-cards" onclick="setView('cards')">⊞ Cards</button>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div id="content">
+    <div id="loading">
+      <div class="spinner"></div>
+      Loading papers…
+    </div>
+
+    <!-- Table view -->
+    <div id="table-view" style="display:none;">
+      <table>
+        <thead id="thead"></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+
+    <!-- Card view -->
+    <div id="card-view" style="display:none;"></div>
+
+    <!-- Empty -->
+    <div id="empty-state" style="display:none;">
+      <div class="emoji">🔍</div>
+      <p>No papers match your filters.</p>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div id="pagination" style="display:none;"></div>
+
+</div><!-- #app -->
+
+<script>
+'use strict';
+
+// ══════════════════════════════════════════════════════════════════════════════
+// CONFIGURATION — edit USERS and PAGES_URL as needed
+// To generate a password hash: python scripts/hash_password.py
+// ══════════════════════════════════════════════════════════════════════════════
+const USERS = [
+  // { username: "admin", hash: "REPLACE_WITH_SHA256_HASH" }
+  // Add more users as needed. Run scripts/hash_password.py to generate hashes.
+];
+
+// If USERS is empty, the app runs in open mode (no login required).
+const OPEN_MODE = USERS.length === 0;
+
+const PAPERS_URL = './papers.json';    // relative to index.html (served by Pages)
+const PAGE_SIZE  = 50;
+
+// Domain → color mapping (must match watchtags.csv domains)
+const DOMAIN_COLORS = {
+  NOLO:    '#0ea5e9',
+  Quality: '#10b981',
+  BSG:     '#f59e0b',
+  Biotech: '#8b5cf6',
+  Process: '#ef4444',
+};
+
+// ── State ──────────────────────────────────────────────────────────────────
+let allPapers  = [];
+let filtered   = [];
+let page       = 1;
+let sortKey    = 'score';
+let sortDir    = -1;    // -1 = desc, 1 = asc
+let viewMode   = 'table';
+
+// ── Auth ───────────────────────────────────────────────────────────────────
+async function sha256(str) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+}
+
+async function handleLogin(e) {
+  e.preventDefault();
+  const user = document.getElementById('inp-user').value.trim();
+  const pass = document.getElementById('inp-pass').value;
+  const hash = await sha256(pass);
+  const ok   = USERS.some(u => u.username === user && u.hash === hash);
+  if (ok) {
+    sessionStorage.setItem('tv-user', user);
+    showApp();
+  } else {
+    document.getElementById('login-error').textContent = 'Invalid credentials.';
+    document.getElementById('inp-pass').value = '';
+  }
+}
+
+function logout() {
+  sessionStorage.removeItem('tv-user');
+  document.getElementById('app').style.display = 'none';
+  document.getElementById('login-screen').style.display = 'flex';
+}
+
+function checkAuth() {
+  if (OPEN_MODE) { showApp(); return; }
+  if (sessionStorage.getItem('tv-user')) { showApp(); return; }
+  // else stay on login screen
+}
+
+function showApp() {
+  document.getElementById('login-screen').style.display = 'none';
+  document.getElementById('app').style.display = 'flex';
+  loadPapers();
+}
+
+// ── Theme ──────────────────────────────────────────────────────────────────
+function toggleTheme() {
+  const html  = document.documentElement;
+  const next  = html.dataset.theme === 'dark' ? 'light' : 'dark';
+  html.dataset.theme = next;
+  localStorage.setItem('tv-theme', next);
+  ['theme-btn'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = next === 'dark' ? '🌙' : '☀️';
+  });
+}
+
+function initTheme() {
+  const saved = localStorage.getItem('tv-theme') || 'dark';
+  document.documentElement.dataset.theme = saved;
+  ['theme-btn'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = saved === 'dark' ? '🌙' : '☀️';
+  });
+}
+
+// ── Data loading ───────────────────────────────────────────────────────────
+async function loadPapers() {
+  try {
+    const r = await fetch(PAPERS_URL + '?v=' + Date.now());
+    if (!r.ok) throw new Error(r.statusText);
+    allPapers = await r.json();
+    initFilters();
+    applyFilters();
+    document.getElementById('loading').style.display = 'none';
+  } catch(err) {
+    document.getElementById('loading').innerHTML =
+      `<div style="color:var(--danger)">Failed to load papers.json<br><small>${err.message}</small></div>`;
+  }
+}
+
+// ── Filter init ────────────────────────────────────────────────────────────
+function initFilters() {
+  // Domains
+  const domains = [...new Set(allPapers.map(p => p.domain).filter(Boolean))].sort();
+  const dSel = document.getElementById('f-domain');
+  domains.forEach(d => { const o = new Option(d, d); dSel.add(o); });
+
+  // Years
+  const years = [...new Set(allPapers.map(p => p.year).filter(Boolean))].sort().reverse();
+  const ySel  = document.getElementById('f-year');
+  years.forEach(y => { const o = new Option(y, y); ySel.add(o); });
+}
+
+// ── Filtering & sorting ────────────────────────────────────────────────────
+function onScoreRange() {
+  document.getElementById('score-val').textContent =
+    document.getElementById('f-score').value;
+  applyFilters();
+}
+
+function applyFilters() {
+  const search = document.getElementById('f-search').value.toLowerCase();
+  const domain = document.getElementById('f-domain').value;
+  const year   = document.getElementById('f-year').value;
+  const minSc  = parseInt(document.getElementById('f-score').value, 10);
+  const source = document.getElementById('f-source').value.toLowerCase();
+
+  filtered = allPapers.filter(p => {
+    if (domain && p.domain !== domain) return false;
+    if (year   && p.year   !== year)   return false;
+    if (minSc  && (p.score || 0) < minSc) return false;
+    if (source && !(p.source || '').toLowerCase().includes(source)) return false;
+    if (search) {
+      const hay = [p.title, p.authors, p.abstract, p.journal].join(' ').toLowerCase();
+      if (!hay.includes(search)) return false;
+    }
+    return true;
+  });
+
+  sortPapers();
+  page = 1;
+  render();
+}
+
+function sortPapers() {
+  filtered.sort((a, b) => {
+    let va = a[sortKey] ?? '', vb = b[sortKey] ?? '';
+    if (typeof va === 'string') va = va.toLowerCase();
+    if (typeof vb === 'string') vb = vb.toLowerCase();
+    if (va < vb) return -sortDir;
+    if (va > vb) return  sortDir;
+    return 0;
+  });
+}
+
+function setSort(key) {
+  if (sortKey === key) { sortDir *= -1; } else { sortKey = key; sortDir = -1; }
+  sortPapers();
+  render();
+}
+
+// ── Rendering ──────────────────────────────────────────────────────────────
+function setView(mode) {
+  viewMode = mode;
+  document.getElementById('btn-table').classList.toggle('active', mode === 'table');
+  document.getElementById('btn-cards').classList.toggle('active', mode === 'cards');
+  render();
+}
+
+function render() {
+  const total   = filtered.length;
+  const pages   = Math.max(1, Math.ceil(total / PAGE_SIZE));
+  page          = Math.min(page, pages);
+  const slice   = filtered.slice((page-1)*PAGE_SIZE, page*PAGE_SIZE);
+
+  // Nav stats
+  document.getElementById('nav-stats').textContent =
+    `${filtered.length} / ${allPapers.length} papers`;
+
+  // Show/hide views
+  document.getElementById('table-view').style.display  = viewMode==='table' ? '' : 'none';
+  document.getElementById('card-view').style.display   = viewMode==='cards' ? 'grid' : 'none';
+  document.getElementById('empty-state').style.display = total===0 ? '' : 'none';
+  document.getElementById('pagination').style.display  = total>0 ? 'flex' : 'none';
+
+  if (total === 0) return;
+
+  if (viewMode === 'table') renderTable(slice);
+  else                       renderCards(slice);
+  renderPagination(pages);
+}
+
+// ── Table rendering ────────────────────────────────────────────────────────
+const COLS = [
+  { key:'score',   label:'Score',   w:'60px'  },
+  { key:'title',   label:'Title',   w:'auto'  },
+  { key:'authors', label:'Authors', w:'140px' },
+  { key:'journal', label:'Journal', w:'120px' },
+  { key:'year',    label:'Year',    w:'56px'  },
+  { key:'domain',  label:'Domain',  w:'90px'  },
+  { key:'source',  label:'Source',  w:'110px' },
+  { key:'doi',     label:'DOI',     w:'100px' },
+];
+
+function renderTable(slice) {
+  // Header
+  document.getElementById('thead').innerHTML = '<tr>' + COLS.map(c => {
+    const arrow = sortKey===c.key ? (sortDir===-1?'↓':'↑') : '';
+    return `<th style="width:${c.w}" onclick="setSort('${c.key}')" class="${sortKey===c.key?'sorted':''}">
+              ${c.label}<span class="sort-arrow">${arrow}</span>
+            </th>`;
+  }).join('') + '</tr>';
+
+  // Body
+  document.getElementById('tbody').innerHTML = slice.map(p => {
+    const sc     = p.score || 0;
+    const sColor = sc>=60 ? 'var(--success)' : sc>=40 ? 'var(--warn)' : 'var(--text-faint)';
+    const dColor = DOMAIN_COLORS[p.domain] || '#64748b';
+    const doi    = p.doi_url
+      ? `<a href="${esc(p.doi_url)}" target="_blank" rel="noopener">${esc(p.doi.substring(0,18))}…</a>`
+      : '—';
+    return `<tr>
+      <td style="text-align:center;">
+        <span class="score-badge" style="color:${sColor};border-color:${sColor};">${sc}</span>
+      </td>
+      <td class="td-title">
+        <strong>${esc(p.title)}</strong>
+        <div class="meta">${esc(p.pub_date||p.year||'')}</div>
+      </td>
+      <td style="max-width:140px;font-size:12px;color:var(--text-muted);">${esc(p.authors||'')}</td>
+      <td style="max-width:120px;font-size:12px;color:var(--text-muted);">${esc(p.journal||'')}</td>
+      <td>${esc(p.year||'')}</td>
+      <td><span class="badge badge-domain" style="background:${dColor};">${esc(p.domain||'')}</span></td>
+      <td style="font-size:11px;color:var(--text-muted);">${esc(p.source||'')}</td>
+      <td style="font-size:11px;">${doi}</td>
+    </tr>`;
+  }).join('');
+}
+
+// ── Card rendering ─────────────────────────────────────────────────────────
+function renderCards(slice) {
+  document.getElementById('card-view').innerHTML = slice.map((p, i) => {
+    const sc      = p.score || 0;
+    const sColor  = sc>=60 ? 'var(--success)' : sc>=40 ? 'var(--warn)' : 'var(--text-faint)';
+    const dColor  = DOMAIN_COLORS[p.domain] || '#64748b';
+    const tags    = (p.matched_tags||[]).map(t =>
+      `<span class="badge badge-tag">${esc(t)}</span>`).join('');
+    const doi_btn = p.doi_url
+      ? `<a href="${esc(p.doi_url)}" target="_blank" rel="noopener" class="card-link">DOI ↗</a>` : '';
+    const pm_btn  = p.pubmed_url
+      ? `<a href="${esc(p.pubmed_url)}" target="_blank" rel="noopener" class="card-link">PubMed ↗</a>` : '';
+    const abs     = p.abstract
+      ? `<div class="card-abstract" id="abs-${i}">${esc(p.abstract).replace(/\n/g,'<br>')}</div>
+         <button class="card-abstract-toggle" onclick="toggleAbs(${i})">Show abstract ▾</button>`
+      : '';
+    return `<div class="card">
+      <div class="card-header">
+        <div class="card-title">${esc(p.title)}</div>
+        <span class="score-badge" style="color:${sColor};border-color:${sColor};flex-shrink:0;">${sc}</span>
+      </div>
+      <div class="card-meta">
+        ${esc(p.authors||'')}${p.authors&&p.journal?' &bull; ':''}${esc(p.journal||'')}${p.year?' &bull; '+esc(p.year):''}<br>
+        <span class="badge badge-domain" style="background:${dColor};margin-top:4px;">${esc(p.domain||'')}</span>
+        <span class="badge badge-source" style="margin-left:4px;">${esc(p.source||'')}</span>
+      </div>
+      ${tags ? `<div class="card-tags">${tags}</div>` : ''}
+      ${abs}
+      <div class="card-footer">${doi_btn}${pm_btn}</div>
+    </div>`;
+  }).join('');
+}
+
+function toggleAbs(i) {
+  const el  = document.getElementById(`abs-${i}`);
+  const btn = el.nextElementSibling;
+  el.classList.toggle('expanded');
+  btn.textContent = el.classList.contains('expanded') ? 'Hide abstract ▴' : 'Show abstract ▾';
+}
+
+// ── Pagination ─────────────────────────────────────────────────────────────
+function renderPagination(pages) {
+  const total = filtered.length;
+  const from  = (page-1)*PAGE_SIZE + 1;
+  const to    = Math.min(page*PAGE_SIZE, total);
+  let html = `<span id="page-info">${from}–${to} of ${total}</span>`;
+  html += `<button class="page-btn" onclick="goPage(${page-1})" ${page===1?'disabled':''}>‹ Prev</button>`;
+
+  // Show at most 7 page buttons
+  const range = pagRange(page, pages);
+  range.forEach(n => {
+    if (n === '…') html += `<span style="padding:0 4px;color:var(--text-faint)">…</span>`;
+    else html += `<button class="page-btn ${n===page?'active':''}" onclick="goPage(${n})">${n}</button>`;
+  });
+
+  html += `<button class="page-btn" onclick="goPage(${page+1})" ${page===pages?'disabled':''}>Next ›</button>`;
+  document.getElementById('pagination').innerHTML = html;
+}
+
+function pagRange(cur, total) {
+  if (total <= 7) return Array.from({length:total},(_,i)=>i+1);
+  const r = new Set([1, total, cur-1, cur, cur+1].filter(n => n>=1 && n<=total));
+  const sorted = [...r].sort((a,b)=>a-b);
+  const out = [];
+  sorted.forEach((n,i) => {
+    if (i>0 && n - sorted[i-1] > 1) out.push('…');
+    out.push(n);
+  });
+  return out;
+}
+
+function goPage(n) {
+  const pages = Math.ceil(filtered.length/PAGE_SIZE);
+  if (n<1 || n>pages) return;
+  page = n;
+  render();
+  window.scrollTo(0, 0);
+}
+
+// ── CSV Export ─────────────────────────────────────────────────────────────
+function exportCSV() {
+  const fields = ['score','title','authors','journal','year','domain',
+                  'doi','doi_url','pmid','source','citations','fetch_date','abstract'];
+  const rows   = [fields.join(',')];
+  filtered.forEach(p => {
+    rows.push(fields.map(f => {
+      const v = (p[f] ?? '').toString().replace(/"/g,'""');
+      return `"${v}"`;
+    }).join(','));
+  });
+  const blob = new Blob([rows.join('\n')], {type:'text/csv'});
+  const a    = Object.assign(document.createElement('a'), {
+    href: URL.createObjectURL(blob),
+    download: `tech-vigilance-${new Date().toISOString().slice(0,10)}.csv`,
+  });
+  a.click();
+}
+
+// ── Utilities ──────────────────────────────────────────────────────────────
+function esc(str) {
+  return String(str||'')
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+
+// ── Boot ───────────────────────────────────────────────────────────────────
+initTheme();
+checkAuth();
+</script>
+</body>
+</html>

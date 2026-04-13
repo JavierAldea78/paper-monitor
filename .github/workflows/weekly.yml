@@ -1,0 +1,127 @@
+name: Weekly Paper Monitor
+
+on:
+  schedule:
+    # 06:00 UTC = 07:00 CET (winter) / 08:00 CEST (summer) — closest fixed cron to "Monday 7 AM Madrid"
+    - cron: '0 6 * * 1'
+  workflow_dispatch:   # allow manual run from the Actions tab
+
+# Least-privilege: each job declares its own permissions
+permissions: {}
+
+concurrency:
+  group: paper-monitor
+  cancel-in-progress: false
+
+jobs:
+  # ─────────────────────────────────────────────────────────────────────────────
+  fetch:
+    name: Fetch papers
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      count: ${{ steps.count.outputs.count }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Fetch papers from all sources
+        env:
+          NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
+          S2_API_KEY:   ${{ secrets.S2_API_KEY }}
+        run: python scripts/fetch_papers.py
+
+      - name: Count results
+        id: count
+        run: |
+          echo "count=$(python -c "import json; d=json.load(open('papers.json')); print(len(d))")" \
+            >> "$GITHUB_OUTPUT"
+
+      - name: Commit updated data files
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add papers.json papers.csv
+          git diff --staged --quiet && echo "No changes." && exit 0
+          git commit -m "chore: papers $(date -u +%Y-%m-%d) — ${{ steps.count.outputs.count }} papers"
+          git push
+
+  # ─────────────────────────────────────────────────────────────────────────────
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: fetch
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages:    write
+      id-token: write
+    environment:
+      name: github-pages
+      url:  ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout (with fresh papers.json)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Build _site
+        run: |
+          mkdir _site
+          cp index.html papers.json papers.csv _site/
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '_site'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  # ─────────────────────────────────────────────────────────────────────────────
+  newsletter:
+    name: Send newsletter
+    needs: fetch
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    # Skip if no papers were found
+    if: ${{ needs.fetch.outputs.count > 0 }}
+
+    steps:
+      - name: Checkout (with fresh papers.json)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Send newsletter
+        env:
+          GMAIL_USER:         ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          NEWSLETTER_TO:      ${{ secrets.NEWSLETTER_TO }}
+          PAGES_URL:          ${{ needs.deploy.outputs.page_url || '' }}
+        run: python scripts/send_newsletter.py
