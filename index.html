@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Tech Vigilance</title>
 <meta name="build-version" content="__BUILD_HASH__">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
 /* ── Theme tokens ─────────────────────────────────────────────────────────── */
 :root { --radius:8px; --transition:0.15s ease; }
@@ -563,14 +563,18 @@ function initTheme() {
 // ══════════════════════════════════════════════════════════════════════════════
 async function loadPapers() {
   try {
-    const r = await fetch(PAPERS_URL + '?v=__BUILD_HASH__');
+    const url = PAPERS_URL + '?v=__BUILD_HASH__';
+    console.log('[TV] fetching papers:', url);
+    const r = await fetch(url);
     if (!r.ok) throw new Error(r.statusText);
     allPapers = await r.json();
+    console.log('[TV] papers loaded:', allPapers.length, '| Chart.js ready:', typeof Chart !== 'undefined');
     initFilters();
     applyFilters();
     document.getElementById('loading').style.display = 'none';
     if (mainTab === 'analytics') renderAnalytics();
   } catch(err) {
+    console.error('[TV] loadPapers failed:', err);
     document.getElementById('loading').innerHTML =
       `<div style="color:var(--danger)">Failed to load papers.json<br><small>${err.message}</small></div>`;
   }
@@ -597,7 +601,7 @@ function switchTab(tab) {
   document.getElementById('filters').style.display          = onPapers ? '' : 'none';
   document.getElementById('content').style.display          = onPapers ? '' : 'none';
   document.getElementById('pagination').style.display       = (onPapers && filtered.length > 0) ? 'flex' : 'none';
-  document.getElementById('analytics-panel').style.display  = onPapers ? 'none' : '';
+  document.getElementById('analytics-panel').style.display  = onPapers ? 'none' : 'block';
   document.getElementById('nav-export-btn').style.display   = onPapers ? '' : 'none';
   if (!onPapers && allPapers.length > 0) renderAnalytics();
 }
@@ -889,6 +893,12 @@ function chartTheme() {
 // ANALYTICS RENDER
 // ══════════════════════════════════════════════════════════════════════════════
 function renderAnalytics() {
+  if (typeof Chart === 'undefined') {
+    console.error('[TV] Chart.js not loaded yet — analytics cannot render');
+    return;
+  }
+  console.log('[TV] renderAnalytics — papers:', allPapers.length);
+
   // Populate journal domain selector once
   const jSel = document.getElementById('f-jdomain');
   if (jSel && jSel.options.length === 1) {
