@@ -79,7 +79,9 @@ jobs:
       - name: Build _site
         run: |
           mkdir _site
-          cp index.html papers.json papers.csv _site/
+          cp index.html papers.json papers.csv _headers _site/
+          HASH=$(git rev-parse --short HEAD)
+          sed -i "s/__BUILD_HASH__/${HASH}/g" _site/index.html
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

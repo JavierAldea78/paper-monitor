@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Tech Vigilance</title>
+<meta name="build-version" content="__BUILD_HASH__">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" defer></script>
 <style>
 /* ── Theme tokens ─────────────────────────────────────────────────────────── */
@@ -562,7 +563,7 @@ function initTheme() {
 // ══════════════════════════════════════════════════════════════════════════════
 async function loadPapers() {
   try {
-    const r = await fetch(PAPERS_URL + '?v=' + Date.now());
+    const r = await fetch(PAPERS_URL + '?v=__BUILD_HASH__');
     if (!r.ok) throw new Error(r.statusText);
     allPapers = await r.json();
     initFilters();
