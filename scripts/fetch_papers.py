@@ -281,6 +281,30 @@ def merge_papers(raw: list[dict]) -> list[dict]:
     return list(by_doi.values())
 
 
+CUTOFF_DATE = datetime.date(2024, 1, 1)
+
+def _paper_date(paper: dict) -> datetime.date | None:
+    """Return the best-available publication date, or None if unparseable."""
+    for field in ("pub_date", "year"):
+        raw = (paper.get(field) or "").strip()
+        if not raw:
+            continue
+        for fmt, length in (("%Y-%m-%d", 10), ("%Y-%m", 7), ("%Y", 4)):
+            try:
+                return datetime.datetime.strptime(raw[:length], fmt).date()
+            except ValueError:
+                continue
+    return None
+
+
+def _is_recent_enough(paper: dict) -> bool:
+    """Return False if the paper has a known publication date before CUTOFF_DATE."""
+    d = _paper_date(paper)
+    if d is None:
+        return True          # no date info → keep (benefit of the doubt)
+    return d >= CUTOFF_DATE
+
+
 def score_paper(paper: dict, n_tags: int) -> int:
     s = min(n_tags * 10, 40)                           # tag relevance (0-40)
     s += min(int((paper.get("citations") or 0) / 5), 30)  # citations  (0-30)
@@ -369,7 +393,9 @@ def main():
 
     print(f"\nTotal raw: {len(all_raw)}")
     merged = merge_papers(all_raw)
-    print(f"After dedup: {len(merged)}\n")
+    print(f"After dedup: {len(merged)}")
+    merged = [p for p in merged if _is_recent_enough(p)]
+    print(f"After 2024-01-01 cutoff: {len(merged)}\n")
 
     today_iso = datetime.date.today().isoformat()
     for paper in merged:
