@@ -226,8 +226,8 @@ tr:hover td { background:var(--accent-dim); }
   background:var(--surface2); color:var(--text-muted); border:1px solid var(--border);
 }
 .card-link:hover { background:var(--accent); color:#fff; border-color:var(--accent); text-decoration:none; }
-.btn-obsidian { color:#7c3aed; border-color:#7c3aed40; }
-.btn-obsidian:hover { background:#7c3aed !important; color:#fff !important; border-color:#7c3aed !important; }
+.btn-insight { color:#7c3aed; border-color:#7c3aed40; }
+.btn-insight:hover { background:#7c3aed; color:#fff; border-color:#7c3aed; }
 
 /* ── Badges ───────────────────────────────────────────────────────────────── */
 .badge {
@@ -420,12 +420,13 @@ const DOMAIN_COLORS = {
 };
 
 // ── State ──────────────────────────────────────────────────────────────────
-let allPapers  = [];
-let filtered   = [];
-let page       = 1;
-let sortKey    = 'score';
-let sortDir    = -1;    // -1 = desc, 1 = asc
-let viewMode   = 'table';
+let allPapers    = [];
+let filtered     = [];
+let currentSlice = [];
+let page         = 1;
+let sortKey      = 'score';
+let sortDir      = -1;    // -1 = desc, 1 = asc
+let viewMode     = 'table';
 
 // ── Auth ───────────────────────────────────────────────────────────────────
 async function sha256(str) {
@@ -643,6 +644,7 @@ function renderTable(slice) {
 
 // ── Card rendering ─────────────────────────────────────────────────────────
 function renderCards(slice) {
+  currentSlice = slice;
   document.getElementById('card-view').innerHTML = slice.map((p, i) => {
     const sc      = p.score || 0;
     const sColor  = sc>=60 ? 'var(--success)' : sc>=40 ? 'var(--warn)' : 'var(--text-faint)';
@@ -653,7 +655,7 @@ function renderCards(slice) {
       ? `<a href="${esc(p.doi_url)}" target="_blank" rel="noopener" class="card-link">DOI ↗</a>` : '';
     const pm_btn  = p.pubmed_url
       ? `<a href="${esc(p.pubmed_url)}" target="_blank" rel="noopener" class="card-link">PubMed ↗</a>` : '';
-    const obs_btn = `<a href="${obsidianURL(p)}" class="card-link btn-obsidian">→ Obsidian</a>`;
+    const obs_btn = `<button class="card-link btn-insight" onclick="downloadInsight(currentSlice[${i}])">↓ Insight</button>`;
     const abs     = p.abstract
       ? `<div class="card-abstract" id="abs-${i}">${esc(p.abstract).replace(/\n/g,'<br>')}</div>
          <button class="card-abstract-toggle" onclick="toggleAbs(${i})">Show abstract ▾</button>`
@@ -755,17 +757,19 @@ function exportCSV() {
   a.click();
 }
 
-// ── Obsidian integration ───────────────────────────────────────────────────
-function obsidianURL(p) {
-  const title   = (p.title || 'Untitled').replace(/[\\/:*?"<>|#^[\]]/g, ' ').replace(/\s+/g, ' ').trim();
-  const doi     = p.doi   || '';
-  const area    = p.domain || '';
-  const today   = new Date().toISOString().slice(0, 10);
+// ── Insight download ───────────────────────────────────────────────────────
+function downloadInsight(p) {
+  if (!p) return;
+  const today    = new Date().toISOString().slice(0, 10);
+  const safeName = (p.title || 'Untitled')
+    .replace(/[\\/:*?"<>|#^[\]]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
   const content = [
     '---',
     `paper_title: "${(p.title || '').replace(/"/g, "'")}"`,
-    `doi: "${doi}"`,
-    `area: "${area}"`,
+    `doi: "${p.doi || ''}"`,
+    `area: "${p.domain || ''}"`,
     `date: ${today}`,
     '---',
     '',
@@ -781,9 +785,13 @@ function obsidianURL(p) {
     '## Notes',
     '',
   ].join('\n');
-  return 'obsidian://new?vault=B%C3%B3veda'
-    + '&file=' + encodeURIComponent('Papers/Insights/' + title)
-    + '&content=' + encodeURIComponent(content);
+  const blob = new Blob([content], { type: 'text/markdown;charset=utf-8;' });
+  const a    = Object.assign(document.createElement('a'), {
+    href:     URL.createObjectURL(blob),
+    download: safeName + '.md',
+  });
+  a.click();
+  URL.revokeObjectURL(a.href);
 }
 
 // ── Utilities ──────────────────────────────────────────────────────────────
