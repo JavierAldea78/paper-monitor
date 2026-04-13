@@ -722,20 +722,35 @@ function goPage(n) {
 }
 
 // ── CSV Export ─────────────────────────────────────────────────────────────
+function csvCell(v) {
+  return '"' + String(v ?? '').replace(/"/g, '""') + '"';
+}
+
 function exportCSV() {
-  const fields = ['score','title','authors','journal','year','domain',
-                  'doi','doi_url','pmid','source','citations','fetch_date','abstract'];
-  const rows   = [fields.join(',')];
-  filtered.forEach(p => {
-    rows.push(fields.map(f => {
-      const v = (p[f] ?? '').toString().replace(/"/g,'""');
-      return `"${v}"`;
-    }).join(','));
-  });
-  const blob = new Blob([rows.join('\n')], {type:'text/csv'});
-  const a    = Object.assign(document.createElement('a'), {
+  const COLS = [
+    { header: 'Rank',     get: (p, i) => i + 1 },
+    { header: 'Title',    get: (p)    => p.title    || '' },
+    { header: 'Authors',  get: (p)    => p.authors  || '' },
+    { header: 'Journal',  get: (p)    => p.journal  || '' },
+    { header: 'Year',     get: (p)    => p.year     || '' },
+    { header: 'Domain',   get: (p)    => p.domain   || '' },
+    { header: 'DOI',      get: (p)    => p.doi      || '' },
+    { header: 'Score',    get: (p)    => p.score    ?? '' },
+    { header: 'Abstract', get: (p)    => p.abstract || '' },
+  ];
+
+  const header = COLS.map(c => csvCell(c.header)).join(',');
+  const rows   = filtered.map((p, i) =>
+    COLS.map(c => csvCell(c.get(p, i))).join(',')
+  );
+
+  const blob = new Blob(
+    ['\uFEFF' + [header, ...rows].join('\r\n')],  // BOM for Excel UTF-8 detection
+    { type: 'text/csv;charset=utf-8;' }
+  );
+  const a = Object.assign(document.createElement('a'), {
     href: URL.createObjectURL(blob),
-    download: `tech-vigilance-${new Date().toISOString().slice(0,10)}.csv`,
+    download: `tech-vigilance-${new Date().toISOString().slice(0, 10)}.csv`,
   });
   a.click();
 }
