@@ -226,6 +226,8 @@ tr:hover td { background:var(--accent-dim); }
   background:var(--surface2); color:var(--text-muted); border:1px solid var(--border);
 }
 .card-link:hover { background:var(--accent); color:#fff; border-color:var(--accent); text-decoration:none; }
+.btn-obsidian { color:#7c3aed; border-color:#7c3aed40; }
+.btn-obsidian:hover { background:#7c3aed !important; color:#fff !important; border-color:#7c3aed !important; }
 
 /* ── Badges ───────────────────────────────────────────────────────────────── */
 .badge {
@@ -651,6 +653,7 @@ function renderCards(slice) {
       ? `<a href="${esc(p.doi_url)}" target="_blank" rel="noopener" class="card-link">DOI ↗</a>` : '';
     const pm_btn  = p.pubmed_url
       ? `<a href="${esc(p.pubmed_url)}" target="_blank" rel="noopener" class="card-link">PubMed ↗</a>` : '';
+    const obs_btn = `<a href="${obsidianURL(p)}" class="card-link btn-obsidian">→ Obsidian</a>`;
     const abs     = p.abstract
       ? `<div class="card-abstract" id="abs-${i}">${esc(p.abstract).replace(/\n/g,'<br>')}</div>
          <button class="card-abstract-toggle" onclick="toggleAbs(${i})">Show abstract ▾</button>`
@@ -667,7 +670,7 @@ function renderCards(slice) {
       </div>
       ${tags ? `<div class="card-tags">${tags}</div>` : ''}
       ${abs}
-      <div class="card-footer">${doi_btn}${pm_btn}</div>
+      <div class="card-footer">${doi_btn}${pm_btn}${obs_btn}</div>
     </div>`;
   }).join('');
 }
@@ -735,6 +738,37 @@ function exportCSV() {
     download: `tech-vigilance-${new Date().toISOString().slice(0,10)}.csv`,
   });
   a.click();
+}
+
+// ── Obsidian integration ───────────────────────────────────────────────────
+function obsidianURL(p) {
+  const title   = (p.title || 'Untitled').replace(/[\\/:*?"<>|#^[\]]/g, ' ').replace(/\s+/g, ' ').trim();
+  const doi     = p.doi   || '';
+  const area    = p.domain || '';
+  const today   = new Date().toISOString().slice(0, 10);
+  const content = [
+    '---',
+    `paper_title: "${(p.title || '').replace(/"/g, "'")}"`,
+    `doi: "${doi}"`,
+    `area: "${area}"`,
+    `date: ${today}`,
+    '---',
+    '',
+    '## Key Insights',
+    '',
+    '',
+    '## Methodology',
+    '',
+    '',
+    '## Relevance',
+    '',
+    '',
+    '## Notes',
+    '',
+  ].join('\n');
+  return 'obsidian://new?vault=B%C3%B3veda'
+    + '&file=' + encodeURIComponent('Papers/Insights/' + title)
+    + '&content=' + encodeURIComponent(content);
 }
 
 // ── Utilities ──────────────────────────────────────────────────────────────
