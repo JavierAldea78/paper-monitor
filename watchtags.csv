@@ -1,19 +1,19 @@
 tag,synonyms,mustInclude,domain,folder,active
-non-alcoholic beer,"dealcoholization,vacuum distillation,reverse osmosis beer,pervaporation beer",,NOLO,NOLO,true
-beer sensory mouthfeel,"beer mouthfeel,beer foam stability,beer aroma retention,beer sensory off-flavor",,NOLO,NOLO,true
-BSG valorization,"brewers spent grain,arabinoxylan brewery,dietary fiber brewers grain",,BSG,BSG,true
-non-conventional yeast brewing,"Lachancea brewing,Torulaspora brewing,non-conventional yeast beer,non-Saccharomyces brewing aroma",,Biotech,Biotech,true
-lactic acid bacteria brewing,"Lactobacillus brewing,Pediococcus brewing,sour beer fermentation,lactic fermentation beer",,Biotech,Biotech,true
-brewing enzymes,"amylase brewing,protease brewing,beta-glucanase brewing,enzyme beer",,Biotech,Biotech,true
-precision fermentation,"precision fermentation food,recombinant protein fermentation,bioreactor food production",,Biotech,Biotech,true
-metabolic engineering brewing,"metabolic engineering yeast beer,flux balance brewing,synthetic biology beer",,Biotech,Biotech,true
-phage brewery,"bacteriophage brewery,phage contamination brewing,phage beer spoilage",,Biotech,Biotech,true
-antimicrobial peptides brewing,"antimicrobial peptides beer,bacteriocin brewing,nisin brewery",,Biotech,Biotech,true
-bioactive peptides brewing,"bioactive peptides beer,ACE inhibitory peptides fermentation,antioxidant peptides beer",,Biotech,Biotech,true
-cell-free brewing,"cell-free fermentation,enzymatic brewing,in vitro fermentation beer",,Biotech,Biotech,true
-CoQ10 fermentation,"coenzyme Q10 fermentation,ubiquinone microbial production,CoQ10 yeast",,Biotech,Biotech,true
-beer off-flavors,"beer off-flavor,beer metallic,beer phenolic,DMS beer,diacetyl beer",,Quality,Quality,true
-beer haze stability,"colloidal stability beer,beer polyphenols haze,PVPP beer",,Quality,Quality,true
-beer oxidation,"beer staling,beer aldehydes,trans-2-nonenal,beer shelf-life oxidation",,Quality,Quality,true
-CIP brewery,"enzymatic CIP,ozone brewery cleaning,electrolyzed water brewery",,Process,Process,true
-CO2 recovery brewery,"brewery CO2 recovery,fermentation CO2 capture,CO2 reuse brewery",,Process,Process,true
+non-alcoholic beer,"dealcoholization,vacuum distillation,reverse osmosis beer,pervaporation beer,low-alcohol beer,alcohol-free beer,beer dealcoholization",,NOLO,NOLO,true
+beer sensory mouthfeel,"beer mouthfeel,beer foam stability,beer aroma retention,beer sensory off-flavor,beer body,beer creaminess,beer texture sensory,beer head retention",,NOLO,NOLO,true
+BSG valorization,"brewers spent grain,arabinoxylan brewery,dietary fiber brewers grain,spent grain valorization,brewer's grain byproduct,BSG protein extraction,spent grain upcycling",,BSG,BSG,true
+non-conventional yeast brewing,"Lachancea brewing,Torulaspora brewing,non-conventional yeast beer,non-Saccharomyces brewing aroma,Pichia brewing,Kluyveromyces brewing,wild yeast fermentation beer,alternative yeast brewing",,Biotech,Biotech,true
+lactic acid bacteria brewing,"Lactobacillus brewing,Pediococcus brewing,sour beer fermentation,lactic fermentation beer,Lacticaseibacillus brewing,mixed fermentation beer,kettle souring,LAB beer spoilage,lactobacillus beer acidification",,Biotech,Biotech,true
+brewing enzymes,"amylase brewing,protease brewing,beta-glucanase brewing,enzyme beer,glucoamylase beer,xylanase brewing,exogenous enzyme brewery,enzymatic hydrolysis beer,enzyme addition fermentation",,Biotech,Biotech,true
+precision fermentation,"precision fermentation food,recombinant protein fermentation,bioreactor food production,fermentation-derived ingredients,microbial protein production,alternative protein fermentation,biosynthesis food ingredient",,Biotech,Biotech,true
+metabolic engineering brewing,"metabolic engineering yeast beer,flux balance brewing,synthetic biology beer,CRISPR yeast brewing,genome editing Saccharomyces,engineered yeast fermentation,gene editing brewing,systems biology yeast fermentation",,Biotech,Biotech,true
+phage brewery,"bacteriophage brewery,phage contamination brewing,phage beer spoilage,phage lytic bacteria brewery,bacteriophage lactic acid bacteria,phage biocontrol fermentation,brewery phage infection",,Biotech,Biotech,true
+antimicrobial peptides brewing,"antimicrobial peptides beer,bacteriocin brewing,nisin brewery,defensin fermentation,antimicrobial proteins beer,peptide biopreservation brewing,natural preservative beer",,Biotech,Biotech,true
+bioactive peptides brewing,"bioactive peptides beer,ACE inhibitory peptides fermentation,antioxidant peptides beer,fermentation-derived peptides,functional peptides brewing,biopeptides fermented beverage,antihypertensive peptides beer",,Biotech,Biotech,true
+cell-free brewing,"cell-free fermentation,enzymatic brewing,in vitro fermentation beer,acellular fermentation,enzyme cascade alcohol production,in vitro biosynthesis ethanol,cell-free synthetic biology brewing",,Biotech,Biotech,true
+CoQ10 fermentation,"coenzyme Q10 fermentation,ubiquinone microbial production,CoQ10 yeast,ubiquinone Saccharomyces,CoQ10 biosynthesis yeast,coenzyme Q microbial,CoQ10 metabolic engineering",,Biotech,Biotech,true
+beer off-flavors,"beer off-flavor,beer metallic,beer phenolic,DMS beer,diacetyl beer,beer sulfur compounds,beer cardboard flavor,beer light-struck,beer autolysis,acetaldehyde beer",,Quality,Quality,true
+beer haze stability,"colloidal stability beer,beer polyphenols haze,PVPP beer,beer chill haze,protein polyphenol haze,beer turbidity,beer clarity,silica gel beer stabilization,bentonite beer fining",,Quality,Quality,true
+beer oxidation,"beer staling,beer aldehydes,trans-2-nonenal,beer shelf-life oxidation,beer aging aldehydes,Strecker degradation beer,beer radical oxidation,beer flavor instability,beer antioxidant stability",,Quality,Quality,true
+CIP brewery,"enzymatic CIP,ozone brewery cleaning,electrolyzed water brewery,clean-in-place brewery,brewery sanitation,caustic CIP brewing,brewery hygiene,peracetic acid brewery,brewery biofilm removal",,Process,Process,true
+CO2 recovery brewery,"brewery CO2 recovery,fermentation CO2 capture,CO2 reuse brewery,carbon dioxide recovery fermentation,CO2 recycling beer production,brewery carbon footprint,fermentation gas recovery",,Process,Process,true
