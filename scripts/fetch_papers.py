@@ -26,8 +26,11 @@ DAYS_BACK    = 90
 DELAY        = 0.4   # seconds between API calls (polite throttling)
 DELAY_S2     = 1.2   # Semantic Scholar is stricter (100 req / 5 min unauth)
 
-NCBI_API_KEY = os.environ.get("NCBI_API_KEY", "")
-S2_API_KEY   = os.environ.get("S2_API_KEY", "")
+NCBI_API_KEY    = os.environ.get("NCBI_API_KEY", "")
+S2_API_KEY      = os.environ.get("S2_API_KEY", "")
+ZOTERO_API_KEY  = os.environ.get("ZOTERO_API_KEY", "")
+ZOTERO_USER_ID  = os.environ.get("ZOTERO_USER_ID", "")
+ZOTERO_MIN_SCORE = 70   # push papers at or above this score
 
 # ── API base URLs ──────────────────────────────────────────────────────────────
 
@@ -36,7 +39,8 @@ PUBMED_FETCH  = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi"
 S2_SEARCH     = "https://api.semanticscholar.org/graph/v1/paper/search"
 EPMC_SEARCH   = "https://www.ebi.ac.uk/europepmc/webservices/rest/search"
 
-S2_FIELDS = "title,authors,year,externalIds,abstract,citationCount,publicationDate,venue"
+S2_FIELDS    = "title,authors,year,externalIds,abstract,citationCount,publicationDate,venue"
+ZOTERO_BASE  = "https://api.zotero.org"
 
 # ── Tag loading ────────────────────────────────────────────────────────────────
 
@@ -239,6 +243,157 @@ def search_europe_pmc(query: str, days: int) -> list[dict]:
         print(f"  [Europe PMC] '{query}': {e}")
         return []
 
+# ── Zotero ─────────────────────────────────────────────────────────────────────
+
+def _zh() -> dict:
+    """Zotero request headers."""
+    return {"Zotero-API-Key": ZOTERO_API_KEY, "Content-Type": "application/json"}
+
+def _zu(path: str) -> str:
+    return f"{ZOTERO_BASE}/users/{ZOTERO_USER_ID}{path}"
+
+
+def zotero_fetch() -> list[dict]:
+    """Pull journalArticle items already saved in the user's Zotero library."""
+    if not ZOTERO_API_KEY or not ZOTERO_USER_ID:
+        print("  [Zotero] no credentials — skipping fetch")
+        return []
+    out, start, limit = [], 0, 100
+    while True:
+        try:
+            r = requests.get(
+                _zu("/items"),
+                headers=_zh(),
+                params={"format": "json", "itemType": "journalArticle",
+                        "include": "data", "start": start, "limit": limit},
+                timeout=20,
+            )
+            r.raise_for_status()
+            items = r.json()
+            if not items:
+                break
+            for item in items:
+                d = item.get("data", {})
+                title = (d.get("title") or "").strip()
+                if not title:
+                    continue
+                creators = d.get("creators", [])
+                names = [
+                    c.get("name") or f"{c.get('lastName','')} {c.get('firstName','')}".strip()
+                    for c in creators[:3]
+                ]
+                astr = ", ".join(filter(None, names))
+                if len(creators) > 3:
+                    astr += " et al."
+                year = (d.get("date") or "")[:4]
+                out.append({
+                    "title":    title,
+                    "abstract": d.get("abstractNote") or "",
+                    "doi":      (d.get("DOI") or "").strip(),
+                    "pmid":     "",
+                    "authors":  astr,
+                    "journal":  d.get("publicationTitle") or "",
+                    "year":     year,
+                    "pub_date": d.get("date") or year,
+                    "source":   "Zotero",
+                    "citations": 0,
+                })
+            start += limit
+            if len(items) < limit:
+                break
+            time.sleep(DELAY)
+        except Exception as e:
+            print(f"  [Zotero fetch] {e}")
+            break
+    print(f"  [Zotero fetch] {len(out)} items from library")
+    return out
+
+
+def _zotero_get_or_create_collection(name: str, parent_key: str = "") -> str:
+    """Return the key of a Zotero collection by name, creating it if absent."""
+    r = requests.get(_zu("/collections"), headers=_zh(),
+                     params={"format": "json", "limit": 100}, timeout=20)
+    r.raise_for_status()
+    for col in r.json():
+        d = col.get("data", {})
+        stored_parent = d.get("parentCollection") or ""
+        if d.get("name") == name and stored_parent == parent_key:
+            return col["key"]
+    payload = [{"name": name}]
+    if parent_key:
+        payload[0]["parentCollection"] = parent_key
+    r = requests.post(_zu("/collections"), headers=_zh(), json=payload, timeout=20)
+    r.raise_for_status()
+    return r.json()["successful"]["0"]["key"]
+
+
+def _parse_zotero_creators(astr: str) -> list[dict]:
+    if not astr:
+        return []
+    astr = re.sub(r'\s+et al\.?$', '', astr, flags=re.IGNORECASE)
+    creators = []
+    for name in [n.strip() for n in astr.split(",") if n.strip()]:
+        parts = name.split(None, 1)
+        if len(parts) == 2:
+            creators.append({"creatorType": "author",
+                             "lastName": parts[0], "firstName": parts[1]})
+        else:
+            creators.append({"creatorType": "author", "name": name})
+    return creators
+
+
+def zotero_push(papers: list[dict]) -> None:
+    """Push high-scoring papers to a dated collection inside 'Paper Monitor'."""
+    if not ZOTERO_API_KEY or not ZOTERO_USER_ID:
+        print("[Zotero push] no credentials — skipping")
+        return
+    to_push = [p for p in papers if (p.get("score") or 0) >= ZOTERO_MIN_SCORE]
+    if not to_push:
+        print("[Zotero push] no papers above score threshold — nothing to push")
+        return
+    print(f"[Zotero push] {len(to_push)} papers (score ≥ {ZOTERO_MIN_SCORE})…")
+    try:
+        parent_key = _zotero_get_or_create_collection("Paper Monitor")
+        col_key    = _zotero_get_or_create_collection(
+            datetime.date.today().isoformat(), parent_key
+        )
+        items = []
+        for p in to_push:
+            tags = [{"tag": "paper-monitor"}]
+            if p.get("domain"):
+                tags.append({"tag": f"domain:{p['domain']}"})
+            for t in (p.get("matched_tags") or [])[:5]:
+                tags.append({"tag": t[:100]})
+            items.append({
+                "itemType":         "journalArticle",
+                "title":            p.get("title") or "",
+                "abstractNote":     (p.get("abstract") or "")[:3000],
+                "publicationTitle": p.get("journal") or "",
+                "DOI":              p.get("doi") or "",
+                "url":              p.get("doi_url") or p.get("pubmed_url") or "",
+                "date":             p.get("pub_date") or p.get("year") or "",
+                "creators":         _parse_zotero_creators(p.get("authors") or ""),
+                "tags":             tags,
+                "collections":      [col_key],
+                "extra":            (f"Score: {p.get('score',0)} | "
+                                     f"Citations: {p.get('citations',0)} | "
+                                     f"Source: {p.get('source','')}"),
+            })
+        pushed = 0
+        for i in range(0, len(items), 50):   # Zotero max 50 items per POST
+            r = requests.post(_zu("/items"), headers=_zh(),
+                              json=items[i:i+50], timeout=30)
+            r.raise_for_status()
+            result = r.json()
+            pushed += len(result.get("successful", {}))
+            if result.get("failed"):
+                print(f"  [Zotero push] {len(result['failed'])} items failed")
+            time.sleep(DELAY)
+        print(f"[Zotero push] {pushed} papers → 'Paper Monitor / {datetime.date.today().isoformat()}'")
+    except Exception as e:
+        print(f"[Zotero push] ERROR: {e}")
+
+
 # ── Deduplication & merging ────────────────────────────────────────────────────
 
 def _norm_doi(doi: str) -> str:
@@ -323,12 +478,15 @@ def score_paper(paper: dict, n_tags: int) -> int:
 def main():
     today = datetime.date.today().isoformat()
     print(f"Paper fetcher — {today}  ({DAYS_BACK} days back)")
-    print(f"Sources: PubMed  Semantic Scholar  Europe PMC\n")
+    print(f"Sources: PubMed  Semantic Scholar  Europe PMC  Zotero\n")
 
     tags = load_tags(TAGS_FILE)
     print(f"Loaded {len(tags)} active tag(s)\n")
 
-    all_raw: list[dict]           = []
+    # ── Zotero library (fetch existing items) ──────────────────────────────────
+    zotero_papers = zotero_fetch()
+
+    all_raw: list[dict]           = list(zotero_papers)   # seed with Zotero library
     tag_index:    dict[str,list]  = {}  # doi/title-key → [matched tags]
     domain_index: dict[str,str]   = {}
     folder_index: dict[str,str]   = {}
@@ -412,6 +570,9 @@ def main():
                                   if paper.get("pmid") else "")
 
     merged.sort(key=lambda p: p.get("score", 0), reverse=True)
+
+    # ── Push to Zotero ─────────────────────────────────────────────────────────
+    zotero_push(merged)
 
     # ── Save JSON ──────────────────────────────────────────────────────────────
     OUTPUT_JSON.write_text(
