@@ -2,7 +2,7 @@
 """
 Tech vigilance paper fetcher.
 Sources: PubMed, Semantic Scholar, Europe PMC (all free, no mandatory keys).
-Reads watchtags.csv → writes papers.json + papers.csv.
+Reads watchtags.csv → writes papers.json + papers.csv + papers_readable.txt.
 """
 
 import csv
@@ -17,10 +17,11 @@ from pathlib import Path
 
 # ── Config ─────────────────────────────────────────────────────────────────────
 
-REPO_ROOT   = Path(__file__).parent.parent
-TAGS_FILE   = REPO_ROOT / "watchtags.csv"
-OUTPUT_JSON = REPO_ROOT / "papers.json"
-OUTPUT_CSV  = REPO_ROOT / "papers.csv"
+REPO_ROOT        = Path(__file__).parent.parent
+TAGS_FILE        = REPO_ROOT / "watchtags.csv"
+OUTPUT_JSON      = REPO_ROOT / "papers.json"
+OUTPUT_CSV       = REPO_ROOT / "papers.csv"
+OUTPUT_READABLE  = REPO_ROOT / "papers_readable.txt"
 
 DAYS_BACK    = 90
 DELAY        = 0.4   # seconds between API calls (polite throttling)
@@ -173,7 +174,7 @@ def search_semantic_scholar(query: str, days: int) -> list[dict]:
     try:
         r = requests.get(S2_SEARCH, params=params, headers=headers, timeout=30)
         if r.status_code == 429:
-            print("  [S2] rate limited, waiting 15s…")
+            print("  [S2] rate limited, waiting 15s...")
             time.sleep(15)
             r = requests.get(S2_SEARCH, params=params, headers=headers, timeout=30)
         r.raise_for_status()
@@ -254,9 +255,9 @@ def _zu(path: str) -> str:
 
 
 def zotero_fetch() -> list[dict]:
-    """Pull journalArticle items already saved in the user's Zotero library."""
+    """Pull journalArticle items already saved in the user\'s Zotero library."""
     if not ZOTERO_API_KEY or not ZOTERO_USER_ID:
-        print("  [Zotero] no credentials — skipping fetch")
+        print("  [Zotero] no credentials - skipping fetch")
         return []
     out, start, limit = [], 0, 100
     while True:
@@ -330,7 +331,7 @@ def _zotero_get_or_create_collection(name: str, parent_key: str = "") -> str:
 def _parse_zotero_creators(astr: str) -> list[dict]:
     if not astr:
         return []
-    astr = re.sub(r'\s+et al\.?$', '', astr, flags=re.IGNORECASE)
+    astr = re.sub(r"\s+et al\.?$", "", astr, flags=re.IGNORECASE)
     creators = []
     for name in [n.strip() for n in astr.split(",") if n.strip()]:
         parts = name.split(None, 1)
@@ -343,15 +344,15 @@ def _parse_zotero_creators(astr: str) -> list[dict]:
 
 
 def zotero_push(papers: list[dict]) -> None:
-    """Push high-scoring papers to a dated collection inside 'Paper Monitor'."""
+    """Push high-scoring papers to a dated collection inside \'Paper Monitor\'."""
     if not ZOTERO_API_KEY or not ZOTERO_USER_ID:
-        print("[Zotero push] no credentials — skipping")
+        print("[Zotero push] no credentials - skipping")
         return
     to_push = [p for p in papers if (p.get("score") or 0) >= ZOTERO_MIN_SCORE]
     if not to_push:
-        print("[Zotero push] no papers above score threshold — nothing to push")
+        print("[Zotero push] no papers above score threshold - nothing to push")
         return
-    print(f"[Zotero push] {len(to_push)} papers (score ≥ {ZOTERO_MIN_SCORE})…")
+    print(f"[Zotero push] {len(to_push)} papers (score >= {ZOTERO_MIN_SCORE})...")
     try:
         parent_key = _zotero_get_or_create_collection("Paper Monitor")
         col_key    = _zotero_get_or_create_collection(
@@ -389,7 +390,7 @@ def zotero_push(papers: list[dict]) -> None:
             if result.get("failed"):
                 print(f"  [Zotero push] {len(result['failed'])} items failed")
             time.sleep(DELAY)
-        print(f"[Zotero push] {pushed} papers → 'Paper Monitor / {datetime.date.today().isoformat()}'")
+        print(f"[Zotero push] {pushed} papers -> 'Paper Monitor / {datetime.date.today().isoformat()}'")
     except Exception as e:
         print(f"[Zotero push] ERROR: {e}")
 
@@ -428,7 +429,7 @@ def merge_papers(raw: list[dict]) -> list[dict]:
 
     seen_titles: set[str] = set()
     for p in no_doi:
-        key = re.sub(r'\s+', ' ', (p.get("title","")).lower().strip())[:80]
+        key = re.sub(r"\s+", " ", (p.get("title","")).lower().strip())[:80]
         if key and key not in seen_titles:
             seen_titles.add(key)
             by_doi[f"__notitle__{key}"] = p
@@ -456,7 +457,7 @@ def _is_recent_enough(paper: dict) -> bool:
     """Return False if the paper has a known publication date before CUTOFF_DATE."""
     d = _paper_date(paper)
     if d is None:
-        return True          # no date info → keep (benefit of the doubt)
+        return True          # no date info -> keep (benefit of the doubt)
     return d >= CUTOFF_DATE
 
 
@@ -473,11 +474,60 @@ def score_paper(paper: dict, n_tags: int) -> int:
         s += 10
     return min(s, 100)
 
+# ── Readable text export ───────────────────────────────────────────────────────
+
+def write_readable_txt(papers: list[dict], path: Path) -> None:
+    """Write papers_readable.txt grouped by domain, max 500 papers."""
+    from collections import defaultdict
+    today = datetime.date.today().isoformat()
+    subset = papers[:500]
+
+    by_domain: dict[str, list[dict]] = defaultdict(list)
+    for p in subset:
+        domain = (p.get("domain") or "General").strip()
+        by_domain[domain].append(p)
+
+    lines = [
+        "TECH VIGILANCE MONITOR - MSM R&D",
+        f"Last updated: {today}",
+        f"Total papers: {len(subset)}",
+        "",
+    ]
+
+    for domain in sorted(by_domain.keys()):
+        lines += [
+            "========================================",
+            f"DOMAIN: {domain}",
+            "========================================",
+            "",
+        ]
+        for p in by_domain[domain]:
+            doi_val = p.get("doi_url") or (
+                f"https://doi.org/{p['doi']}" if p.get("doi") else ""
+            )
+            abstract = (p.get("abstract") or "").strip()
+            abstract = re.sub(r"\*\*[^*]+:\*\*\s*", "", abstract)
+
+            lines += [
+                f"PAPER: {(p.get('title') or '').strip()}",
+                f"AUTHORS: {(p.get('authors') or '').strip()}",
+                f"JOURNAL: {(p.get('journal') or '').strip()}",
+                f"YEAR: {(p.get('year') or '').strip()}",
+                f"DOI: {doi_val}",
+                f"ABSTRACT: {abstract}",
+                "",
+                "---",
+                "",
+            ]
+
+    path.write_text("\n".join(lines), encoding="utf-8")
+    print(f"papers_readable.txt  ->  {len(subset)} papers")
+
 # ── Main ───────────────────────────────────────────────────────────────────────
 
 def main():
     today = datetime.date.today().isoformat()
-    print(f"Paper fetcher — {today}  ({DAYS_BACK} days back)")
+    print(f"Paper fetcher - {today}  ({DAYS_BACK} days back)")
     print(f"Sources: PubMed  Semantic Scholar  Europe PMC  Zotero\n")
 
     tags = load_tags(TAGS_FILE)
@@ -486,8 +536,8 @@ def main():
     # ── Zotero library (fetch existing items) ──────────────────────────────────
     zotero_papers = zotero_fetch()
 
-    all_raw: list[dict]           = list(zotero_papers)   # seed with Zotero library
-    tag_index:    dict[str,list]  = {}  # doi/title-key → [matched tags]
+    all_raw: list[dict]           = list(zotero_papers)
+    tag_index:    dict[str,list]  = {}
     domain_index: dict[str,str]   = {}
     folder_index: dict[str,str]   = {}
 
@@ -496,7 +546,7 @@ def main():
         domain  = tag_info["domain"]
         folder  = tag_info["folder"]
         queries = [tag] + tag_info["synonyms"]
-        print(f"── {tag}  [{domain}]")
+        print(f"-- {tag}  [{domain}]")
 
         seen_pmids: set[str] = set()
         batch: list[dict]    = []
@@ -522,7 +572,7 @@ def main():
             batch.extend(epmc)
             time.sleep(DELAY)
 
-        # Apply mustInclude filter (all listed terms must appear in title or abstract)
+        # Apply mustInclude filter
         must = tag_info["mustInclude"]
         if must:
             filtered = []
@@ -532,7 +582,6 @@ def main():
                     filtered.append(p)
             batch = filtered
 
-        # Tag each paper and accumulate
         for p in batch:
             ndoi = _norm_doi(p.get("doi",""))
             key  = ndoi if ndoi else f"__notitle__{p.get('title','')[:80].lower()}"
@@ -578,7 +627,7 @@ def main():
     OUTPUT_JSON.write_text(
         json.dumps(merged, ensure_ascii=False, indent=2), encoding="utf-8"
     )
-    print(f"papers.json  →  {len(merged)} papers")
+    print(f"papers.json  ->  {len(merged)} papers")
 
     # ── Save CSV ───────────────────────────────────────────────────────────────
     FIELDS = [
@@ -593,7 +642,10 @@ def main():
             row = dict(p)
             row["matched_tags"] = "; ".join(row.get("matched_tags", []))
             w.writerow(row)
-    print(f"papers.csv   →  {OUTPUT_CSV.name}")
+    print(f"papers.csv   ->  {OUTPUT_CSV.name}")
+
+    # ── Save readable text ─────────────────────────────────────────────────────
+    write_readable_txt(merged, OUTPUT_READABLE)
 
 
 if __name__ == "__main__":
