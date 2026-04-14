@@ -433,7 +433,7 @@ tr:hover td { background:var(--accent-dim); }
 
       <!-- 5. Emerging Signals -->
       <div class="viz-card wide">
-        <div class="viz-title">Emerging Signals — score &gt; 70 · citations &lt; 5 · published last 60 days</div>
+        <div class="viz-title">Emerging Signals — score &gt; 70 · citations &lt; 15 · published last 90 days</div>
         <div id="viz-signals-body"></div>
       </div>
 
@@ -496,6 +496,7 @@ let cvDragState      = null;   // {type:'node'|'pan', nodeId?, offX,offY, startR
 let cvConnecting     = null;   // {fromId, curX?, curY?}
 let cvGrouping       = null;   // {sx,sy,cx,cy}
 let cvResizeObserver = null;
+let cvPointerDownPos = null;   // {x,y} — for DOI tap detection
 
 // ══════════════════════════════════════════════════════════════════════════════
 // AUTH
@@ -1102,12 +1103,12 @@ function buildTopJournals(domain='') {
 // ── 5. Emerging Signals ────────────────────────────────────────────────────
 function buildEmergingSignals() {
   const cutoff = new Date();
-  cutoff.setDate(cutoff.getDate()-60);
+  cutoff.setDate(cutoff.getDate()-90);
 
   const signals = allPapers
     .filter(p => {
       const d = parseDate(p.pub_date||p.year);
-      return (p.score||0)>70 && (p.citations||0)<5 && d && d>=cutoff;
+      return (p.score||0)>70 && (p.citations||0)<15 && d && d>=cutoff;
     })
     .sort((a,b)=>(b.score||0)-(a.score||0));
 
@@ -1269,6 +1270,13 @@ function syncStarredNodes() {
 }
 
 // ── Canvas draw ───────────────────────────────────────────────────────────
+// Returns true if canvas coordinate (x,y) falls in the DOI link zone of node n
+function cvDOIHit(n, x, y) {
+  return n.type === 'paper' &&
+    x >= n.x+12 && x <= n.x+n.w-8 &&
+    y >= n.y+36 && y <= n.y+50;
+}
+
 function cvDraw() {
   const canvas = document.getElementById('canvas-board');
   if (!canvas||!cvState) return;
@@ -1360,7 +1368,18 @@ function cvDraw() {
 
       ctx.fillStyle = dark?'#f1f5f9':'#0f172a';
       ctx.font = 'bold 11px system-ui,sans-serif';
-      cvWrapText(ctx,n.title,n.x+12,n.y+16,n.w-20,14,3);
+      cvWrapText(ctx,n.title,n.x+12,n.y+14,n.w-20,14,2);
+
+      // DOI link
+      const _pp = allPapers.find(p => starKey(p) === n.paperId);
+      const _doiUrl = n.doi || (_pp ? _pp.doi_url || '' : '');
+      if (_doiUrl) {
+        ctx.fillStyle = '#3b82f6';
+        ctx.font = '10px system-ui,sans-serif';
+        ctx.fillText('DOI ↗', n.x+12, n.y+44);
+        const _tw = ctx.measureText('DOI ↗').width;
+        ctx.fillRect(n.x+12, n.y+45, _tw, 1);
+      }
 
       ctx.fillStyle = dark?'#64748b':'#94a3b8';
       ctx.font = '10px system-ui,sans-serif';
@@ -1416,6 +1435,7 @@ function cvDown(e) {
   if (!cvState) return;
   const pos  = cvCoords(e);
   const node = cvHitNode(pos.x,pos.y);
+  cvPointerDownPos = { x:pos.x, y:pos.y };
 
   if (cvTool==='select') {
     if (node) {
@@ -1459,6 +1479,13 @@ function cvMove(e) {
   if (!cvState) return;
   const pos = cvCoords(e);
 
+  // Cursor: pointer when hovering a DOI link
+  if (!cvDragState && !cvConnecting && !cvGrouping) {
+    const hNode = cvHitNode(pos.x, pos.y);
+    document.getElementById('canvas-board').style.cursor =
+      (hNode && cvDOIHit(hNode, pos.x, pos.y)) ? 'pointer' : '';
+  }
+
   if (cvDragState) {
     if (cvDragState.type==='node') {
       const node = cvState.nodes.find(n=>n.id===cvDragState.nodeId);
@@ -1477,6 +1504,21 @@ function cvMove(e) {
 
 function cvUp(e) {
   if (!cvState) return;
+  const pos = cvCoords(e);
+  // DOI link tap: treat as click if pointer barely moved
+  if (cvPointerDownPos) {
+    const dx = Math.abs(pos.x - cvPointerDownPos.x);
+    const dy = Math.abs(pos.y - cvPointerDownPos.y);
+    if (dx < 5 && dy < 5) {
+      const node = cvHitNode(pos.x, pos.y);
+      if (node && cvDOIHit(node, pos.x, pos.y)) {
+        const _pp  = allPapers.find(p => starKey(p) === node.paperId);
+        const _url = node.doi || (_pp ? _pp.doi_url || '' : '');
+        if (_url) window.open(_url, '_blank', 'noopener');
+      }
+    }
+    cvPointerDownPos = null;
+  }
   if (cvDragState) { cvSave(); cvDragState=null; }
   if (cvGrouping) {
     const {sx,sy,cx,cy} = cvGrouping;
