@@ -125,13 +125,16 @@ def _parse_pubmed_xml(xml_text: str) -> list[dict]:
             parts.append(f"**{label}:** {text}" if label else text)
         abstract = "\n\n".join(parts) if parts else ""
 
-        doi  = ""
-        pmid = ""
+        doi    = ""
+        pmid   = ""
+        pmc_id = ""
         for aid in art.findall(".//ArticleId"):
             if aid.get("IdType") == "doi" and not doi:
                 doi = (aid.text or "").strip()
             if aid.get("IdType") == "pubmed" and not pmid:
                 pmid = (aid.text or "").strip()
+            if aid.get("IdType") == "pmc" and not pmc_id:
+                pmc_id = (aid.text or "").strip()
         if not pmid:
             el = art.find(".//PMID")
             pmid = el.text.strip() if el is not None else ""
@@ -160,12 +163,19 @@ def _parse_pubmed_xml(xml_text: str) -> list[dict]:
             "title": title, "abstract": abstract, "doi": doi, "pmid": pmid,
             "authors": author_str, "journal": journal, "year": year,
             "pub_date": pub_date, "source": "PubMed", "citations": 0,
+            "is_oa":   bool(pmc_id),
         })
     return out
 
 # ── Semantic Scholar ───────────────────────────────────────────────────────────
 
+_s2_disabled: bool = False   # set True on first 429; skips S2 for the rest of the run
+
+
 def search_semantic_scholar(query: str, days: int) -> list[dict]:
+    global _s2_disabled
+    if _s2_disabled:
+        return []
     year_from = (datetime.date.today() - datetime.timedelta(days=days)).year
     headers   = {"User-Agent": "paper-monitor/2.0 (github.com/JavierAldea78/paper-monitor)"}
     if S2_API_KEY:
@@ -174,9 +184,9 @@ def search_semantic_scholar(query: str, days: int) -> list[dict]:
     try:
         r = requests.get(S2_SEARCH, params=params, headers=headers, timeout=30)
         if r.status_code == 429:
-            print("  [S2] rate limited, waiting 15s...")
-            time.sleep(15)
-            r = requests.get(S2_SEARCH, params=params, headers=headers, timeout=30)
+            print("[S2] rate limited - skipping S2 for this entire run, results from PubMed+EPMC only")
+            _s2_disabled = True
+            return []
         r.raise_for_status()
         out = []
         for p in r.json().get("data", []):
@@ -199,6 +209,7 @@ def search_semantic_scholar(query: str, days: int) -> list[dict]:
                 "pub_date": p.get("publicationDate") or str(year),
                 "source":   "Semantic Scholar",
                 "citations": p.get("citationCount") or 0,
+                "is_oa":    bool(p.get("openAccessPdf")),
             })
         return out
     except Exception as e:
@@ -238,6 +249,7 @@ def search_europe_pmc(query: str, days: int) -> list[dict]:
                 "authors": astr, "journal": journal, "year": year,
                 "pub_date": pub_date, "source": "Europe PMC",
                 "citations": p.get("citedByCount") or 0,
+                "is_oa":    p.get("isOpenAccess") == "Y",
             })
         return out
     except Exception as e:
@@ -298,6 +310,7 @@ def zotero_fetch() -> list[dict]:
                     "pub_date": d.get("date") or year,
                     "source":   "Zotero",
                     "citations": 0,
+                    "is_oa":    False,
                 })
             start += limit
             if len(items) < limit:
@@ -417,6 +430,8 @@ def merge_papers(raw: list[dict]) -> list[dict]:
                     ex["abstract"] = p["abstract"]
                 if (p.get("citations") or 0) > (ex.get("citations") or 0):
                     ex["citations"] = p["citations"]
+                if p.get("is_oa"):
+                    ex["is_oa"] = True
                 srcs = set(ex["source"].split(" + ")) | {p["source"]}
                 ex["source"] = " + ".join(sorted(srcs))
                 for f in ("authors","journal","year","pub_date","pmid"):
@@ -462,16 +477,26 @@ def _is_recent_enough(paper: dict) -> bool:
 
 
 def score_paper(paper: dict, n_tags: int) -> int:
-    s = min(n_tags * 10, 40)                           # tag relevance (0-40)
-    s += min(int((paper.get("citations") or 0) / 5), 30)  # citations  (0-30)
-    try:                                                # recency     (0-20)
+    s = min(n_tags * 15, 60)                           # tag relevance  (0-60)
+    try:                                                # recency        (0-25)
         py = int((paper.get("pub_date","") or paper.get("year",""))[:4])
         cy = datetime.date.today().year
-        s += 20 if py == cy else (10 if py == cy - 1 else 0)
+        s += 25 if py == cy else (15 if py == cy - 1 else (5 if py == cy - 2 else 0))
     except (ValueError, TypeError):
         pass
-    if paper.get("abstract"):                          # has abstract (0-10)
+    if paper.get("abstract"):                          # has abstract   (10)
         s += 10
+    if paper.get("is_oa"):                             # open access    (5)
+        s += 5
+    if paper.get("must_match"):                        # mustInclude bonus (10)
+        s += 10
+    cit = paper.get("citations") or 0                 # citations if S2 available (0-20)
+    if cit >= 51:
+        s += 20
+    elif cit >= 11:
+        s += 10
+    elif cit >= 1:
+        s += 5
     return min(s, 100)
 
 # ── Readable text export ───────────────────────────────────────────────────────
@@ -540,6 +565,7 @@ def main():
     tag_index:    dict[str,list]  = {}
     domain_index: dict[str,str]   = {}
     folder_index: dict[str,str]   = {}
+    must_index:   dict[str,bool]  = {}   # key → True if paper satisfies any tag's mustInclude
 
     for tag_info in tags:
         tag     = tag_info["tag"]
@@ -572,15 +598,16 @@ def main():
             batch.extend(epmc)
             time.sleep(DELAY)
 
-        # Apply mustInclude filter
+        # mustInclude: soft bonus (+10 pts at scoring) instead of hard exclusion filter
         must = tag_info["mustInclude"]
         if must:
-            filtered = []
             for p in batch:
                 haystack = (p.get("title","") + " " + p.get("abstract","")).lower()
                 if all(m.lower() in haystack for m in must):
-                    filtered.append(p)
-            batch = filtered
+                    ndoi_tmp = _norm_doi(p.get("doi",""))
+                    k = ndoi_tmp if ndoi_tmp else f"__notitle__{p.get('title','')[:80].lower()}"
+                    if k:
+                        must_index[k] = True
 
         for p in batch:
             ndoi = _norm_doi(p.get("doi",""))
@@ -612,6 +639,7 @@ def main():
         paper["matched_tags"] = tags_for
         paper["domain"]       = domain_index.get(key, paper.get("domain","General"))
         paper["folder"]       = folder_index.get(key, paper.get("folder","General"))
+        paper["must_match"]   = must_index.get(key, False)
         paper["score"]        = score_paper(paper, len(tags_for))
         paper["fetch_date"]   = today_iso
         paper["doi_url"]      = f"https://doi.org/{paper['doi']}" if paper.get("doi") else ""
@@ -633,7 +661,7 @@ def main():
     FIELDS = [
         "score","title","authors","journal","year","pub_date",
         "doi","doi_url","pmid","pubmed_url","domain","folder",
-        "matched_tags","citations","source","fetch_date","abstract",
+        "matched_tags","must_match","citations","is_oa","source","fetch_date","abstract",
     ]
     with open(OUTPUT_CSV, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=FIELDS, extrasaction="ignore")
