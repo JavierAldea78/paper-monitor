@@ -57,6 +57,7 @@ jobs:
           git add papers.json papers.csv papers_readable.txt
           git diff --staged --quiet && echo "No changes." && exit 0
           git commit -m "chore: papers $(date -u +%Y-%m-%d) — ${{ steps.count.outputs.count }} papers"
+          git pull --rebase origin main
           git push
 
   # ─────────────────────────────────────────────────────────────────────────────
