@@ -6,6 +6,7 @@ Reads watchtags.csv → writes papers.json + papers.csv + papers_readable.txt.
 """
 
 import csv
+import html
 import json
 import os
 import re
@@ -356,6 +357,12 @@ def _parse_zotero_creators(astr: str) -> list[dict]:
     return creators
 
 
+def _clean_text(text: str) -> str:
+    """Unescape HTML entities then strip any remaining HTML tags."""
+    text = html.unescape(text or "")
+    return re.sub(r"<[^>]+>", "", text)
+
+
 def zotero_push(papers: list[dict]) -> None:
     """Push high-scoring papers to a dated collection inside \'Paper Monitor\'."""
     if not ZOTERO_API_KEY or not ZOTERO_USER_ID:
@@ -380,13 +387,13 @@ def zotero_push(papers: list[dict]) -> None:
                 tags.append({"tag": t[:100]})
             items.append({
                 "itemType":         "journalArticle",
-                "title":            p.get("title") or "",
-                "abstractNote":     (p.get("abstract") or "")[:3000],
+                "title":            _clean_text(p.get("title") or ""),
+                "abstractNote":     _clean_text(p.get("abstract") or "")[:3000],
                 "publicationTitle": p.get("journal") or "",
                 "DOI":              p.get("doi") or "",
                 "url":              p.get("doi_url") or p.get("pubmed_url") or "",
                 "date":             p.get("pub_date") or p.get("year") or "",
-                "creators":         _parse_zotero_creators(p.get("authors") or ""),
+                "creators":         _parse_zotero_creators(_clean_text(p.get("authors") or "")),
                 "tags":             tags,
                 "collections":      [col_key],
                 "extra":            (f"Score: {p.get('score',0)} | "
