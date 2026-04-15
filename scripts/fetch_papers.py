@@ -454,6 +454,60 @@ def merge_papers(raw: list[dict]) -> list[dict]:
 
 CUTOFF_DATE = datetime.date(2024, 1, 1)
 
+
+def load_existing_papers() -> list[dict]:
+    """Load papers.json from disk. Returns empty list if file doesn't exist or is unreadable."""
+    if not OUTPUT_JSON.exists():
+        return []
+    try:
+        data = json.loads(OUTPUT_JSON.read_text(encoding="utf-8"))
+        if isinstance(data, list):
+            return data
+    except Exception as e:
+        print(f"[load_existing] could not read {OUTPUT_JSON.name}: {e}")
+    return []
+
+
+def merge_with_existing(new_papers: list[dict], existing_papers: list[dict]) -> list[dict]:
+    """
+    Combine freshly-fetched papers with the previously saved list so no paper
+    is ever dropped between runs.
+
+    Strategy:
+    - Papers found in the current run take precedence (they have fresh scores /
+      citation counts).  For duplicate DOIs the new version wins entirely.
+    - Papers from the existing file whose DOI (or title, for DOI-less papers) is
+      NOT present in the new run are appended unchanged.
+    - Final list is re-sorted by score descending.
+    """
+    # Index new papers by normalised DOI
+    new_by_doi: dict[str, bool] = {}
+    new_title_keys: set[str] = set()
+
+    for p in new_papers:
+        ndoi = _norm_doi(p.get("doi", ""))
+        if ndoi:
+            new_by_doi[ndoi] = True
+        else:
+            key = re.sub(r'\s+', ' ', p.get("title", "").lower().strip())[:80]
+            if key:
+                new_title_keys.add(key)
+
+    retained: list[dict] = []
+    for p in existing_papers:
+        ndoi = _norm_doi(p.get("doi", ""))
+        if ndoi:
+            if ndoi not in new_by_doi:
+                retained.append(p)
+        else:
+            key = re.sub(r'\s+', ' ', p.get("title", "").lower().strip())[:80]
+            if key and key not in new_title_keys:
+                retained.append(p)
+
+    combined = new_papers + retained
+    combined.sort(key=lambda p: p.get("score", 0), reverse=True)
+    return combined
+
 def _paper_date(paper: dict) -> datetime.date | None:
     """Return the best-available publication date, or None if unparseable."""
     for field in ("pub_date", "year"):
@@ -647,6 +701,16 @@ def main():
                                   if paper.get("pmid") else "")
 
     merged.sort(key=lambda p: p.get("score", 0), reverse=True)
+
+    # ── Merge with previously saved papers (so nothing is ever dropped) ────────
+    existing = load_existing_papers()
+    if existing:
+        new_count = len(merged)
+        merged = merge_with_existing(merged, existing)
+        retained = len(merged) - new_count
+        print(f"Merged: {new_count} new/updated + {retained} retained from previous run = {len(merged)} total\n")
+    else:
+        print(f"No existing papers.json found — writing fresh file\n")
 
     # ── Push to Zotero ─────────────────────────────────────────────────────────
     zotero_push(merged)

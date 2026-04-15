@@ -193,6 +193,8 @@ tr:hover td { background:var(--accent-dim); }
 .card-link:hover { background:var(--accent); color:#fff; border-color:var(--accent); text-decoration:none; }
 .btn-insight { color:#7c3aed; border-color:#7c3aed40; }
 .btn-insight:hover { background:#7c3aed; color:#fff; border-color:#7c3aed; }
+.btn-zotero  { color:#e5521a; border-color:#e5521a40; }
+.btn-zotero:hover  { background:#e5521a; color:#fff; border-color:#e5521a; }
 .btn-star {
   background:none; border:none; font-size:17px; padding:1px 3px;
   line-height:1; border-radius:4px; color:var(--text-faint); flex-shrink:0;
@@ -349,6 +351,7 @@ tr:hover td { background:var(--accent-dim); }
     </div>
     <div class="nav-spacer"></div>
     <span class="nav-stats" id="nav-stats"></span>
+    <button class="btn-sm" id="nav-zotero-btn" onclick="exportHighScoreToZotero()" title="Send all papers with score ≥ 70 to Zotero (or download .ris)">📚 Zotero ≥70</button>
     <button class="btn-sm" id="nav-export-btn" onclick="exportCSV()">Export CSV</button>
     <button class="btn-icon" onclick="toggleTheme()" title="Toggle theme" id="theme-btn">🌙</button>
     <button class="btn-sm" onclick="logout()">Sign out</button>
@@ -582,6 +585,7 @@ async function loadPapers() {
     applyFilters();
     document.getElementById('loading').style.display = 'none';
     if (mainTab === 'analytics') renderAnalytics();
+    autoSendHighScore();
   } catch(err) {
     console.error('[TV] loadPapers failed:', err);
     document.getElementById('loading').innerHTML =
@@ -762,7 +766,8 @@ function renderCards(slice) {
       ? `<a href="${esc(p.doi_url)}" target="_blank" rel="noopener" class="card-link">DOI ↗</a>` : '';
     const pm_btn  = p.pubmed_url
       ? `<a href="${esc(p.pubmed_url)}" target="_blank" rel="noopener" class="card-link">PubMed ↗</a>` : '';
-    const obs_btn = `<button class="card-link btn-insight" onclick="downloadInsight(currentSlice[${i}])">↓ Insight</button>`;
+    const obs_btn    = `<button class="card-link btn-insight" onclick="downloadInsight(currentSlice[${i}])">↓ Insight</button>`;
+    const zotero_btn = `<button class="card-link btn-zotero"  onclick="sendToZotero([currentSlice[${i}]],'${(p.doi||p.title||'').replace(/'/g,"\\'").slice(0,40)}')">📚 Zotero</button>`;
     const isStarred = starredIds.has(starKey(p));
     const star_btn  = `<button class="btn-star${isStarred?' starred':''}" onclick="toggleStar(currentSlice[${i}],event)" title="${isStarred?'Remove from canvas':'Add to canvas'}">${isStarred?'★':'☆'}</button>`;
     const abs     = p.abstract
@@ -781,7 +786,7 @@ function renderCards(slice) {
       </div>
       ${tags?`<div class="card-tags">${tags}</div>`:''}
       ${abs}
-      <div class="card-footer">${doi_btn}${pm_btn}${obs_btn}</div>
+      <div class="card-footer">${doi_btn}${pm_btn}${obs_btn}${zotero_btn}</div>
     </div>`;
   }).join('');
 }
@@ -1588,6 +1593,138 @@ function esc(str) {
   return String(str||'')
     .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
     .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// ZOTERO INTEGRATION
+// ══════════════════════════════════════════════════════════════════════════════
+let zoteroSent = new Set(JSON.parse(localStorage.getItem('tv-zotero-sent') || '[]'));
+
+function showToast(msg, type) {
+  let toast = document.getElementById('tv-toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'tv-toast';
+    toast.style.cssText = [
+      'position:fixed','bottom:24px','right:24px','z-index:9999',
+      'background:var(--surface)','border:1px solid var(--border)',
+      'color:var(--text)','border-radius:10px','padding:12px 18px',
+      'box-shadow:var(--shadow)','font-size:13px','max-width:360px',
+      'transition:opacity 0.4s ease','pointer-events:none',
+    ].join(';');
+    document.body.appendChild(toast);
+  }
+  const color = type==='success'?'var(--success)':type==='error'?'var(--danger)':'var(--accent)';
+  const icon  = type==='success'?'✓':type==='error'?'✕':'ℹ';
+  toast.style.borderColor = color;
+  toast.innerHTML = `<span style="color:${color};font-weight:700;margin-right:6px;">${icon}</span>${esc(msg)}`;
+  toast.style.opacity = '1';
+  clearTimeout(toast._timer);
+  toast._timer = setTimeout(() => { toast.style.opacity = '0'; }, 4000);
+}
+
+function toZoteroItem(p) {
+  const creators = (p.authors || '')
+    .replace(/ et al\.?/i, '')
+    .split(',').map(a => a.trim()).filter(Boolean)
+    .map(name => {
+      const parts = name.trim().split(/\s+/);
+      const lastName  = parts.length > 1 ? parts.pop() : name;
+      const firstName = parts.join(' ');
+      return firstName
+        ? { creatorType:'author', firstName, lastName }
+        : { creatorType:'author', name };
+    });
+  return {
+    itemType:         'journalArticle',
+    title:            p.title            || '',
+    creators,
+    abstractNote:     p.abstract         || '',
+    publicationTitle: p.journal          || '',
+    date:             p.pub_date         || String(p.year || ''),
+    DOI:              p.doi              || '',
+    url:              p.doi_url || p.pubmed_url || '',
+    tags:             (p.matched_tags    || []).map(t => ({ tag: t })),
+    attachments: [],
+  };
+}
+
+async function sendToZoteroConnector(papers) {
+  const sessionID = Math.random().toString(36).slice(2) + Date.now().toString(36);
+  const resp = await fetch('http://127.0.0.1:23119/connector/saveItems', {
+    method:  'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body:    JSON.stringify({ sessionID, items: papers.map(toZoteroItem) }),
+  });
+  if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+  return papers.length;
+}
+
+function toRIS(papers) {
+  const lines = [];
+  papers.forEach(p => {
+    lines.push('TY  - JOUR');
+    if (p.title)    lines.push(`TI  - ${p.title}`);
+    (p.authors || '').replace(/ et al\.?/i, '').split(',')
+      .map(a => a.trim()).filter(Boolean)
+      .forEach(a => lines.push(`AU  - ${a}`));
+    if (p.journal)  lines.push(`JO  - ${p.journal}`);
+    if (p.year)     lines.push(`PY  - ${p.year}`);
+    if (p.pub_date) lines.push(`DA  - ${p.pub_date}`);
+    if (p.doi)      lines.push(`DO  - ${p.doi}`);
+    if (p.doi_url)  lines.push(`UR  - ${p.doi_url}`);
+    if (p.abstract) lines.push(`AB  - ${p.abstract.replace(/\r?\n/g,' ')}`);
+    (p.matched_tags || []).forEach(t => lines.push(`KW  - ${t}`));
+    lines.push('ER  - ');
+    lines.push('');
+  });
+  return lines.join('\r\n');
+}
+
+function downloadRIS(papers, filename) {
+  const blob = new Blob([toRIS(papers)], { type: 'application/x-research-info-systems;charset=utf-8;' });
+  const a = Object.assign(document.createElement('a'), {
+    href:     URL.createObjectURL(blob),
+    download: filename || `tech-vigilance-${new Date().toISOString().slice(0,10)}.ris`,
+  });
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+async function sendToZotero(papers, label) {
+  if (!papers || !papers.length) { showToast('No papers to send.','info'); return; }
+  try {
+    const n = await sendToZoteroConnector(papers);
+    papers.forEach(p => zoteroSent.add(p.doi || p.title || ''));
+    localStorage.setItem('tv-zotero-sent', JSON.stringify([...zoteroSent]));
+    showToast(`${n} paper${n!==1?'s':''} sent to Zotero.`, 'success');
+  } catch (_) {
+    const fname = (label ? label.replace(/[\\/:*?"<>|]/g,'_').slice(0,60) : null) ||
+                  `tech-vigilance-${new Date().toISOString().slice(0,10)}`;
+    downloadRIS(papers, fname + '.ris');
+    showToast('Zotero no está abierto — se ha descargado el archivo .ris. Ábrelo en Zotero para importar.', 'info');
+  }
+}
+
+function exportHighScoreToZotero() {
+  const papers = allPapers.filter(p => (p.score || 0) >= 70);
+  if (!papers.length) { showToast('No hay papers con score ≥ 70.', 'info'); return; }
+  sendToZotero(papers, `tech-vigilance-score70plus-${new Date().toISOString().slice(0,10)}`);
+}
+
+async function autoSendHighScore() {
+  if (!allPapers.length) return;
+  const pending = allPapers.filter(p =>
+    (p.score || 0) >= 70 && !zoteroSent.has(p.doi || p.title || ''));
+  if (!pending.length) return;
+  try {
+    const n = await sendToZoteroConnector(pending);
+    pending.forEach(p => zoteroSent.add(p.doi || p.title || ''));
+    localStorage.setItem('tv-zotero-sent', JSON.stringify([...zoteroSent]));
+    showToast(`Auto-enviados ${n} paper${n!==1?'s':''} nuevos con score ≥ 70 a Zotero.`, 'success');
+  } catch (_) {
+    // Zotero no disponible — no descargamos automáticamente, el usuario puede usar el botón
+  }
 }
 
 // ══════════════════════════════════════════════════════════════════════════════
