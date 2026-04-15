@@ -1,5 +1,5 @@
 TECH VIGILANCE MONITOR - MSM R&D
-Last updated: 2026-04-14
+Last updated: 2026-04-15
 Total papers: 500
 
 ========================================
@@ -923,15 +923,6 @@ JOURNAL:
 YEAR: 2026
 DOI: https://doi.org/10.1016/j.fochx.2026.103751
 ABSTRACT: Mustard and wild jujube are highly distinctive agricultural products, with mustard being widely used in northern China for preparing pickled vegetables. However, the potential of their co-fermentation to develop novel food products with enhanced flavor and quality remains underexplored. This study aimed to investigate the correlation between physicochemical properties, volatile compounds, and the structural dynamics and interactions of microbial communities during the mixed fermentation of mustard and wild jujube powder. The fermentation process was monitored for changes in pH, total titratable acidity, and nitrite content. Volatile compounds were analyzed to identify key flavor components, while high-throughput sequencing was employed to track microbial community succession. Correlation analysis was subsequently used to examine associations between environmental factors, bacterial dynamics, and flavor formation. The results indicated that mixed-fermented mustard exhibited a faster pH decline, increased total titratable acidity, and lower nitrite content during fermentation. Flavor analysis revealed that co-fermentation reduced the sulfur compound content by 28%. Thirteen key volatile compounds were identified throughout fermentation. At the phylum level, the dominant microbial community shifted from Proteobacteria in the early stages to Firmicutes in later stages. At the genus level, the abundance of <i>Stenotrophomonas</i> increased, while <i>Pseudomonas</i> and <i>Micrococcus</i> decreased. Correlation analysis indicated that pH, total acidity, nitrite, and <i>Pseudomonas</i> were associated with bacterial community structure and the formation of multiple volatile compounds. This study provides novel insights into the flavor and microbial characteristics of mixed-fermented mustard and wild jujube products, offering a scientific basis for developing fermented vegetable products with enhanced flavor profiles.
-
----
-
-PAPER: Regulating Glycerol Metabolism to Investigate the Effects of Engineered <i>Saccharomyces cerevisiae</i> on Simulated Wine Flavor Compounds.
-AUTHORS: Chen L, Gao J, Wang H et al.
-JOURNAL: 
-YEAR: 2026
-DOI: https://doi.org/10.3390/foods15020300
-ABSTRACT: This study aimed to modify metabolite synthesis in <i>Saccharomyces cerevisiae</i> (<i>S. cerevisiae</i>) under simulated wine fermentation conditions by regulating the glycerol metabolic pathway. We systematically analyzed the effects of overexpressing the aquaporin gene <i>AQY1</i> and co-expressing <i>AQY1</i> with the glycerol-3-phosphate dehydrogenase gene <i>GPD1</i> on the metabolism of ethanol, higher alcohols, and esters. Our results indicate that <i>AQY1</i> overexpression increased glycerol yield by 6.58%, reduced higher alcohol content by 14.60%, and elevated ester content by 7.15%. The downregulation of related amino acid metabolism genes correlated with the observed decrease in higher alcohol levels. Notably, co-expression of <i>AQY1</i> and <i>GPD1</i> further enhanced glycerol yield by 10.66% while decreasing ethanol content by 6.32%. By analyzing changes in gene expression alongside metabolic mechanisms, we hypothesize that the redistribution of carbon flux and NADH toward the glycerol pathway not only decreases the precursors for ethanol synthesis but also directly inhibits the activity of aldehyde dehydrogenase (<i>ALD2</i>/<i>3</i>/<i>4</i>/<i>6</i>), thereby constraining ethanol production. In comparison to <i>AQY1</i> overexpression alone, the co-expression strategy did not significantly alter glycerol accumulation; however, it reduced both ethanol and ester content by 8.38% and 8.40%, respectively, while markedly increasing higher alcohol content by 22.30%. This increase may result from enhanced glycolytic flux and pyruvate accumulation, which promote metabolic flow toward amino acid synthesis pathways. In summary, this study effectively remodeled the central carbon metabolism network by targeting glycerol metabolism, achieving diverse metabolic product synthesis and providing important references for the selection and breeding of industrial <i>S. cerevisiae</i> strains.
 
 ---
 
@@ -1934,21 +1925,21 @@ ABSTRACT: A thorough understanding of the microbial ecology of meat products, do
 
 ---
 
-PAPER: Revolutionizing bio-hydrogen production: smart integration of nanotechnology, microbial engineering, and circular waste valorisation.
-AUTHORS: Maturi KC, Madeti SRK, Sinha S et al.
-JOURNAL: 
-YEAR: 2026
-DOI: https://doi.org/10.1186/s40643-025-01001-4
-ABSTRACT: The escalating depletion of fossil fuel reserves and mounting environmental concerns from greenhouse gas emissions have intensified the global pursuit for sustainable energy alternatives. Bio-hydrogen production emerges as a transformative solution, offering carbon-neutral energy generation while simultaneously addressing organic waste management challenges. This comprehensive review examines the revolutionary integration of nanotechnology, advanced microbial engineering, and circular economy principles in bio-hydrogen production systems. A systematic analysis of diverse renewable feedstocks, including agricultural residues, municipal solid waste, microalgae, and industrial biomass, highlighting their potential for decentralized bio-hydrogen production. The review critically evaluates cutting-edge microbial innovations encompassing hybrid fermentation systems, extremophile consortia, and synthetic biology approaches utilizing CRISPR-Cas9 technology for enhanced hydrogen yields. Nanotechnology applications are extensively discussed, focusing on nano-metal catalysts, enzyme immobilization techniques, and plasmonic nanoparticles that significantly improve bioconversion efficiency and system stability. Advanced purification technologies, including mixed-matrix membranes and graphene-based systems, alongside innovative storage solutions using metal hydrides, are comprehensively assessed. The integration of bio-hydrogen into fuel cells and industrial applications demonstrates substantial potential for replacing fossil-based hydrogen. This review establishes bio-hydrogen as a cornerstone technology for achieving sustainable energy transitions while fostering circular bio-economy development.
-
----
-
 PAPER: Post-Inoculation Drying and Storage Effects on HAB Viability and Nutrient Retention in Biochar.
 AUTHORS: Bitrus C, Hammed A, Ayodele T et al.
 JOURNAL: 
 YEAR: 2026
 DOI: https://doi.org/10.3390/biotech15010019
 ABSTRACT: <h4>Background/objectives</h4>The effects of thermal drying on the viability of beneficial microorganisms immobilized in biochar, as well as on biochar nutrient retention, remain insufficiently understood. This study aimed to evaluate how drying temperature influences the survival of hyper-ammonia-producing bacteria (HAB) immobilized on pine wood biochar and to assess the impact of subsequent storage on bacterial recovery and nutrient stability.<h4>Methods</h4>Biochar was inoculated with HAB and subjected to drying at temperatures ranging from 40 to 60 °C. Following drying, samples were characterized and stored for 30 days. Microbial revival was assessed through reculturing, while changes in surface functional groups were analyzed using FTIR spectroscopy. Nutrient retention, particularly nitrogen content, was also evaluated.<h4>Results</h4>Higher drying temperatures resulted in reduced immediate microbial revival during reculturing. However, samples exhibiting limited immediate recovery demonstrated enhanced revival after the 30-day storage period. FTIR analysis revealed that drying temperature modified the availability of surface functional groups associated with microbial attachment and activity. Nutrient analysis indicated only minor reductions in nitrogen retention in biochar dried at temperatures above 55 °C.<h4>Conclusions</h4>Drying temperature significantly affects both the short-term survival and post-storage recovery of beneficial microorganisms immobilized in biochar. While elevated temperatures may initially suppress microbial activity, recovery potential during storage remains substantial. Optimizing drying conditions is therefore essential to balance microbial viability with nutrient retention in biochar-based formulations.
+
+---
+
+PAPER: Revolutionizing bio-hydrogen production: smart integration of nanotechnology, microbial engineering, and circular waste valorisation.
+AUTHORS: Maturi KC, Madeti SRK, Sinha S et al.
+JOURNAL: 
+YEAR: 2026
+DOI: https://doi.org/10.1186/s40643-025-01001-4
+ABSTRACT: The escalating depletion of fossil fuel reserves and mounting environmental concerns from greenhouse gas emissions have intensified the global pursuit for sustainable energy alternatives. Bio-hydrogen production emerges as a transformative solution, offering carbon-neutral energy generation while simultaneously addressing organic waste management challenges. This comprehensive review examines the revolutionary integration of nanotechnology, advanced microbial engineering, and circular economy principles in bio-hydrogen production systems. A systematic analysis of diverse renewable feedstocks, including agricultural residues, municipal solid waste, microalgae, and industrial biomass, highlighting their potential for decentralized bio-hydrogen production. The review critically evaluates cutting-edge microbial innovations encompassing hybrid fermentation systems, extremophile consortia, and synthetic biology approaches utilizing CRISPR-Cas9 technology for enhanced hydrogen yields. Nanotechnology applications are extensively discussed, focusing on nano-metal catalysts, enzyme immobilization techniques, and plasmonic nanoparticles that significantly improve bioconversion efficiency and system stability. Advanced purification technologies, including mixed-matrix membranes and graphene-based systems, alongside innovative storage solutions using metal hydrides, are comprehensively assessed. The integration of bio-hydrogen into fuel cells and industrial applications demonstrates substantial potential for replacing fossil-based hydrogen. This review establishes bio-hydrogen as a cornerstone technology for achieving sustainable energy transitions while fostering circular bio-economy development.
 
 ---
 
@@ -2186,15 +2177,6 @@ ABSTRACT: The food enzyme containing endo-1,4-β-xylanase (4-β-D-xylan xylanohy
 
 ---
 
-PAPER: Analysis of microbial diversity of traditional Chinese starters and screening of special flavor yeast for Chinese baked flatbread.
-AUTHORS: Yang Y, Wang Y, Li B et al.
-JOURNAL: Frontiers in nutrition
-YEAR: 2025
-DOI: https://doi.org/10.3389/fnut.2025.1755466
-ABSTRACT: <h4>Introduction</h4>Traditional Chinese starters have unclear microbial complexity and community functions.<h4>Methods</h4>To screen functional yeasts for flavor enhancement of Chinese baked flatbread (CBF), Saccharomyces cerevisiae Y4 was isolated and identified from traditional Chinese starters using a combined approach of high-throughput sequencing and culturomics. The traditional starters samples were aseptically collected from Luohe, Xinxiang in Henan province and Rizhao in Shandong province.<h4>Results</h4>The analysis of microbial communities revealed that Luohe starter had the highest fungal (Chao1 = 271.86) and bacterial (Chao1 = 341.76) richness, with dominant genera including Saccharomyces and Lactiplantibacillus. Saccharomyces cerevisiae Y4 showed the following performance: saturated gas production at 48 h, 12% ethanol tolerance, high acid tolerance (OD value below 0.15), and 1975 mL gas production in fermented dough. CBF fermented by Y4 had a high sensory score (82.8) and 40 volatiles, including the unique 1-octen-3-ol and a prominent level of phenethyl acetate content.<h4>Discussion</h4>In this study, a superior yeast strain was identified, providing theoretical insights and valuable microbial resources for optimizing the flavor of CBF.
-
----
-
 PAPER: Hanseniaspora uvarum and Hanseniaspora opuntiae differ in their growth and in the production of volatile organic compounds in wine.
 AUTHORS: Čuš F, Potisek M, Čadež N.
 JOURNAL: Applied microbiology and biotechnology
@@ -2250,6 +2232,15 @@ JOURNAL: Scientific reports
 YEAR: 2026
 DOI: https://doi.org/10.1038/s41598-026-44328-4
 ABSTRACT: This study represents the biosynthesis of copper oxide nanoparticles (CuO-NPs) via bacteria and their utilization in the synthesis of a bio-nanocomposite based on starch (St) and polyvinyl alcohol (PVA) to be applied in preserving ultrafiltration (UF) soft cheese. The bio-nanocomposites were synthesized by blending St/PVA with a ratio of 4:1 wt, wt and loaded with various concentrations of CuO-NPs (0, 20, 40, and 80 mg) to obtain bio-nanocomposite coatings S1, S2, S3, and S4, respectively. The coatings' mechanical strength, water and oxygen barrier quality, morphology, and crystallinity were all studied. The chemical composition, microbial load, total solids, and pH changes for uncoated and coated cheese samples that were stored at 5 ± 2 °C for 60 days were evaluated. Results showed that films loaded with CuO-NPs significantly improved the mechanical and barrier properties of the prepared films, in addition to reducing the moisture loss and microbial growth and extending the shelf life of the coated cheese. In addition, the bio-nanocomposite coating loaded with higher CuO-NP concentrations (S3 and S4) showed superior antimicrobial effects, indicating their potential as active edible coatings for cheese preservation.
+
+---
+
+PAPER: Plant-Derived Functional Ingredients in Pet Nutrition: Phytochemical Classification, Mechanisms, Efficacy, and Application in Dogs and Cats.
+AUTHORS: Srisa Atcharawan, Kamonpatana Pitiya, Promhuad Khwanchat et al.
+JOURNAL: Animals : an open access journal from MDPI
+YEAR: 2026
+DOI: https://doi.org/10.3390/ani16071034
+ABSTRACT: This review classifies plant-derived functional ingredients in pet food according to phytochemical groups and application forms, including direct oral supplementation and incorporation into complete diets. Polyphenols and plant extracts exert prominent antioxidant (singular), anti-inflammatory, immunomodulatory, and microbiome-regulating effects. Microalgae and omega-3 sources support lipid metabolism, cardiovascular function, and skin integrity. Cannabinoids demonstrate dose-dependent responses in dogs, while cats generally tolerate long-term administration and exhibit notable benefits in chronic pain management. Combinations of botanical extracts with complementary bioactives and fermented botanical preparations exhibit multi-target functionality, with dogs showing pronounced biochemical and microbiome modulation, whereas cats display more behavioral and functional improvements. Phytochemicals operate through integrated multi-level regulation, including activation of antioxidant enzymes, modulation of inflammatory cytokines and T-lymphocyte ratios, microbial metabolic shifts toward short-chain fatty acid production, and regulation of lipid metabolism. Dogs demonstrate marked effects on hepatic function, reproductive resilience, microbiome diversity, CD4+/CD8+ balance, and cholesterol control. In contrast, cats show greater benefits in inflammation reduction, pain relief, intestinal integrity, and long-term safety. These species-specific responses underscore the importance of precision formulation and highlight the emergence of plant-based "pharma-pet nutrition" integrating nutritional and biochemical strategies for targeted health promotion.
 
 ---
 
@@ -2855,6 +2846,15 @@ ABSTRACT: This study presents a comprehensive analysis of the bromatological pro
 
 ---
 
+PAPER: Study on the Antioxidant Activity of Fermented Broad Bean-Mulberry Composite Juice Based on In Vitro Digestion and Non-Targeted Metabolomic Analysis.
+AUTHORS: Zhao Y, Pang W, Wang Y et al.
+JOURNAL: Foods (Basel, Switzerland)
+YEAR: 2026
+DOI: https://doi.org/10.3390/foods15060991
+ABSTRACT: Fermentation is a widely utilized technology that efficiently enriches bioactive compounds, thereby enhancing the bioactivity of food. This study aimed to investigate the release of the total polyphenol content (TPC) and flavonoid content (TFC), changes in antioxidant activity, and in vitro relative abundance trends of phenolic metabolites in the fermented composite juice of kidney beans and mulberries. An in vitro simulated gastric and intestinal digestion method was employed to examine the release patterns of polyphenols and flavonoids, along with alterations in antioxidant activity during the gastrointestinal digestion of the fermented composite juice. Non-targeted metabolomics LC-MS technology was employed to detect changes in the relative abundance and enrichment of phenolic metabolites during fermentation and digestion stages. The results indicated that after simulated digestion, the polyphenol content increased by 1.42-fold and the flavonoid content by 2.53-fold compared to pre-digestion. The scavenging rates for DPPH radicals, hydroxyl radicals, and ABTS radicals reached 85.44%, 94.77%, and 76.12%, respectively. Non-targeted metabolomic investigation through KEGG pathway enrichment showed associations between phenolic metabolites and antioxidant activity. During fermentation and digestion, daidzein, genistein, quercetin, and catechin may be the potential compounds contributing to the enhanced antioxidant activity of FBMJ. Among these, phenolic metabolites are significantly enriched in the biosynthetic pathways of flavonoids and flavanols. This study has elucidated the metabolic variations between the fermentation and digestion stages of fermented composite juice from a metabolomics perspective, providing preliminary in vitro research evidence and theoretical clues for developing it as a functional food with antioxidant potential.
+
+---
+
 PAPER: Waste-Glass-Derived Porous Silica: Synthesis and Structural Characterization.
 AUTHORS: Lima AMO, Graça MPF, Hammami I et al.
 JOURNAL: 
@@ -2866,7 +2866,7 @@ ABSTRACT: This work reports the reuse of waste glass as a sustainable silica sou
 
 PAPER: Nickel Single-Atom Nanozyme for Multimodal Cancer Therapy.
 AUTHORS: Woo J, Shin H, Hong S et al.
-JOURNAL: ACS applied materials & interfaces
+JOURNAL: 
 YEAR: 2026
 DOI: https://doi.org/10.1021/acsami.5c22956
 ABSTRACT: Nickel has recently emerged as a promising catalytic center for single-atom catalysts, owing to its biological relevance, redox versatility, and favorable coordination chemistry. Herein, we report the synthesis of a multifunctional nanozyme (Ni/PEG-FA) comprising atomically dispersed nickel sites anchored on a nitrogen-doped carbon support. The nanozyme is functionalized with poly(ethylene glycol) to improve colloidal stability and biocompatibility, and further conjugated with folic acid to enable the selective targeting of cancer cells overexpressing folate receptors. Ni/PEG-FA exhibits dual enzyme-mimicking activity, catalyzing both peroxidase-like and superoxide dismutase-like reactions for efficient reactive oxygen species generation under physiological conditions. In addition, Ni/PEG-FA shows strong photothermal conversion upon near-infrared laser irradiation, enabling effective thermal ablation of tumor cells. In vitro and in vivo evaluations demonstrate that Ni/PEG-FA elicits synergistic antitumor effects by combining catalytic oxidative stress with photothermal therapy, with minimal systemic toxicity. These findings underscore the potential of Ni-based single-atom nanozymes as a safe and effective platform for reactive oxygen species-powered cancer therapy.
@@ -3720,6 +3720,15 @@ ABSTRACT: Hospital wastewater (HWW) is a complex matrix of pharmaceutical residu
 
 ---
 
+PAPER: A review on multifunctional applications of MgO nanostructures: from material science to environmental and agricultural innovations.
+AUTHORS: Mahiba GGJ, Prabakaran A, Balraj B.
+JOURNAL: 
+YEAR: 2026
+DOI: https://doi.org/10.1039/d5ra07016c
+ABSTRACT: Green synthesis of magnesium oxide nanoparticles (MgO NPs) using plant extracts and bio-waste materials represents a sustainable alternative to conventional synthesis methods. MgO, characterized by its crystalline lattice of Mg<sup>2+</sup> and O<sup>2-</sup> ions, exhibits hygroscopic properties and is a white, solid mineral with diverse technological applications. These nanoparticles demonstrate versatile applications across multiple disciplines, including agriculture, drug delivery, environmental remediation, antimicrobial treatments, and supercapacitor technologies. Previous studies describe diverse synthesis methodologies including sol-gel routes, flame synthesis, and hydrothermal methods, whereas this review focuses primarily on green synthesis approaches. The green synthesis methodology employs plant extracts that serve dual functions as both reducing agents and capping agents in the formation and stabilization of metal oxide nanoparticles. Biosynthesized MgO NPs exhibit distinctive properties, including controlled morphology, high surface area, tunable particle size distribution, and enhanced stabilization. These characteristics position MgO NPs as promising candidates for addressing contemporary environmental challenges and advancing energy storage technologies. This review critically analyzes recent developments in biosynthesized MgO NPs, highlighting the advantages of green synthesis over conventional methods and identifying key research gaps and future directions in this rapidly evolving field.
+
+---
+
 PAPER: Anaerobic Treatment of the Liquid Fraction of Food Waste in a Hybrid Reactor with Spatially Structured Biomass: Process Performance and Microbial Community Dynamics.
 AUTHORS: Barbosa AA, Bassin ID, Pereira CP et al.
 JOURNAL: ACS omega
@@ -3881,15 +3890,6 @@ JOURNAL:
 YEAR: 2026
 DOI: https://doi.org/10.1016/j.crfs.2026.101384
 ABSTRACT: This study investigated the effect of ultrasound pretreatment (5-15 min, 37 kHz, 300 W) on the fermentation performance and functional properties of buttermilk inoculated with <i>Limosilactobacillus fermentum</i> and <i>Lacticaseibacillus rhamnosus</i>. Buttermilk was sonicated prior to 24 h fermentation to assess microbial proliferation, acidification kinetics, total phenolic content (TPC), antioxidant capacity, and inhibitory activities against α-amylase, α-glucosidase, and lipase. Ultrasonication significantly (P ≤ 0.05) enhanced bacterial growth, with the B+10 treatment achieving 9.3 log CFU/mL, the highest viable count among treatments. Sonicated samples exhibited accelerated acidification (pH 3.4 in B+15) and a marked increase in TPC (9.2 mg/mL in B+10). Antioxidant properties improved substantially, as reflected by a 78.9% increase in reducing power and 82.1% superoxide radical scavenging activity. Enzyme inhibitory activities were also enhanced, with α-glucosidase and lipase inhibition reaching 29.2% and 19.3%, respectively. Notably, <i>L. rhamnosus</i>-fermented samples consistently demonstrated superior phenolic release and bioactivity compared with <i>L. fermentum</i>. Overall, ultrasonic pre-treatment effectively enhanced fermentation performance and biofunctional attributes of buttermilk, highlighting its potential as an innovative approach for developing value-added functional dairy products.
-
----
-
-PAPER: Photocatalytic oxidation of arsenic(iii) in aqueous media: a mini-review.
-AUTHORS: Navarrete-Magaña M, Mantilla A, Samaniego-Benitez E.
-JOURNAL: 
-YEAR: 2026
-DOI: https://doi.org/10.1039/d5ra06908d
-ABSTRACT: Prolonged exposure to arsenic (As)-contaminated water poses a serious risk to human health due to its high toxicity, which can cause skin lesions and, in the most severe cases, various types of cancer. It is therefore imperative to develop effective strategies to remove it. However, conventional removal methods have significant limitations for eliminating this metalloid, prompting research into sustainable alternatives, including photocatalytic oxidation. This mini-review examines the most recent advances in photocatalytic oxidation of As(iii) to As(v) species, with a special emphasis on the primary photocatalysts employed, the reaction mechanisms involved, and the operating parameters that determine process efficiency. Various photocatalysts, based on both metal oxides and carbonaceous materials, have shown high efficiencies under ultraviolet and visible irradiation. Likewise, strategies to optimize photocatalytic performance have been explored, such as the construction of heterojunctions and doping with metallic and non-metallic elements, which facilitate charge separation and enhance light absorption, thereby promoting the generation of reactive oxygen species (ROS). Among these, hydroxyl radicals (˙OH) and superoxide radicals (˙O<sub>2</sub> <sup>-</sup>) have been shown to play a key role in the oxidation of As(iii), achieving 100% conversion in a matter of minutes or hours. Finally, recent advances, the advantages and limitations of different photocatalytic approaches, and the main challenges associated with developing robust, economically viable systems for the treatment of arsenic-contaminated water are analyzed.
 
 ---
 
@@ -4127,15 +4127,6 @@ ABSTRACT: Twenty years ago, an archaeal lineage capable of catalyzing nitrate-de
 
 ---
 
-PAPER: A review on multifunctional applications of MgO nanostructures: from material science to environmental and agricultural innovations.
-AUTHORS: Mahiba GGJ, Prabakaran A, Balraj B.
-JOURNAL: 
-YEAR: 2026
-DOI: https://doi.org/10.1039/d5ra07016c
-ABSTRACT: Green synthesis of magnesium oxide nanoparticles (MgO NPs) using plant extracts and bio-waste materials represents a sustainable alternative to conventional synthesis methods. MgO, characterized by its crystalline lattice of Mg<sup>2+</sup> and O<sup>2-</sup> ions, exhibits hygroscopic properties and is a white, solid mineral with diverse technological applications. These nanoparticles demonstrate versatile applications across multiple disciplines, including agriculture, drug delivery, environmental remediation, antimicrobial treatments, and supercapacitor technologies. Previous studies describe diverse synthesis methodologies including sol-gel routes, flame synthesis, and hydrothermal methods, whereas this review focuses primarily on green synthesis approaches. The green synthesis methodology employs plant extracts that serve dual functions as both reducing agents and capping agents in the formation and stabilization of metal oxide nanoparticles. Biosynthesized MgO NPs exhibit distinctive properties, including controlled morphology, high surface area, tunable particle size distribution, and enhanced stabilization. These characteristics position MgO NPs as promising candidates for addressing contemporary environmental challenges and advancing energy storage technologies. This review critically analyzes recent developments in biosynthesized MgO NPs, highlighting the advantages of green synthesis over conventional methods and identifying key research gaps and future directions in this rapidly evolving field.
-
----
-
 PAPER: Toxic effects of microplastics in aquatic environments and the pathways to sustainable management.
 AUTHORS: Kumar S S, Sangeetha D.
 JOURNAL: 
@@ -4223,15 +4214,6 @@ JOURNAL:
 YEAR: 2026
 DOI: https://doi.org/10.3390/bios16010063
 ABSTRACT: Microparticle detection technology uses materials that can specifically recognize complex biostructures, such as antibodies and aptamers, as trapping agents. The development of antibody production technology and simplification of sensing signal output methods have facilitated commercialization of disposable biosensors, making rapid diagnosis possible. Although this contributed to the early resolution of pandemics, traditional biosensors face issues with sensitivity, durability, and rapid response times. We aimed to fabricate microspaces using metallic materials to further enhance durability of mold fabrication technologies, such as molecular imprinting. Low-damage metal deposition was performed on target protozoa and Norovirus-like particles (NoV-LPs) to produce thin metallic films that adhere to the material. The procedure for fitting the object into the bio structured space formed on the thin metal film took less than a minute, and sensitivity was 10 fg/mL for NoV-LPs. Furthermore, because it was a metal film, no decrease in reactivity was observed even when the same substrate was stored at room temperature and reused repeatedly after fabrication. These findings underscore the potential of integrating stable metallic structures with bio-recognition elements to significantly enhance robustness and reliability of environmental monitoring. This contributes to public health strategies aimed at early detection and containment of infectious diseases.
-
----
-
-PAPER: Two-Dimensional Carbon-Based Electrochemical Sensors for Pesticide Detection: Recent Advances and Environmental Monitoring Applications.
-AUTHORS: Imran K, Amin A, Venkata Prasad G et al.
-JOURNAL: Biosensors
-YEAR: 2026
-DOI: https://doi.org/10.3390/bios16010062
-ABSTRACT: Pesticides have been widely applied in agricultural practices over the past decades to protect crops from pests and other harmful organisms. However, their extensive use results in the contamination of soil, water, and agricultural products, posing significant risks to human and environmental health. Exposure to pesticides can lead to skin irritation, respiratory disorders, and various chronic health problems. Moreover, pesticides frequently enter surface water bodies such as rivers and lakes through agricultural runoff and leaching processes. Therefore, developing effective analytical methods for the rapid and sensitive detection of pesticides in food and water is of great importance. Electrochemical sensing techniques have shown remarkable progress in pesticide analysis due to their high sensitivity, simplicity, and potential for on-site monitoring. Two-dimensional (2D) carbon nanomaterials have emerged as efficient electrocatalysts for the precise and selective detection of pesticides, owing to their large surface area, excellent electrical conductivity, and unique structural features. In this review, we summarize recent advancements in the electrochemical detection of pesticides using 2D carbon-based materials. Comprehensive information on electrode fabrication, sensing mechanisms, analytical performance-including sensing range and limit of detection-and the versatility of 2D carbon composites for pesticide detection is provided. Challenges and future perspectives in developing highly sensitive and selective electrochemical sensing platforms are also discussed, highlighting their potential for simultaneous pesticide monitoring in food and environmental samples. Carbon-based electrochemical sensors have been the subject of many investigations, but their practical application in actual environmental and food samples is still restricted because of matrix effects, operational instability, and repeatability issues. In order to close the gap between laboratory research and real-world applications, this review critically examines sensor performance in real-sample conditions and offers innovative approaches for in situ pesticide monitoring.
 
 ---
 
@@ -4551,5 +4533,27 @@ JOURNAL:
 YEAR: 2026
 DOI: https://doi.org/10.3390/ijms27021107
 ABSTRACT: The recycling of fossil-based plastic waste remains a key challenge in reducing environmental pollution and greenhouse gas emissions. An innovative approach is the biotechnological conversion of the n-alkane mixture obtained from thermal pyrolysis of plastic waste. This study focuses on the use of the oleaginous yeast <i>Yarrowia lipolytica</i> for the valorization of polyethylene (PE)-derived pyrolysis oil. From a screening of 50 <i>Y. lipolytica</i> strains, the most promising candidate was selected, and its single-cell phenotype was stabilized by <i>MHY1</i> deletion. In shake flask experiments, this strain grew similarly on 5-20 vol% of n-hexadecane, revealing no inhibitory effects. Subsequently, a high cell density fermentation was established in a 4 L bioreactor using a pulsed fed-batch approach, resulting in biomass concentrations of up to 145.6 g·L<sup>-1</sup>, which contained 22.0% triacylglycerols. In addition, cultivation at pH 2.5, compared to pH 4.0, reduced citrate formation from 95.6 to 0.8 g·L<sup>-1</sup>, while biomass and TAG titers remained similar. Overall, these results highlight the potential of integrating plastic waste-derived pyrolysis oil into future bioprocesses using <i>Y. lipolytica</i> as an effective platform for high cell density production.
+
+---
+
+PAPER: Rotating algal biofilm reactors retain core microbial communities during scale-up.
+AUTHORS: Matthews E, Moravek A, Harper D et al.
+JOURNAL: Journal of biological engineering
+YEAR: 2026
+DOI: https://doi.org/10.1186/s13036-026-00635-y
+ABSTRACT: Microalgae-bacteria biofilm reactors are a promising alternative to conventional wastewater treatment because they can simultaneously remove nitrogen and phosphorus while producing harvestable biomass. Rotating algal biofilm reactors (RABRs) implement this concept by growing attached microalgae–bacteria biofilms on rotating surfaces that alternately contact wastewater and air, which can enhance nutrient uptake and simplify harvesting. However, successful field implementation requires that biological performance observed at lab scale translate to larger systems. Few studies have examined whether microbial community structure is conserved during scale-up. Here, using RABRs as a case study, we tested whether biofilm community composition is preserved during scale-up when all systems are seeded from a common trickling-filter biofilm inoculum.
+
+Across scales, 16S profiles consistently showed dominance by Proteobacteria and Bacteroidetes, supporting preservation of a core bacterial community. Phototrophic communities (23S) were similarly conserved, with Chlorophyta and Cyanobacteria co-dominant across systems. In contrast, the 18S profiles showed greater variability, with the trickling filter strongly dominated by Opisthokonta, while the pilot-scale system exhibited substantial enrichment of Alveolata. Alpha-diversity patterns indicated that lab-scale reactors supported simpler communities than the trickling filter and pilot system.
+
+RABR scale-up preserved dominant bacterial and phototrophic taxa when reactors were seeded from a common stable-composition trickling-filter inoculum, while eukaryotic communities showed greater sensitivity to operating context and outdoor exposure. These findings support inoculum sourcing and microbial community profiling as practical tools for scalable RABR design and process evaluation.
+
+---
+
+PAPER: Inferring an ancestral alginate lyase for improved stability and high-level expression using fed-batch fermentation.
+AUTHORS: Mu Hongxiao, Guo Renquan, Zhao Beichen et al.
+JOURNAL: Frontiers in microbiology
+YEAR: 2026
+DOI: https://doi.org/10.3389/fmicb.2026.1799015
+ABSTRACT: Alginate lyases are valuable biocatalysts, but their industrial application is often constrained by limited stability and low production efficiency. In this study, an alginate lyase from <i>Flavobacterium</i> sp. was heterologously expressed in different host systems, among which <i>Escherichia coli</i> exhibited the highest enzymatic activity. Ancestral sequence inferring was subsequently applied to engineer improved variants, which were expressed and purified in <i>E. coli</i>. Two variants, AncAlyA1 and AncAlyA2, showed significantly enhanced catalytic activities, with increases of 132.4 and 87.3%, respectively, compared with the wild-type. Both variants also exhibited markedly improved thermal and pH stability. Notably, AncAlyA2 retained approximately 60% of its activity after incubation under extreme conditions, including 60 °C and pH 4.0 or 10.0. In addition, a fed-batch fermentation strategy based on combined glucose and yeast extract feeding was developed. Under optimized conditions, enzyme activities of 5164.8 U/mL and 4220.1 U/mL were achieved for AncAlyA1 and AncAlyA2, respectively. This study provides a promising strategy for industrial-scale production of alginate lyase.
 
 ---
