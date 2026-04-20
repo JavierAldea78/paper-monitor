@@ -10,7 +10,7 @@ on:
 permissions: {}
 
 concurrency:
-  group: paper-monitor
+  group: paper-monitor-fetch
   cancel-in-progress: false
 
 jobs:
