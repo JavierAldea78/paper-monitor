@@ -538,6 +538,7 @@ def _is_recent_enough(paper: dict) -> bool:
 
 
 def score_paper(paper: dict, n_tags: int) -> int:
+    """Return raw (uncapped) relevance score. Normalization happens later."""
     s = min(n_tags * 15, 60)                           # tag relevance  (0-60)
     try:                                                # recency        (0-25)
         py = int((paper.get("pub_date","") or paper.get("year",""))[:4])
@@ -558,7 +559,16 @@ def score_paper(paper: dict, n_tags: int) -> int:
         s += 10
     elif cit >= 1:
         s += 5
-    return min(s, 100)
+    return s
+
+
+def normalize_scores(papers: list[dict]) -> None:
+    """Rescale raw_score to score 0-100 across the full corpus (min-max)."""
+    raw = [p.get("raw_score", 0) for p in papers]
+    lo, hi = min(raw), max(raw)
+    span = hi - lo
+    for p in papers:
+        p["score"] = round((p["raw_score"] - lo) / span * 100) if span else 100
 
 # ── Readable text export ───────────────────────────────────────────────────────
 
@@ -701,13 +711,12 @@ def main():
         paper["domain"]       = domain_index.get(key, paper.get("domain","General"))
         paper["folder"]       = folder_index.get(key, paper.get("folder","General"))
         paper["must_match"]   = must_index.get(key, False)
-        paper["score"]        = score_paper(paper, len(tags_for))
+        paper["raw_score"]    = score_paper(paper, len(tags_for))
+        paper["score"]        = paper["raw_score"]  # replaced by normalize_scores below
         paper["fetch_date"]   = today_iso
         paper["doi_url"]      = f"https://doi.org/{paper['doi']}" if paper.get("doi") else ""
         paper["pubmed_url"]   = (f"https://pubmed.ncbi.nlm.nih.gov/{paper['pmid']}/"
                                   if paper.get("pmid") else "")
-
-    merged.sort(key=lambda p: p.get("score", 0), reverse=True)
 
     # ── Merge with previously saved papers (so nothing is ever dropped) ────────
     existing = load_existing_papers()
@@ -718,6 +727,15 @@ def main():
         print(f"Merged: {new_count} new/updated + {retained} retained from previous run = {len(merged)} total\n")
     else:
         print(f"No existing papers.json found — writing fresh file\n")
+
+    # Ensure every paper has a raw_score before normalizing (legacy papers may lack it)
+    for p in merged:
+        if "raw_score" not in p:
+            tags_for = p.get("matched_tags") or []
+            p["raw_score"] = score_paper(p, len(tags_for))
+
+    normalize_scores(merged)
+    merged.sort(key=lambda p: p.get("score", 0), reverse=True)
 
     # ── Push to Zotero ─────────────────────────────────────────────────────────
     zotero_push(merged)
@@ -730,7 +748,7 @@ def main():
 
     # ── Save CSV ───────────────────────────────────────────────────────────────
     FIELDS = [
-        "score","title","authors","journal","year","pub_date",
+        "score","raw_score","title","authors","journal","year","pub_date",
         "doi","doi_url","pmid","pubmed_url","domain","folder",
         "matched_tags","must_match","citations","is_oa","source","fetch_date","abstract",
     ]
