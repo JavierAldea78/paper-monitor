@@ -1,0 +1,8 @@
+[build]
+  command   = "mkdir -p _site && cp index.html papers.json papers.csv _headers _site/ && HASH=$(git rev-parse --short HEAD) && sed -i \"s/__BUILD_HASH__/${HASH}/g\" _site/index.html"
+  publish   = "_site"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "no-store"

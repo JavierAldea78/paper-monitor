@@ -9,6 +9,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <style>
 /* ── Theme tokens ─────────────────────────────────────────────────────────── */
 :root { --radius:8px; --transition:0.15s ease; }
@@ -319,18 +320,7 @@ tr:hover td { background:var(--accent-dim); }
       <div class="login-logo-icon">🔬</div>
       <div><h1>Tech Vigilance</h1><p>Brewing &amp; food science monitor</p></div>
     </div>
-    <form id="login-form" onsubmit="handleLogin(event)">
-      <div class="form-group">
-        <label for="inp-user">USERNAME</label>
-        <input id="inp-user" type="text" placeholder="username" autocomplete="username" required>
-      </div>
-      <div class="form-group">
-        <label for="inp-pass">PASSWORD</label>
-        <input id="inp-pass" type="password" placeholder="••••••••" autocomplete="current-password" required>
-      </div>
-      <button type="submit" class="btn-primary">Sign in</button>
-      <div id="login-error"></div>
-    </form>
+    <button class="btn-primary" style="width:100%;margin-top:8px" onclick="netlifyIdentity.open()">Sign in with email</button>
   </div>
 </div>
 
@@ -351,6 +341,7 @@ tr:hover td { background:var(--accent-dim); }
     <span class="nav-stats" id="nav-stats"></span>
 <button class="btn-sm" id="nav-export-btn" onclick="exportCSV()">Export CSV</button>
     <button class="btn-icon" onclick="toggleTheme()" title="Toggle theme" id="theme-btn">🌙</button>
+    <span id="nav-user-name" style="font-size:12px;color:var(--text-muted);max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"></span>
     <button class="btn-sm" onclick="logout()">Sign out</button>
   </nav>
 
@@ -467,10 +458,6 @@ tr:hover td { background:var(--accent-dim); }
 // ══════════════════════════════════════════════════════════════════════════════
 // CONFIG
 // ══════════════════════════════════════════════════════════════════════════════
-const USERS = [
-  { username:"admin", hash:"fd88765d02a440127144484c57158f5f6fc4ccdbd447fe92ca17d29ea784cca5" },
-];
-const OPEN_MODE  = USERS.length === 0;
 const PAPERS_URL = './papers.json';
 const PAGE_SIZE  = 50;
 
@@ -507,41 +494,40 @@ let cvResizeObserver = null;
 let cvPointerDownPos = null;   // {x,y} — for DOI tap detection
 
 // ══════════════════════════════════════════════════════════════════════════════
-// AUTH
+// AUTH — Netlify Identity
 // ══════════════════════════════════════════════════════════════════════════════
-async function sha256(str) {
-  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
-  return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
+let _currentUser = null;
+
+function _userName() {
+  return _currentUser?.user_metadata?.full_name || _currentUser?.email || 'guest';
 }
 
-async function handleLogin(e) {
-  e.preventDefault();
-  const user = document.getElementById('inp-user').value.trim();
-  const pass = document.getElementById('inp-pass').value;
-  const hash = await sha256(pass);
-  const ok   = USERS.some(u => u.username===user && u.hash===hash);
-  if (ok) { sessionStorage.setItem('tv-user', user); showApp(); }
-  else {
-    document.getElementById('login-error').textContent = 'Invalid credentials.';
-    document.getElementById('inp-pass').value = '';
-  }
-}
-
-function logout() {
-  sessionStorage.removeItem('tv-user');
-  document.getElementById('app').style.display = 'none';
-  document.getElementById('login-screen').style.display = 'flex';
-}
-
-function checkAuth() {
-  if (OPEN_MODE) { showApp(); return; }
-  if (sessionStorage.getItem('tv-user')) { showApp(); return; }
-}
-
-function showApp() {
+function showApp(user) {
+  _currentUser = user;
+  const el = document.getElementById('nav-user-name');
+  if (el) el.textContent = _userName();
   document.getElementById('login-screen').style.display = 'none';
   document.getElementById('app').style.display = 'flex';
   loadPapers();
+}
+
+function logout() {
+  netlifyIdentity.logout();
+}
+
+function checkAuth() {
+  netlifyIdentity.on('init', user => {
+    if (user) showApp(user);
+  });
+  netlifyIdentity.on('login', user => {
+    netlifyIdentity.close();
+    showApp(user);
+  });
+  netlifyIdentity.on('logout', () => {
+    _currentUser = null;
+    document.getElementById('app').style.display = 'none';
+    document.getElementById('login-screen').style.display = 'flex';
+  });
 }
 
 // ══════════════════════════════════════════════════════════════════════════════
@@ -1184,7 +1170,7 @@ const CV_GROUP_COLORS = ['#3b82f618','#10b98118','#f59e0b18','#ef444418','#8b5cf
 
 function cvSave() {
   if (!cvState) return;
-  const user = sessionStorage.getItem('tv-user')||'guest';
+  const user = _userName();
   localStorage.setItem(`tv-canvas-${user}`, JSON.stringify({
     nodes:cvState.nodes, connections:cvState.connections,
     groups:cvState.groups, pan:cvState.pan,
@@ -1216,7 +1202,7 @@ function initCanvas() {
   if (!container) return;
   if (cvResizeObserver) { cvResizeObserver.disconnect(); cvResizeObserver=null; }
 
-  const user  = sessionStorage.getItem('tv-user')||'guest';
+  const user  = _userName();
   const saved = JSON.parse(localStorage.getItem(`tv-canvas-${user}`)||'null');
   cvState = {
     nodes:       saved?.nodes       || [],
