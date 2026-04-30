@@ -28,10 +28,10 @@ DAYS_BACK    = 90
 DELAY        = 0.4   # seconds between API calls (polite throttling)
 DELAY_S2     = 1.2   # Semantic Scholar: 1 req/sec with API key (20% margin)
 
-NCBI_API_KEY    = os.environ.get("NCBI_API_KEY", "")
-S2_API_KEY      = os.environ.get("S2_API_KEY", "")
-ZOTERO_API_KEY  = os.environ.get("ZOTERO_API_KEY", "")
-ZOTERO_USER_ID  = os.environ.get("ZOTERO_USER_ID", "")
+NCBI_API_KEY    = os.environ.get("NCBI_API_KEY", "").strip()
+S2_API_KEY      = os.environ.get("S2_API_KEY", "").strip()
+ZOTERO_API_KEY  = os.environ.get("ZOTERO_API_KEY", "").strip()
+ZOTERO_USER_ID  = os.environ.get("ZOTERO_USER_ID", "").strip()
 ZOTERO_MIN_SCORE = 70   # push papers at or above this score
 
 # ── API base URLs ──────────────────────────────────────────────────────────────
