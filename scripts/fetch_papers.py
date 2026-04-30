@@ -26,7 +26,7 @@ OUTPUT_READABLE  = REPO_ROOT / "papers_readable.txt"
 
 DAYS_BACK    = 90
 DELAY        = 0.4   # seconds between API calls (polite throttling)
-DELAY_S2     = 1.2   # Semantic Scholar is stricter (100 req / 5 min unauth)
+DELAY_S2     = 1.2   # Semantic Scholar: 1 req/sec with API key (20% margin)
 
 NCBI_API_KEY    = os.environ.get("NCBI_API_KEY", "")
 S2_API_KEY      = os.environ.get("S2_API_KEY", "")
