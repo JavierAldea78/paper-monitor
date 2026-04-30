@@ -9,7 +9,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
 <style>
 /* ── Theme tokens ─────────────────────────────────────────────────────────── */
 :root { --radius:8px; --transition:0.15s ease; }
@@ -320,7 +320,7 @@ tr:hover td { background:var(--accent-dim); }
       <div class="login-logo-icon">🔬</div>
       <div><h1>Tech Vigilance</h1><p>Brewing &amp; food science monitor</p></div>
     </div>
-    <button class="btn-primary" style="width:100%;margin-top:8px" onclick="netlifyIdentity.open()">Sign in with email</button>
+    <button class="btn-primary" style="width:100%;margin-top:8px" onclick="login()">Sign in</button>
   </div>
 </div>
 
@@ -494,12 +494,13 @@ let cvResizeObserver = null;
 let cvPointerDownPos = null;   // {x,y} — for DOI tap detection
 
 // ══════════════════════════════════════════════════════════════════════════════
-// AUTH — Netlify Identity
+// AUTH — Auth0
 // ══════════════════════════════════════════════════════════════════════════════
+let _auth0 = null;
 let _currentUser = null;
 
 function _userName() {
-  return _currentUser?.user_metadata?.full_name || _currentUser?.email || 'guest';
+  return _currentUser?.name || _currentUser?.email || 'guest';
 }
 
 function showApp(user) {
@@ -511,23 +512,30 @@ function showApp(user) {
   loadPapers();
 }
 
-function logout() {
-  netlifyIdentity.logout();
+async function login() {
+  await _auth0.loginWithRedirect({
+    authorizationParams: { redirect_uri: window.location.origin + window.location.pathname }
+  });
 }
 
-function checkAuth() {
-  netlifyIdentity.on('init', user => {
-    if (user) showApp(user);
+async function logout() {
+  await _auth0.logout({
+    logoutParams: { returnTo: window.location.origin + window.location.pathname }
   });
-  netlifyIdentity.on('login', user => {
-    netlifyIdentity.close();
-    showApp(user);
+}
+
+async function checkAuth() {
+  _auth0 = await auth0.createAuth0Client({
+    domain: 'dev-wbt5w3coodp48bti.eu.auth0.com',
+    clientId: 'LZCqb6OxTAun8kzRkv2DWoOGRqw65KTq',
+    authorizationParams: { redirect_uri: window.location.origin + window.location.pathname }
   });
-  netlifyIdentity.on('logout', () => {
-    _currentUser = null;
-    document.getElementById('app').style.display = 'none';
-    document.getElementById('login-screen').style.display = 'flex';
-  });
+  if (window.location.search.includes('code=') || window.location.search.includes('error=')) {
+    await _auth0.handleRedirectCallback();
+    window.history.replaceState({}, document.title, window.location.pathname);
+  }
+  const user = await _auth0.getUser();
+  if (user) showApp(user);
 }
 
 // ══════════════════════════════════════════════════════════════════════════════
@@ -1580,7 +1588,7 @@ function esc(str) {
 // BOOT
 // ══════════════════════════════════════════════════════════════════════════════
 initTheme();
-checkAuth();
+checkAuth().catch(err => console.error('[Auth0]', err));
 </script>
 </body>
 </html>
