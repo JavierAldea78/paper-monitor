@@ -184,8 +184,12 @@ def search_semantic_scholar(query: str, days: int) -> list[dict]:
     params = {"query": query, "fields": S2_FIELDS, "limit": 50}
     try:
         r = requests.get(S2_SEARCH, params=params, headers=headers, timeout=30)
+        if r.status_code in (401, 403):
+            print("[S2] authentication error — check S2_API_KEY; skipping S2 for this run")
+            _s2_disabled = True
+            return []
         if r.status_code == 429:
-            print("[S2] rate limited - skipping S2 for this entire run, results from PubMed+EPMC only")
+            print("[S2] rate limited — skipping S2 for this run (PubMed+EPMC only)")
             _s2_disabled = True
             return []
         r.raise_for_status()
@@ -625,6 +629,8 @@ def main():
     today = datetime.date.today().isoformat()
     print(f"Paper fetcher - {today}  ({DAYS_BACK} days back)")
     print(f"Sources: PubMed  Semantic Scholar  Europe PMC  Zotero\n")
+    if not S2_API_KEY:
+        print("[S2] no API key configured; using unauthenticated mode with lower rate limits\n")
 
     tags = load_tags(TAGS_FILE)
     print(f"Loaded {len(tags)} active tag(s)\n")
