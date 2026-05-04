@@ -515,7 +515,10 @@ function showApp(user) {
 
 async function login() {
   await _auth0.loginWithRedirect({
-    authorizationParams: { redirect_uri: window.location.origin + window.location.pathname }
+    authorizationParams: {
+      redirect_uri: window.location.origin + window.location.pathname,
+      prompt: 'login'
+    }
   });
 }
 
