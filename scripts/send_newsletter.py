@@ -20,7 +20,7 @@ PAPERS_JSON = REPO_ROOT / "papers.json"
 GMAIL_USER         = os.environ["GMAIL_USER"]
 GMAIL_APP_PASSWORD = os.environ["GMAIL_APP_PASSWORD"]
 NEWSLETTER_TO      = os.environ["NEWSLETTER_TO"]   # comma-separated addresses
-PAGES_URL          = os.environ.get("PAGES_URL", "https://javieraldea78.github.io/paper-monitor/")
+PAGES_URL          = os.environ.get("PAGES_URL", "https://paper-monitor.netlify.app/")
 
 DOMAIN_COLORS = {
     "NOLO":    "#0ea5e9",
