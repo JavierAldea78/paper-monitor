@@ -321,6 +321,7 @@ tr:hover td { background:var(--accent-dim); }
       <div><h1>Tech Vigilance</h1><p>Brewing &amp; food science monitor</p></div>
     </div>
     <button class="btn-primary" style="width:100%;margin-top:8px" onclick="login()">Sign in</button>
+    <p id="login-msg" style="color:var(--danger);font-size:12px;margin-top:12px;text-align:center;min-height:16px;"></p>
   </div>
 </div>
 
@@ -524,18 +525,35 @@ async function logout() {
   });
 }
 
+function _clearAuth0Cache() {
+  Object.keys(localStorage).filter(k => k.startsWith('@@auth0')).forEach(k => localStorage.removeItem(k));
+}
+
 async function checkAuth() {
-  _auth0 = await auth0.createAuth0Client({
-    domain: 'dev-wbt5w3coodp48bti.eu.auth0.com',
-    clientId: 'LZCqb6OxTAun8kzRkv2DWoOGRqw65KTq',
-    authorizationParams: { redirect_uri: window.location.origin + window.location.pathname }
-  });
+  try {
+    _auth0 = await auth0.createAuth0Client({
+      domain: 'dev-wbt5w3coodp48bti.eu.auth0.com',
+      clientId: 'LZCqb6OxTAun8kzRkv2DWoOGRqw65KTq',
+      authorizationParams: { redirect_uri: window.location.origin + window.location.pathname }
+    });
+  } catch(err) {
+    document.getElementById('login-msg').textContent = 'Error al iniciar Auth0: ' + err.message;
+    return;
+  }
   if (window.location.search.includes('code=') || window.location.search.includes('error=')) {
-    await _auth0.handleRedirectCallback();
+    try {
+      await _auth0.handleRedirectCallback();
+    } catch(err) {
+      _clearAuth0Cache();
+      window.history.replaceState({}, document.title, window.location.pathname);
+      document.getElementById('login-msg').textContent = 'Error al autenticar: ' + err.message;
+      return;
+    }
     window.history.replaceState({}, document.title, window.location.pathname);
   }
   const user = await _auth0.getUser();
   if (user) showApp(user);
+  else _clearAuth0Cache();
 }
 
 // ══════════════════════════════════════════════════════════════════════════════
