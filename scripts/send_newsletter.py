@@ -23,11 +23,12 @@ NEWSLETTER_TO      = os.environ["NEWSLETTER_TO"]   # comma-separated addresses
 PAGES_URL          = os.environ.get("PAGES_URL") or "https://paper-monitor.netlify.app/"
 
 DOMAIN_COLORS = {
-    "NOLO":    "#0ea5e9",
-    "Quality": "#10b981",
-    "BSG":     "#f59e0b",
-    "Biotech": "#8b5cf6",
-    "Process": "#ef4444",
+    "Brewing & Process":        "#ef4444",
+    "Biotech Applied":          "#8b5cf6",
+    "Byproducts & Circularity": "#f59e0b",
+    "Water & Environment":      "#10b981",
+    "Materials & Packaging":    "#0ea5e9",
+    "Analytics & Digital":      "#6366f1",
 }
 
 # ── HTML builder ───────────────────────────────────────────────────────────────

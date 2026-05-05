@@ -76,6 +76,8 @@ jobs:
     environment:
       name: github-pages
       url:  ${{ steps.deployment.outputs.page_url }}
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Checkout (with fresh papers.json)
@@ -86,7 +88,8 @@ jobs:
       - name: Build _site
         run: |
           mkdir _site
-          cp index.html papers.json papers.csv papers_readable.txt _headers _site/
+          cp index.html papers.csv papers_readable.txt _headers _site/
+          python3 -c "import json; d=json.load(open('papers.json')); json.dump([p for p in d if (p.get('score') or 0)>=40], open('_site/papers.json','w'))"
           HASH=$(git rev-parse --short HEAD)
           sed -i "s/__BUILD_HASH__/${HASH}/g" _site/index.html
 
@@ -105,7 +108,7 @@ jobs:
   # ─────────────────────────────────────────────────────────────────────────────
   newsletter:
     name: Send newsletter
-    needs: fetch
+    needs: [fetch, deploy]
     runs-on: ubuntu-latest
     permissions:
       contents: read
