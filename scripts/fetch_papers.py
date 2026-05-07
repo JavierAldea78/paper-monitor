@@ -25,7 +25,7 @@ OUTPUT_JSON      = REPO_ROOT / "papers.json"
 OUTPUT_CSV       = REPO_ROOT / "papers.csv"
 OUTPUT_READABLE  = REPO_ROOT / "papers_readable.txt"
 
-DAYS_BACK    = 90
+DAYS_BACK    = 10
 DELAY        = 0.4   # seconds between API calls (polite throttling)
 DELAY_S2     = 1.2   # Semantic Scholar: 1 req/sec with API key (20% margin)
 
