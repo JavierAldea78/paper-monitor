@@ -42,6 +42,7 @@ jobs:
           S2_API_KEY:     ${{ secrets.S2_API_KEY }}
           ZOTERO_API_KEY: ${{ secrets.ZOTERO_API_KEY }}
           ZOTERO_USER_ID: ${{ secrets.ZOTERO_USER_ID }}
+          LENS_TOKEN:     ${{ secrets.LENS_TOKEN }}
         run: python scripts/fetch_papers.py
 
       - name: Count results

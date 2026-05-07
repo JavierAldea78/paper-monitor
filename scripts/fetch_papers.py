@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
 Tech vigilance paper fetcher.
-Sources: PubMed, Semantic Scholar, Europe PMC (all free, no mandatory keys).
+Sources: PubMed, Semantic Scholar, Europe PMC (all free, no mandatory keys),
+         Lens.org Scholar (global coverage, requires LENS_TOKEN).
 Reads watchtags.csv → writes papers.json + papers.csv + papers_readable.txt.
 """
 
@@ -33,6 +34,13 @@ S2_API_KEY      = os.environ.get("S2_API_KEY", "").strip()
 ZOTERO_API_KEY  = os.environ.get("ZOTERO_API_KEY", "").strip()
 ZOTERO_USER_ID  = os.environ.get("ZOTERO_USER_ID", "").strip()
 ZOTERO_MIN_SCORE = 70   # push papers at or above this score
+
+# Lens.org Scholar API — free token at https://www.lens.org/lens/user/subscriptions
+LENS_TOKEN       = os.environ.get("LENS_TOKEN", "").strip()
+LENS_SCHOLAR_URL = "https://api.lens.org/scholarly/search"
+LENS_PAGE_SIZE   = 100   # max per request
+LENS_MAX_RESULTS = 200   # cap per query (90-day window is shorter than patents)
+DELAY_LENS       = 1.0   # seconds between paginated requests
 
 # ── API base URLs ──────────────────────────────────────────────────────────────
 
@@ -260,6 +268,163 @@ def search_europe_pmc(query: str, days: int) -> list[dict]:
     except Exception as e:
         print(f"  [Europe PMC] '{query}': {e}")
         return []
+
+# ── Lens.org Scholar API ───────────────────────────────────────────────────────
+
+_lens_disabled: bool = False
+
+
+def _parse_lens_scholar_hit(hit: dict) -> dict | None:
+    # Strip JATS/HTML markup that Lens embeds in some records
+    def _strip_html(text: str) -> str:
+        text = html.unescape(text or "")
+        return re.sub(r"<[^>]+>", " ", text).strip()
+
+    title = _strip_html(hit.get("title") or "")
+    if not title:
+        return None
+
+    # DOI and PMID from external_ids [{type, value}]
+    doi  = ""
+    pmid = ""
+    for eid in (hit.get("external_ids") or []):
+        t = eid.get("type", "")
+        v = (eid.get("value") or "").strip()
+        if t == "doi" and not doi:
+            doi = v
+        elif t == "pmid" and not pmid:
+            pmid = v
+
+    # Abstract (simple string field)
+    abstract = _strip_html(hit.get("abstract") or "")
+
+    # Authors: [{first_name, last_name}], max 3
+    authors_raw = hit.get("authors") or []
+    names = [
+        f"{a.get('last_name', '')} {a.get('first_name', '')}".strip()
+        for a in authors_raw[:3]
+        if (a.get("last_name") or a.get("first_name"))
+    ]
+    author_str = ", ".join(names)
+    if len(authors_raw) > 3:
+        author_str += " et al."
+
+    # Journal
+    journal = (hit.get("source") or {}).get("title") or ""
+
+    # Dates — date_published is ISO datetime "2023-03-25T00:00:00+00:00"
+    pub_date = (hit.get("date_published") or "")[:10]
+    year     = str(hit.get("year_published") or "")
+    if not pub_date and year:
+        pub_date = year
+
+    # Citations and OA
+    citations = hit.get("scholarly_citations_count") or 0
+    oa_info   = hit.get("open_access")
+    is_oa     = bool(oa_info)
+
+    return {
+        "title":    title,
+        "abstract": abstract,
+        "doi":      doi,
+        "pmid":     pmid,
+        "authors":  author_str,
+        "journal":  journal,
+        "year":     year,
+        "pub_date": pub_date,
+        "source":   "Lens Scholar",
+        "citations": citations,
+        "is_oa":    is_oa,
+    }
+
+
+def search_lens_scholar(query: str, days: int) -> list[dict]:
+    """Search Lens.org scholarly database. Covers journal articles, preprints and more.
+    Requires LENS_TOKEN env var (free token at https://www.lens.org/lens/user/subscriptions)."""
+    global _lens_disabled
+    if _lens_disabled or not LENS_TOKEN:
+        return []
+
+    date_from    = (datetime.date.today() - datetime.timedelta(days=days)).strftime("%Y-%m-%d")
+    all_papers: list[dict] = []
+    offset = 0
+
+    while offset < LENS_MAX_RESULTS:
+        size = min(LENS_PAGE_SIZE, LENS_MAX_RESULTS - offset)
+        body = {
+            "query": {
+                "bool": {
+                    "must": [
+                        {
+                            "query_string": {
+                                "query":            query,
+                                "fields":           ["title", "abstract"],
+                                "default_operator": "OR",
+                            }
+                        }
+                    ],
+                    "filter": [
+                        {"range": {"date_published": {"gte": date_from}}}
+                    ],
+                }
+            },
+            "size":    size,
+            "from":    offset,
+            "include": [
+                "lens_id", "title", "abstract", "authors", "publication_type",
+                "year_published", "date_published", "source",
+                "external_ids", "scholarly_citations_count", "open_access",
+            ],
+        }
+        try:
+            r = requests.post(
+                LENS_SCHOLAR_URL,
+                json=body,
+                headers={
+                    "Authorization": f"Bearer {LENS_TOKEN}",
+                    "Content-Type":  "application/json",
+                },
+                timeout=30,
+            )
+            if r.status_code == 401:
+                print("[Lens Scholar] Invalid token — disabling")
+                _lens_disabled = True
+                return all_papers
+            if r.status_code == 429:
+                print("[Lens Scholar] Rate limited — waiting 60s")
+                time.sleep(60)
+                continue
+            if r.status_code != 200:
+                print(f"[Lens Scholar] HTTP {r.status_code} — disabling")
+                _lens_disabled = True
+                return all_papers
+
+            data  = r.json()
+            hits  = data.get("data") or []
+            total = data.get("total") or 0
+
+            for hit in hits:
+                p = _parse_lens_scholar_hit(hit)
+                if p:
+                    all_papers.append(p)
+
+            if not hits or (offset + len(hits)) >= min(total, LENS_MAX_RESULTS):
+                break
+
+            offset += len(hits)
+            time.sleep(DELAY_LENS)
+
+        except Exception as e:
+            err = str(e)
+            if "NameResolutionError" in err or "Failed to resolve" in err or "ConnectionError" in type(e).__name__:
+                print("[Lens Scholar] DNS error — disabling")
+                _lens_disabled = True
+            else:
+                print(f"  [Lens Scholar] '{query}': {e}")
+            return all_papers
+
+    return all_papers
+
 
 # ── Zotero ─────────────────────────────────────────────────────────────────────
 
@@ -628,7 +793,8 @@ def write_readable_txt(papers: list[dict], path: Path) -> None:
 def main():
     today = datetime.date.today().isoformat()
     print(f"Paper fetcher - {today}  ({DAYS_BACK} days back)")
-    print(f"Sources: PubMed  Semantic Scholar  Europe PMC  Zotero\n")
+    lens_status = f"token={'set' if LENS_TOKEN else 'MISSING — add LENS_TOKEN secret'}"
+    print(f"Sources: PubMed  |  Semantic Scholar  |  Europe PMC  |  Lens Scholar ({lens_status})  |  Zotero\n")
     if not S2_API_KEY:
         print("[S2] no API key configured; using unauthenticated mode with lower rate limits\n")
 
@@ -674,6 +840,11 @@ def main():
             epmc = search_europe_pmc(query, DAYS_BACK)
             batch.extend(epmc)
             time.sleep(DELAY)
+
+            # Lens Scholar: global coverage (journals, preprints, conference papers)
+            lens = search_lens_scholar(query, DAYS_BACK)
+            batch.extend(lens)
+            time.sleep(DELAY_LENS)
 
         # mustInclude: soft bonus (+10 pts at scoring) instead of hard exclusion filter
         must = tag_info["mustInclude"]
