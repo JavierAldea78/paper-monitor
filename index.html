@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Tech Vigilance</title>
+<title>Paper Monitor | Tech Vigilance</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔬</text></svg>" />
 <meta name="build-version" content="__BUILD_HASH__">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
@@ -82,23 +83,40 @@ label { font-size:12px; font-weight:600; color:var(--text-muted); letter-spacing
 }
 .btn-primary:hover { background:var(--accent-h); }
 #login-error { color:var(--danger); font-size:12px; margin-top:12px; text-align:center; min-height:16px; }
-.login-theme-toggle { position:absolute; top:20px; right:20px; }
+
+/* ── App header ───────────────────────────────────────────────────────────── */
+.app-header {
+  position:fixed; top:0; left:0; right:0; z-index:110; height:56px;
+  background:linear-gradient(135deg,#0f1f44 0%,#1e3a8a 50%,#2563eb 100%);
+  display:flex; align-items:center; padding:0 20px; gap:16px;
+  box-shadow:0 2px 12px rgba(0,0,0,.3);
+}
+.hdr-logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
+.hdr-icon {
+  width:36px; height:36px; background:rgba(255,255,255,.15); border-radius:9px;
+  display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0;
+}
+.hdr-title { color:#fff; font-size:16px; font-weight:700; letter-spacing:-.3px; }
+.hdr-sub   { color:#93c5fd; font-size:11px; }
+.hdr-spacer { flex:1; }
+.hdr-theme-btn {
+  width:32px; height:32px; border-radius:8px;
+  background:rgba(255,255,255,.1); color:#fff; font-size:15px;
+  display:flex; align-items:center; justify-content:center; transition:background .15s;
+}
+.hdr-theme-btn:hover { background:rgba(255,255,255,.2); }
 
 /* ── App shell ────────────────────────────────────────────────────────────── */
-#app { display:none; flex-direction:column; min-height:100vh; }
+#login-screen { padding-top:56px; }
+#app { display:none; flex-direction:column; min-height:100vh; padding-top:56px; }
 
 /* ── Nav ──────────────────────────────────────────────────────────────────── */
 nav {
-  position:sticky; top:0; z-index:100;
+  position:sticky; top:56px; z-index:100;
   background:var(--surface); border-bottom:1px solid var(--border);
-  padding:0 20px; height:56px;
+  padding:0 20px; height:48px;
   display:flex; align-items:center; gap:12px;
   box-shadow:0 1px 8px #00000020;
-}
-.nav-logo { display:flex; align-items:center; gap:10px; font-weight:700; font-size:15px; flex-shrink:0; }
-.nav-logo-icon {
-  width:32px; height:32px; background:var(--accent); border-radius:7px;
-  display:flex; align-items:center; justify-content:center; font-size:16px;
 }
 .nav-tabs { display:flex; gap:3px; }
 .nav-tab {
@@ -276,21 +294,6 @@ tr:hover td { background:var(--accent-dim); }
 .signal-title { font-size:13px; font-weight:600; line-height:1.4; margin-bottom:8px; }
 .signal-meta { font-size:11px; color:var(--text-muted); display:flex; flex-wrap:wrap; gap:5px; align-items:center; }
 
-/* canvas */
-.canvas-toolbar { display:flex; gap:6px; margin-bottom:10px; flex-wrap:wrap; align-items:center; }
-.cv-tool {
-  background:var(--surface2); border:1px solid var(--border); color:var(--text);
-  padding:5px 12px; border-radius:var(--radius); font-size:12px; font-weight:500;
-}
-.cv-tool.active { background:var(--accent); color:#fff; border-color:var(--accent); }
-.cv-tool:hover:not(.active) { background:var(--border2); }
-.cv-hint { font-size:11px; color:var(--text-faint); }
-.viz-canvas-wrap {
-  position:relative; width:100%; height:480px;
-  border:1px solid var(--border); border-radius:8px;
-  background:var(--bg); overflow:hidden;
-}
-#canvas-board { position:absolute; top:0; left:0; touch-action:none; }
 
 /* ── Responsive ───────────────────────────────────────────────────────────── */
 @media(max-width:900px) {
@@ -306,19 +309,30 @@ tr:hover td { background:var(--accent-dim); }
   .td-title { max-width:200px; }
   #analytics-panel { padding:12px; }
   .viz-grid { gap:12px; }
-  .viz-canvas-wrap { height:360px; }
 }
 </style>
 </head>
 <body>
 
+<!-- ══════════════════════════════════════════════════════════ APP HEADER -->
+<header class="app-header">
+  <a class="hdr-logo" href="#">
+    <div class="hdr-icon">🔬</div>
+    <div>
+      <div class="hdr-title">Paper Monitor</div>
+      <div class="hdr-sub">Tech Vigilance R&amp;D</div>
+    </div>
+  </a>
+  <div class="hdr-spacer"></div>
+  <button class="hdr-theme-btn" id="theme-btn" onclick="toggleTheme()" title="Toggle theme">🌙</button>
+</header>
+
 <!-- ══════════════════════════════════════════════════════════ LOGIN SCREEN -->
 <div id="login-screen">
-  <button class="btn-icon login-theme-toggle" onclick="toggleTheme()" title="Toggle theme">🌙</button>
   <div class="login-card">
     <div class="login-logo">
       <div class="login-logo-icon">🔬</div>
-      <div><h1>Tech Vigilance</h1><p>Brewing &amp; food science monitor</p></div>
+      <div><h1>Paper Monitor</h1><p>Brewing &amp; food science research</p></div>
     </div>
     <button class="btn-primary" style="width:100%;margin-top:8px" onclick="login()">Sign in</button>
     <p id="login-msg" style="color:var(--danger);font-size:12px;margin-top:12px;text-align:center;min-height:16px;"></p>
@@ -330,18 +344,13 @@ tr:hover td { background:var(--accent-dim); }
 
   <!-- Nav -->
   <nav>
-    <div class="nav-logo">
-      <div class="nav-logo-icon">🔬</div>
-      Tech Vigilance
-    </div>
     <div class="nav-tabs">
-      <button class="nav-tab active" id="tab-papers"    onclick="switchTab('papers')">Papers</button>
-      <button class="nav-tab"        id="tab-analytics" onclick="switchTab('analytics')">Analytics</button>
+      <button class="nav-tab active" id="tab-papers"    onclick="switchTab('papers')">📄 Papers</button>
+      <button class="nav-tab"        id="tab-analytics" onclick="switchTab('analytics')">📊 Analytics</button>
     </div>
     <div class="nav-spacer"></div>
     <span class="nav-stats" id="nav-stats"></span>
-<button class="btn-sm" id="nav-export-btn" onclick="exportCSV()">Export CSV</button>
-    <button class="btn-icon" onclick="toggleTheme()" title="Toggle theme" id="theme-btn">🌙</button>
+    <button class="btn-sm" id="nav-export-btn" onclick="exportCSV()">Export CSV</button>
     <span id="nav-user-name" style="font-size:12px;color:var(--text-muted);max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"></span>
     <button class="btn-sm" onclick="logout()">Sign out</button>
   </nav>
@@ -432,19 +441,16 @@ tr:hover td { background:var(--accent-dim); }
         <div id="viz-signals-body"></div>
       </div>
 
-      <!-- 6. Canvas -->
+      <!-- 6. Starred Papers -->
       <div class="viz-card wide">
-        <div class="viz-title">Canvas — star (☆) papers in card view to add them · drag · connect · annotate</div>
-        <div class="canvas-toolbar">
-          <button class="cv-tool active" id="cv-select"  onclick="setCvTool('select')">↖ Select</button>
-          <button class="cv-tool"        id="cv-connect" onclick="setCvTool('connect')">⟿ Connect</button>
-          <button class="cv-tool"        id="cv-note"    onclick="setCvTool('note')">✎ Note</button>
-          <button class="cv-tool"        id="cv-group"   onclick="setCvTool('group')">▭ Group</button>
-          <span class="cv-hint" id="cv-hint-text">Drag to move nodes · drag background to pan · right-click to delete</span>
-          <button class="cv-tool" onclick="cvClearCanvas()" style="margin-left:auto;color:var(--danger);border-color:#ef444440;">Clear All</button>
+        <div class="viz-title" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+          <span>Starred Papers — star (☆) papers in the Papers tab to save them here</span>
+          <button onclick="clearStarredPapers()" style="background:none;border:1px solid #ef444440;color:var(--danger);padding:4px 10px;border-radius:var(--radius);font-size:11px;cursor:pointer;font-family:inherit;">Clear All</button>
         </div>
-        <div class="viz-canvas-wrap" id="canvas-container">
-          <canvas id="canvas-board"></canvas>
+        <div id="starred-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px;margin-top:12px;"></div>
+        <div id="starred-empty" style="text-align:center;padding:40px 20px;color:var(--text-muted);">
+          <div style="font-size:36px;margin-bottom:12px;">☆</div>
+          <p>No starred papers yet. Star papers in the Papers tab to save them here.</p>
         </div>
       </div>
 
@@ -486,13 +492,6 @@ let mainTab      = 'papers';
 // Analytics
 let chartInst        = {};
 let starredIds       = new Set(JSON.parse(localStorage.getItem('tv-starred') || '[]'));
-let cvTool           = 'select';
-let cvState          = null;
-let cvDragState      = null;   // {type:'node'|'pan', nodeId?, offX,offY, startRawX?,startRawY?,startPanX?,startPanY?}
-let cvConnecting     = null;   // {fromId, curX?, curY?}
-let cvGrouping       = null;   // {sx,sy,cx,cy}
-let cvResizeObserver = null;
-let cvPointerDownPos = null;   // {x,y} — for DOI tap detection
 
 // ══════════════════════════════════════════════════════════════════════════════
 // AUTH — Auth0
@@ -569,8 +568,6 @@ function toggleTheme() {
   localStorage.setItem('tv-theme', next);
   const btn = document.getElementById('theme-btn');
   if (btn) btn.textContent = next==='dark' ? '🌙' : '☀️';
-  // Redraw canvas with new theme colors
-  if (cvState) cvDraw();
   // Rebuild charts if analytics tab is open
   if (mainTab === 'analytics' && allPapers.length) renderAnalytics();
 }
@@ -646,9 +643,9 @@ function toggleStar(p, event) {
     const starred = starredIds.has(key);
     btn.classList.toggle('starred', starred);
     btn.textContent = starred ? '★' : '☆';
-    btn.title = starred ? 'Remove from canvas' : 'Add to canvas';
+    btn.title = starred ? 'Remove from starred' : 'Add to starred';
   }
-  if (cvState) syncStarredNodes();
+  renderStarredSection();
 }
 
 // ══════════════════════════════════════════════════════════════════════════════
@@ -779,7 +776,7 @@ function renderCards(slice) {
       ? `<a href="${esc(p.pubmed_url)}" target="_blank" rel="noopener" class="card-link">PubMed ↗</a>` : '';
     const obs_btn    = `<button class="card-link btn-insight" onclick="downloadInsight(currentSlice[${i}])">↓ Insight</button>`;
     const isStarred = starredIds.has(starKey(p));
-    const star_btn  = `<button class="btn-star${isStarred?' starred':''}" onclick="toggleStar(currentSlice[${i}],event)" title="${isStarred?'Remove from canvas':'Add to canvas'}">${isStarred?'★':'☆'}</button>`;
+    const star_btn  = `<button class="btn-star${isStarred?' starred':''}" onclick="toggleStar(currentSlice[${i}],event)" title="${isStarred?'Remove from starred':'Add to starred'}">${isStarred?'★':'☆'}</button>`;
     const abs     = p.abstract
       ? `<div class="card-abstract" id="abs-${i}">${esc(p.abstract).replace(/\n/g,'<br>')}</div>
          <button class="card-abstract-toggle" onclick="toggleAbs(${i})">Show abstract ▾</button>` : '';
@@ -938,7 +935,7 @@ function renderAnalytics() {
   buildTopAuthors();
   buildTopJournals(document.getElementById('f-jdomain')?.value || '');
   buildEmergingSignals();
-  initCanvas();
+  renderStarredSection();
 }
 
 // ── 1. Temporal Evolution ──────────────────────────────────────────────────
@@ -1173,425 +1170,82 @@ function jumpToPaper(key) {
 }
 
 // ══════════════════════════════════════════════════════════════════════════════
-// CANVAS
+// STARRED PAPERS SECTION
 // ══════════════════════════════════════════════════════════════════════════════
-const CV_NODE_W = 164;
-const CV_NODE_H = 72;
-const CV_NOTE_W = 144;
-const CV_NOTE_H = 80;
-const CV_GROUP_COLORS = ['#3b82f618','#10b98118','#f59e0b18','#ef444418','#8b5cf618'];
+let _starredList = [];
 
-// Polyfill roundRect for older Android WebView
-(function(){
-  const proto = CanvasRenderingContext2D.prototype;
-  if (!proto.roundRect) {
-    proto.roundRect = function(x,y,w,h,r) {
-      const rad = Math.min(typeof r==='number'?r:(Array.isArray(r)?r[0]:0), w/2, h/2);
-      this.moveTo(x+rad,y);
-      this.lineTo(x+w-rad,y);  this.arcTo(x+w,y,   x+w,y+rad,   rad);
-      this.lineTo(x+w,y+h-rad);this.arcTo(x+w,y+h, x+w-rad,y+h, rad);
-      this.lineTo(x+rad,y+h);  this.arcTo(x,y+h,   x,y+h-rad,   rad);
-      this.lineTo(x,y+rad);    this.arcTo(x,y,      x+rad,y,      rad);
-      this.closePath();
-    };
+
+function renderStarredSection() {
+  const grid  = document.getElementById('starred-grid');
+  const empty = document.getElementById('starred-empty');
+  if (!grid) return;
+
+  _starredList = allPapers.filter(p => starredIds.has(starKey(p)));
+
+  if (!_starredList.length) {
+    grid.style.display = 'none';
+    if (empty) empty.style.display = 'block';
+    return;
   }
-})();
+  if (empty) empty.style.display = 'none';
+  grid.style.display = 'grid';
 
-function cvSave() {
-  if (!cvState) return;
-  const user = _userName();
-  localStorage.setItem(`tv-canvas-${user}`, JSON.stringify({
-    nodes:cvState.nodes, connections:cvState.connections,
-    groups:cvState.groups, pan:cvState.pan,
-  }));
+  grid.innerHTML = _starredList.map((p, i) => {
+    const sc      = p.score||0;
+    const sColor  = sc>=60?'var(--success)':sc>=40?'var(--warn)':'var(--text-faint)';
+    const dColor  = DOMAIN_COLORS[p.domain]||'#64748b';
+    const tags    = (p.matched_tags||[]).map(t=>`<span class="badge badge-tag">${esc(t)}</span>`).join('');
+    const doi_btn = p.doi_url ? `<a href="${esc(p.doi_url)}" target="_blank" rel="noopener" class="card-link">DOI ↗</a>` : '';
+    const pm_btn  = p.pubmed_url ? `<a href="${esc(p.pubmed_url)}" target="_blank" rel="noopener" class="card-link">PubMed ↗</a>` : '';
+    const absId   = 'sabs-' + i;
+    const abs     = p.abstract
+      ? `<div class="card-abstract" id="${absId}">${esc(p.abstract).replace(/\n/g,'<br>')}</div>
+         <button class="card-abstract-toggle" onclick="toggleStarredAbs('${absId}')">Show abstract ▾</button>` : '';
+    return `<div class="card">
+      <div class="card-header">
+        <div class="card-title">${esc(p.title)}</div>
+        <button class="btn-star starred" onclick="unstarStarred(${i})" title="Remove from starred">★</button>
+        <span class="score-badge" style="color:${sColor};border-color:${sColor};flex-shrink:0;">${sc}</span>
+      </div>
+      <div class="card-meta">
+        ${esc(p.authors||'')}${p.authors&&p.journal?' &bull; ':''}${esc(p.journal||'')}${p.year?' &bull; '+esc(p.year):''}<br>
+        <span class="badge badge-domain" style="background:${dColor};margin-top:4px;">${esc(p.domain||'')}</span>
+        <span class="badge badge-source" style="margin-left:4px;">${esc(p.source||'')}</span>
+      </div>
+      ${tags?`<div class="card-tags">${tags}</div>`:''}
+      ${abs}
+      <div class="card-footer">
+        ${doi_btn}${pm_btn}
+        <button class="card-link btn-insight" onclick="downloadInsight(_starredList[${i}])">↓ Insight</button>
+      </div>
+    </div>`;
+  }).join('');
 }
 
-function setCvTool(tool) {
-  cvTool = tool;
-  ['select','connect','note','group'].forEach(t => {
-    const el = document.getElementById(`cv-${t}`);
-    if (el) el.classList.toggle('active', t===tool);
-  });
-  const hints = {
-    select:  'Drag to move nodes · drag background to pan · right-click to delete',
-    connect: 'Click source node → click target node to draw a connection',
-    note:    'Click empty space to add a text note · double-click to edit',
-    group:   'Drag to draw a group area',
-  };
-  const h = document.getElementById('cv-hint-text');
-  if (h) h.textContent = hints[tool]||'';
-  const canvas = document.getElementById('canvas-board');
-  if (canvas) canvas.style.cursor = tool==='select' ? 'default' : 'crosshair';
-  cvConnecting = null; cvGrouping = null;
-  cvDraw();
+function toggleStarredAbs(id) {
+  const el  = document.getElementById(id);
+  if (!el) return;
+  const btn = el.nextElementSibling;
+  el.classList.toggle('expanded');
+  btn.textContent = el.classList.contains('expanded') ? 'Hide abstract ▴' : 'Show abstract ▾';
 }
 
-function initCanvas() {
-  const container = document.getElementById('canvas-container');
-  if (!container) return;
-  if (cvResizeObserver) { cvResizeObserver.disconnect(); cvResizeObserver=null; }
-
-  const user  = _userName();
-  const saved = JSON.parse(localStorage.getItem(`tv-canvas-${user}`)||'null');
-  cvState = {
-    nodes:       saved?.nodes       || [],
-    connections: saved?.connections || [],
-    groups:      saved?.groups      || [],
-    pan:         saved?.pan         || {x:0,y:0},
-  };
-
-  // Replace canvas element to clear all old event listeners
-  const oldCanvas = document.getElementById('canvas-board');
-  const fresh = document.createElement('canvas');
-  fresh.id = 'canvas-board';
-  fresh.style.cssText = 'position:absolute;top:0;left:0;touch-action:none;';
-  fresh.width  = container.clientWidth  || 800;
-  fresh.height = container.clientHeight || 480;
-  container.replaceChild(fresh, oldCanvas);
-
-  fresh.addEventListener('pointerdown',  cvDown);
-  fresh.addEventListener('pointermove',  cvMove);
-  fresh.addEventListener('pointerup',    cvUp);
-  fresh.addEventListener('pointercancel',cvUp);
-  fresh.addEventListener('dblclick',     cvDblClick);
-  fresh.addEventListener('contextmenu',  e => { e.preventDefault(); cvRightClick(e); });
-
-  syncStarredNodes();
-  cvDraw();
-
-  cvResizeObserver = new ResizeObserver(() => {
-    const c = document.getElementById('canvas-board');
-    if (!c) return;
-    c.width  = container.clientWidth;
-    c.height = container.clientHeight;
-    cvDraw();
-  });
-  cvResizeObserver.observe(container);
+function unstarStarred(i) {
+  const p = _starredList[i];
+  if (!p) return;
+  starredIds.delete(starKey(p));
+  localStorage.setItem('tv-starred', JSON.stringify([...starredIds]));
+  renderStarredSection();
+  if (viewMode === 'cards') render();
 }
 
-function syncStarredNodes() {
-  if (!cvState) return;
-  const starred = allPapers.filter(p => starredIds.has(starKey(p)));
-
-  starred.forEach(p => {
-    const key = starKey(p);
-    if (!cvState.nodes.find(n => n.paperId===key)) {
-      const col = cvState.nodes.filter(n=>n.type==='paper').length;
-      cvState.nodes.push({
-        id: 'n'+Date.now()+Math.random().toString(36).slice(2),
-        type:'paper', paperId:key,
-        title:p.title||key, domain:p.domain||'',
-        x:20+(col%4)*182, y:20+Math.floor(col/4)*90,
-        w:CV_NODE_W, h:CV_NODE_H,
-      });
-    }
-  });
-
-  cvState.nodes = cvState.nodes.filter(n => n.type!=='paper' || starredIds.has(n.paperId));
-  cvSave();
-  cvDraw();
-}
-
-// ── Canvas draw ───────────────────────────────────────────────────────────
-// Returns true if canvas coordinate (x,y) falls in the DOI link zone of node n
-function cvDOIHit(n, x, y) {
-  return n.type === 'paper' &&
-    x >= n.x+12 && x <= n.x+n.w-8 &&
-    y >= n.y+36 && y <= n.y+50;
-}
-
-function cvDraw() {
-  const canvas = document.getElementById('canvas-board');
-  if (!canvas||!cvState) return;
-  const ctx  = canvas.getContext('2d');
-  const dark = document.documentElement.dataset.theme==='dark';
-  const {pan,nodes,connections,groups} = cvState;
-
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  ctx.save();
-  ctx.translate(pan.x,pan.y);
-
-  // Groups
-  groups.forEach(g => {
-    ctx.beginPath();
-    ctx.roundRect(g.x,g.y,g.w,g.h,8);
-    ctx.fillStyle   = g.color||CV_GROUP_COLORS[0];
-    ctx.strokeStyle = (g.color||'#3b82f6').slice(0,7)+'60';
-    ctx.lineWidth   = 1.5;
-    ctx.fill(); ctx.stroke();
-    if (g.label) {
-      ctx.fillStyle = dark?'#94a3b8':'#475569';
-      ctx.font = 'bold 11px system-ui,sans-serif';
-      ctx.fillText(g.label, g.x+10, g.y+18);
-    }
-  });
-
-  // Connections
-  connections.forEach(c => {
-    const a = nodes.find(n=>n.id===c.from);
-    const b = nodes.find(n=>n.id===c.to);
-    if (!a||!b) return;
-    const ax=a.x+a.w/2, ay=a.y+a.h/2, bx=b.x+b.w/2, by=b.y+b.h/2;
-    const mx=(ax+bx)/2;
-    ctx.beginPath();
-    ctx.moveTo(ax,ay);
-    ctx.bezierCurveTo(mx,ay,mx,by,bx,by);
-    ctx.strokeStyle = dark?'#475569':'#94a3b8';
-    ctx.lineWidth   = 1.5;
-    ctx.stroke();
-    // Arrow head
-    const angle = Math.atan2(by-ay,bx-ax);
-    ctx.save();
-    ctx.translate(bx,by); ctx.rotate(angle);
-    ctx.beginPath(); ctx.moveTo(-10,-5); ctx.lineTo(0,0); ctx.lineTo(-10,5);
-    ctx.strokeStyle = dark?'#475569':'#94a3b8';
-    ctx.lineWidth=1.5; ctx.stroke();
-    ctx.restore();
-  });
-
-  // In-progress connection line
-  if (cvConnecting&&cvConnecting.curX!=null) {
-    const a = nodes.find(n=>n.id===cvConnecting.fromId);
-    if (a) {
-      ctx.beginPath();
-      ctx.moveTo(a.x+a.w/2,a.y+a.h/2);
-      ctx.lineTo(cvConnecting.curX,cvConnecting.curY);
-      ctx.strokeStyle = getCSSVar('--accent');
-      ctx.lineWidth   = 1.5;
-      ctx.setLineDash([5,4]); ctx.stroke(); ctx.setLineDash([]);
-    }
-  }
-
-  // In-progress group rectangle
-  if (cvGrouping) {
-    const {sx,sy,cx:gx,cy:gy} = cvGrouping;
-    ctx.beginPath();
-    ctx.roundRect(Math.min(sx,gx),Math.min(sy,gy),Math.abs(gx-sx),Math.abs(gy-sy),6);
-    ctx.fillStyle   = '#3b82f610';
-    ctx.strokeStyle = getCSSVar('--accent');
-    ctx.lineWidth   = 1.5;
-    ctx.setLineDash([6,4]); ctx.fill(); ctx.stroke(); ctx.setLineDash([]);
-  }
-
-  // Nodes
-  nodes.forEach(n => {
-    const highlighted = cvConnecting&&cvConnecting.fromId===n.id;
-    ctx.shadowColor = '#00000030'; ctx.shadowBlur = 6;
-    ctx.beginPath(); ctx.roundRect(n.x,n.y,n.w,n.h,8);
-    ctx.fillStyle   = dark?'#1e293b':'#ffffff';
-    ctx.strokeStyle = highlighted ? getCSSVar('--accent') : (dark?'#334155':'#e2e8f0');
-    ctx.lineWidth   = highlighted?2:1;
-    ctx.fill(); ctx.stroke();
-    ctx.shadowBlur = 0;
-
-    if (n.type==='paper') {
-      const domColor = DOMAIN_COLORS[n.domain]||'#3b82f6';
-      ctx.beginPath(); ctx.roundRect(n.x,n.y,4,n.h,[8,0,0,8]);
-      ctx.fillStyle=domColor; ctx.fill();
-
-      ctx.fillStyle = dark?'#f1f5f9':'#0f172a';
-      ctx.font = 'bold 11px system-ui,sans-serif';
-      cvWrapText(ctx,n.title,n.x+12,n.y+14,n.w-20,14,2);
-
-      // DOI link
-      const _pp = allPapers.find(p => starKey(p) === n.paperId);
-      const _doiUrl = n.doi || (_pp ? _pp.doi_url || '' : '');
-      if (_doiUrl) {
-        ctx.fillStyle = '#3b82f6';
-        ctx.font = '10px system-ui,sans-serif';
-        ctx.fillText('DOI ↗', n.x+12, n.y+44);
-        const _tw = ctx.measureText('DOI ↗').width;
-        ctx.fillRect(n.x+12, n.y+45, _tw, 1);
-      }
-
-      ctx.fillStyle = dark?'#64748b':'#94a3b8';
-      ctx.font = '10px system-ui,sans-serif';
-      ctx.fillText(n.domain||'',n.x+12,n.y+n.h-9);
-    } else {
-      ctx.fillStyle = n.color||'#f59e0b';
-      ctx.font = 'bold 10px system-ui,sans-serif';
-      ctx.fillText('✎ Note',n.x+9,n.y+17);
-      ctx.fillStyle = dark?'#f1f5f9':'#0f172a';
-      ctx.font = '11px system-ui,sans-serif';
-      cvWrapText(ctx,n.text||'(empty)',n.x+9,n.y+33,n.w-18,14,3);
-    }
-  });
-
-  ctx.restore();
-}
-
-function cvWrapText(ctx,text,x,y,maxW,lineH,maxLines) {
-  const words = (text||'').split(/\s+/);
-  let line='', drawn=0;
-  for (const w of words) {
-    const test = line ? line+' '+w : w;
-    if (ctx.measureText(test).width>maxW && line) {
-      if (drawn>=maxLines-1) { ctx.fillText(line+'…',x,y+drawn*lineH); return; }
-      ctx.fillText(line,x,y+drawn*lineH);
-      line=w; drawn++;
-    } else { line=test; }
-  }
-  if (line&&drawn<maxLines) ctx.fillText(line,x,y+drawn*lineH);
-}
-
-// ── Canvas pointer helpers ────────────────────────────────────────────────
-function cvCoords(e) {
-  const canvas = document.getElementById('canvas-board');
-  const rect   = canvas.getBoundingClientRect();
-  const rawX   = e.clientX-rect.left;
-  const rawY   = e.clientY-rect.top;
-  return { x:rawX-cvState.pan.x, y:rawY-cvState.pan.y, rawX, rawY };
-}
-
-function cvHitNode(x,y) {
-  if (!cvState) return null;
-  for (let i=cvState.nodes.length-1;i>=0;i--) {
-    const n=cvState.nodes[i];
-    if (x>=n.x&&x<=n.x+n.w&&y>=n.y&&y<=n.y+n.h) return n;
-  }
-  return null;
-}
-
-// ── Canvas events ─────────────────────────────────────────────────────────
-function cvDown(e) {
-  e.preventDefault();
-  if (!cvState) return;
-  const pos  = cvCoords(e);
-  const node = cvHitNode(pos.x,pos.y);
-  cvPointerDownPos = { x:pos.x, y:pos.y };
-
-  if (cvTool==='select') {
-    if (node) {
-      // Bring to front
-      cvState.nodes = [...cvState.nodes.filter(n=>n.id!==node.id), node];
-      cvDragState = { type:'node', nodeId:node.id, offX:pos.x-node.x, offY:pos.y-node.y };
-    } else {
-      cvDragState = { type:'pan', startRawX:pos.rawX, startRawY:pos.rawY, startPanX:cvState.pan.x, startPanY:cvState.pan.y };
-    }
-
-  } else if (cvTool==='connect') {
-    if (node) {
-      if (!cvConnecting) {
-        cvConnecting = { fromId:node.id, curX:pos.x, curY:pos.y };
-      } else if (cvConnecting.fromId!==node.id) {
-        const dup = cvState.connections.some(c=>c.from===cvConnecting.fromId&&c.to===node.id);
-        if (!dup) cvState.connections.push({from:cvConnecting.fromId,to:node.id});
-        cvConnecting = null;
-        cvSave();
-      }
-    } else { cvConnecting = null; }
-    cvDraw();
-
-  } else if (cvTool==='note') {
-    if (!node) {
-      const text = prompt('Note text:')||'';
-      cvState.nodes.push({
-        id:'n'+Date.now(), type:'note', text,
-        x:pos.x-CV_NOTE_W/2, y:pos.y-CV_NOTE_H/2,
-        w:CV_NOTE_W, h:CV_NOTE_H, color:'#f59e0b',
-      });
-      cvSave(); cvDraw();
-    }
-
-  } else if (cvTool==='group') {
-    cvGrouping = { sx:pos.x, sy:pos.y, cx:pos.x, cy:pos.y };
-  }
-}
-
-function cvMove(e) {
-  if (!cvState) return;
-  const pos = cvCoords(e);
-
-  // Cursor: pointer when hovering a DOI link
-  if (!cvDragState && !cvConnecting && !cvGrouping) {
-    const hNode = cvHitNode(pos.x, pos.y);
-    document.getElementById('canvas-board').style.cursor =
-      (hNode && cvDOIHit(hNode, pos.x, pos.y)) ? 'pointer' : '';
-  }
-
-  if (cvDragState) {
-    if (cvDragState.type==='node') {
-      const node = cvState.nodes.find(n=>n.id===cvDragState.nodeId);
-      if (node) { node.x=pos.x-cvDragState.offX; node.y=pos.y-cvDragState.offY; }
-    } else {
-      cvState.pan.x = cvDragState.startPanX+(pos.rawX-cvDragState.startRawX);
-      cvState.pan.y = cvDragState.startPanY+(pos.rawY-cvDragState.startRawY);
-    }
-    cvDraw();
-  } else if (cvConnecting) {
-    cvConnecting.curX=pos.x; cvConnecting.curY=pos.y; cvDraw();
-  } else if (cvGrouping) {
-    cvGrouping.cx=pos.x; cvGrouping.cy=pos.y; cvDraw();
-  }
-}
-
-function cvUp(e) {
-  if (!cvState) return;
-  const pos = cvCoords(e);
-  // DOI link tap: treat as click if pointer barely moved
-  if (cvPointerDownPos) {
-    const dx = Math.abs(pos.x - cvPointerDownPos.x);
-    const dy = Math.abs(pos.y - cvPointerDownPos.y);
-    if (dx < 5 && dy < 5) {
-      const node = cvHitNode(pos.x, pos.y);
-      if (node && cvDOIHit(node, pos.x, pos.y)) {
-        const _pp  = allPapers.find(p => starKey(p) === node.paperId);
-        const _url = node.doi || (_pp ? _pp.doi_url || '' : '');
-        if (_url) window.open(_url, '_blank', 'noopener');
-      }
-    }
-    cvPointerDownPos = null;
-  }
-  if (cvDragState) { cvSave(); cvDragState=null; }
-  if (cvGrouping) {
-    const {sx,sy,cx,cy} = cvGrouping;
-    const w=Math.abs(cx-sx), h=Math.abs(cy-sy);
-    if (w>30&&h>20) {
-      const label    = prompt('Group label (optional):')||'';
-      const colorIdx = cvState.groups.length % CV_GROUP_COLORS.length;
-      cvState.groups.push({
-        id:'g'+Date.now(),
-        x:Math.min(sx,cx), y:Math.min(sy,cy), w, h,
-        color:CV_GROUP_COLORS[colorIdx], label,
-      });
-      cvSave();
-    }
-    cvGrouping=null; cvDraw();
-  }
-}
-
-function cvDblClick(e) {
-  if (!cvState||cvTool!=='select') return;
-  const pos  = cvCoords(e);
-  const node = cvHitNode(pos.x,pos.y);
-  if (node&&node.type==='note') {
-    const text = prompt('Edit note:',node.text||'')?? node.text;
-    node.text = text; cvSave(); cvDraw();
-  }
-}
-
-function cvRightClick(e) {
-  if (!cvState) return;
-  const pos  = cvCoords(e);
-  const node = cvHitNode(pos.x,pos.y);
-  if (!node) return;
-  if (node.type==='paper') {
-    starredIds.delete(node.paperId);
-    localStorage.setItem('tv-starred',JSON.stringify([...starredIds]));
-  }
-  cvState.nodes       = cvState.nodes.filter(n=>n.id!==node.id);
-  cvState.connections = cvState.connections.filter(c=>c.from!==node.id&&c.to!==node.id);
-  cvSave(); cvDraw();
-}
-
-function cvClearCanvas() {
-  if (!cvState) return;
-  if (!confirm('Clear all canvas items and starred papers?')) return;
-  cvState.nodes=[];cvState.connections=[];cvState.groups=[];
+function clearStarredPapers() {
+  if (!starredIds.size) return;
+  if (!confirm('Clear all starred papers?')) return;
   starredIds.clear();
-  localStorage.setItem('tv-starred',JSON.stringify([]));
-  cvSave(); cvDraw();
-  if (viewMode==='cards') render();
+  localStorage.setItem('tv-starred', JSON.stringify([]));
+  renderStarredSection();
+  if (viewMode === 'cards') render();
 }
 
 // ══════════════════════════════════════════════════════════════════════════════
