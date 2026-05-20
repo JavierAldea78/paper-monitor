@@ -113,8 +113,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    # Skip if no papers were found
-    if: ${{ needs.fetch.outputs.count > 0 }}
+    if: false  # temporarily disabled
 
     steps:
       - name: Checkout (with fresh papers.json)
