@@ -40,32 +40,40 @@ jobs:
               --repo ${{ github.repository }}
             echo "Downloaded papers.json ($(du -sh papers.json | cut -f1))"
           else
-            echo "No release found — skipping (first deploy)" && exit 0
+            echo "No release found — skipping" && exit 0
           fi
 
       - name: Build _site
         run: |
           mkdir _site
           cp index.html papers_readable.txt _headers _site/
-          python3 -c "
-          import json, csv, os
-          if not os.path.exists('papers.json'):
-              print('No papers.json — skipping filters')
-              exit(0)
-          d = json.load(open('papers.json'))
-          json.dump([p for p in d if (p.get('score') or 0) >= 40], open('_site/papers.json','w'), ensure_ascii=False)
-          fields = ['score','raw_score','title','authors','journal','year','pub_date',
-                    'doi','doi_url','pmid','pubmed_url','domain','folder',
-                    'matched_tags','must_match','citations','is_oa','source','fetch_date','abstract']
-          with open('_site/papers.csv', 'w', newline='', encoding='utf-8') as f:
-              w = csv.DictWriter(f, fieldnames=fields, extrasaction='ignore')
-              w.writeheader()
-              for p in d:
-                  row = dict(p)
-                  row['matched_tags'] = '; '.join(row.get('matched_tags') or [])
-                  w.writerow(row)
-          print(f'Built _site with {len(d)} papers')
-          "
+          python3 - << 'PYEOF'
+import json, csv, os
+if not os.path.exists('papers.json'):
+    print('No papers.json — skipping')
+    exit(0)
+d = json.load(open('papers.json'))
+d.sort(key=lambda p: p.get('score', 0), reverse=True)
+# Top 5000 for corpus view
+json.dump(d[:5000], open('_site/papers.json', 'w'), ensure_ascii=False)
+# Latest fetch date = Esta semana
+dates = sorted(set(p.get('fetch_date','') for p in d if p.get('fetch_date')), reverse=True)
+latest = dates[0] if dates else ''
+new_papers = [p for p in d if p.get('fetch_date','') == latest]
+json.dump(new_papers, open('_site/papers_new.json', 'w'), ensure_ascii=False)
+# CSV for download
+fields = ['score','raw_score','title','authors','journal','year','pub_date',
+          'doi','doi_url','pmid','pubmed_url','domain','folder',
+          'matched_tags','must_match','citations','is_oa','source','fetch_date','abstract']
+with open('_site/papers.csv', 'w', newline='', encoding='utf-8') as f:
+    w = csv.DictWriter(f, fieldnames=fields, extrasaction='ignore')
+    w.writeheader()
+    for p in d[:5000]:
+        row = dict(p)
+        row['matched_tags'] = '; '.join(row.get('matched_tags') or [])
+        w.writerow(row)
+print(f'corpus: {len(d[:5000])} | esta semana: {len(new_papers)} ({latest}) | total: {len(d)}')
+PYEOF
           HASH=$(git rev-parse --short HEAD)
           sed -i "s/__BUILD_HASH__/${HASH}/g" _site/index.html
 
