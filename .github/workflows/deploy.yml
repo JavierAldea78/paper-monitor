@@ -9,7 +9,7 @@ permissions: {}
 
 concurrency:
   group: pages-deploy
-  cancel-in-progress: true   # supersede any in-flight deploy on rapid pushes
+  cancel-in-progress: true
 
 jobs:
   deploy:
@@ -29,11 +29,43 @@ jobs:
         with:
           ref: main
 
+      - name: Download papers.json from release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if gh release view data-latest --repo ${{ github.repository }} >/dev/null 2>&1; then
+            gh release download data-latest \
+              --pattern 'papers.json' \
+              --clobber \
+              --repo ${{ github.repository }}
+            echo "Downloaded papers.json ($(du -sh papers.json | cut -f1))"
+          else
+            echo "No release found — skipping (first deploy)" && exit 0
+          fi
+
       - name: Build _site
         run: |
           mkdir _site
-          cp index.html papers.csv papers_readable.txt _headers _site/
-          python3 -c "import json; d=json.load(open('papers.json')); json.dump([p for p in d if (p.get('score') or 0)>=40], open('_site/papers.json','w'))"
+          cp index.html papers_readable.txt _headers _site/
+          python3 -c "
+          import json, csv, os
+          if not os.path.exists('papers.json'):
+              print('No papers.json — skipping filters')
+              exit(0)
+          d = json.load(open('papers.json'))
+          json.dump([p for p in d if (p.get('score') or 0) >= 40], open('_site/papers.json','w'), ensure_ascii=False)
+          fields = ['score','raw_score','title','authors','journal','year','pub_date',
+                    'doi','doi_url','pmid','pubmed_url','domain','folder',
+                    'matched_tags','must_match','citations','is_oa','source','fetch_date','abstract']
+          with open('_site/papers.csv', 'w', newline='', encoding='utf-8') as f:
+              w = csv.DictWriter(f, fieldnames=fields, extrasaction='ignore')
+              w.writeheader()
+              for p in d:
+                  row = dict(p)
+                  row['matched_tags'] = '; '.join(row.get('matched_tags') or [])
+                  w.writerow(row)
+          print(f'Built _site with {len(d)} papers')
+          "
           HASH=$(git rev-parse --short HEAD)
           sed -i "s/__BUILD_HASH__/${HASH}/g" _site/index.html
 
