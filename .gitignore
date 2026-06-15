@@ -7,3 +7,7 @@ _site/
 
 # Claude Code local state
 .claude/
+
+# Large data files — stored in GitHub Releases, not in git
+papers.json
+papers.csv

@@ -802,9 +802,8 @@ def main():
     print(f"Loaded {len(tags)} active tag(s)\n")
 
     # ── Zotero library (fetch existing items) ──────────────────────────────────
-    zotero_papers = zotero_fetch()
-
-    all_raw: list[dict]           = list(zotero_papers)
+    # Zotero disabled — used only as export destination, not source
+    all_raw: list[dict]           = []
     tag_index:    dict[str,list]  = {}
     domain_index: dict[str,str]   = {}
     folder_index: dict[str,str]   = {}
@@ -914,8 +913,15 @@ def main():
     normalize_scores(merged)
     merged.sort(key=lambda p: p.get("score", 0), reverse=True)
 
-    # ── Push to Zotero ─────────────────────────────────────────────────────────
-    zotero_push(merged)
+    # Zotero push disabled
+
+
+    # Truncate abstracts for storage (scoring already complete above)
+    _MAX_AB = 400
+    for p in merged:
+        ab = p.get('abstract') or ''
+        if len(ab) > _MAX_AB:
+            p['abstract'] = ab[:_MAX_AB].rsplit(' ', 1)[0] + '…'
 
     # ── Save JSON ──────────────────────────────────────────────────────────────
     OUTPUT_JSON.write_text(
