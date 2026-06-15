@@ -18,7 +18,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      releases: write
     outputs:
       count: ${{ steps.count.outputs.count }}
 
