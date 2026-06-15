@@ -345,7 +345,8 @@ tr:hover td { background:var(--accent-dim); }
   <!-- Nav -->
   <nav>
     <div class="nav-tabs">
-      <button class="nav-tab active" id="tab-papers"    onclick="switchTab('papers')">📄 Papers</button>
+      <button class="nav-tab active" id="tab-week"      onclick="switchTab('week')">🆕 Esta semana</button>
+      <button class="nav-tab"        id="tab-papers"    onclick="switchTab('papers')">📄 Todos</button>
       <button class="nav-tab"        id="tab-analytics" onclick="switchTab('analytics')">📊 Analytics</button>
     </div>
     <div class="nav-spacer"></div>
@@ -368,7 +369,7 @@ tr:hover td { background:var(--accent-dim); }
     </div>
     <div class="filter-group">
       <label class="filter-label">MIN SCORE</label>
-      <input type="range" id="f-score" min="0" max="100" value="0" oninput="onScoreRange()">
+      <input type="range" id="f-score" min="0" max="110" value="0" oninput="onScoreRange()">
       <span id="score-val">0</span>
     </div>
     <div class="filter-group">
@@ -480,14 +481,16 @@ const DOMAIN_COLORS = {
 // ══════════════════════════════════════════════════════════════════════════════
 // STATE
 // ══════════════════════════════════════════════════════════════════════════════
-let allPapers    = [];
+let allPapers    = [];   // points to active dataset
+let corpusPapers = [];   // top papers from full corpus
+let weekPapers   = [];   // papers from latest fetch
 let filtered     = [];
 let currentSlice = [];
 let page         = 1;
 let sortKey      = 'score';
 let sortDir      = -1;
 let viewMode     = 'table';
-let mainTab      = 'papers';
+let mainTab      = 'week';
 
 // Analytics
 let chartInst        = {};
@@ -584,12 +587,16 @@ function initTheme() {
 // ══════════════════════════════════════════════════════════════════════════════
 async function loadPapers() {
   try {
-    const url = PAPERS_URL + '?v=__BUILD_HASH__';
-    console.log('[TV] fetching papers:', url);
-    const r = await fetch(url);
-    if (!r.ok) throw new Error(r.statusText);
-    allPapers = await r.json();
-    console.log('[TV] papers loaded:', allPapers.length, '| Chart.js ready:', typeof Chart !== 'undefined');
+    const v = '__BUILD_HASH__';
+    const [rCorpus, rWeek] = await Promise.all([
+      fetch('./papers.json?v=' + v),
+      fetch('./papers_new.json?v=' + v).catch(() => null),
+    ]);
+    if (!rCorpus.ok) throw new Error(rCorpus.statusText);
+    corpusPapers = await rCorpus.json();
+    weekPapers   = rWeek && rWeek.ok ? await rWeek.json() : [];
+    console.log('[TV] corpus:', corpusPapers.length, '| week:', weekPapers.length);
+    allPapers = mainTab === 'week' ? weekPapers : corpusPapers;
     initFilters();
     applyFilters();
     document.getElementById('loading').style.display = 'none';
@@ -616,15 +623,22 @@ function initFilters() {
 // ══════════════════════════════════════════════════════════════════════════════
 function switchTab(tab) {
   mainTab = tab;
-  const onPapers = tab === 'papers';
-  document.getElementById('tab-papers').classList.toggle('active',  onPapers);
-  document.getElementById('tab-analytics').classList.toggle('active', !onPapers);
+  const onPapers    = tab === 'papers' || tab === 'week';
+  const onAnalytics = tab === 'analytics';
+  document.getElementById('tab-week').classList.toggle('active',      tab === 'week');
+  document.getElementById('tab-papers').classList.toggle('active',    tab === 'papers');
+  document.getElementById('tab-analytics').classList.toggle('active', onAnalytics);
   document.getElementById('filters').style.display          = onPapers ? '' : 'none';
   document.getElementById('content').style.display          = onPapers ? '' : 'none';
   document.getElementById('pagination').style.display       = (onPapers && filtered.length > 0) ? 'flex' : 'none';
-  document.getElementById('analytics-panel').style.display  = onPapers ? 'none' : 'block';
+  document.getElementById('analytics-panel').style.display  = onAnalytics ? 'block' : 'none';
   document.getElementById('nav-export-btn').style.display   = onPapers ? '' : 'none';
-  if (!onPapers && allPapers.length > 0) renderAnalytics();
+  if (onPapers) {
+    allPapers = tab === 'week' ? weekPapers : corpusPapers;
+    initFilters();
+    applyFilters();
+  }
+  if (onAnalytics && allPapers.length > 0) renderAnalytics();
 }
 
 // ══════════════════════════════════════════════════════════════════════════════
@@ -710,7 +724,8 @@ function render() {
   page        = Math.min(page, pages);
   const slice = filtered.slice((page-1)*PAGE_SIZE, page*PAGE_SIZE);
 
-  document.getElementById('nav-stats').textContent = `${filtered.length} / ${allPapers.length} papers`;
+  const label = mainTab === 'week' ? 'novedades' : 'corpus';
+  document.getElementById('nav-stats').textContent = `${filtered.length} / ${allPapers.length} ${label}`;
 
   document.getElementById('table-view').style.display  = viewMode==='table' ? '' : 'none';
   document.getElementById('card-view').style.display   = viewMode==='cards' ? 'grid' : 'none';

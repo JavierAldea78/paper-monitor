@@ -904,13 +904,16 @@ def main():
     else:
         print(f"No existing papers.json found — writing fresh file\n")
 
-    # Ensure every paper has a raw_score before normalizing (legacy papers may lack it)
+    # Ensure every paper has a raw_score (sync score=raw_score for all, including legacy)
     for p in merged:
         if "raw_score" not in p:
             tags_for = p.get("matched_tags") or []
             p["raw_score"] = score_paper(p, len(tags_for))
+        p["score"] = p["raw_score"]
 
-    normalize_scores(merged)
+    # Absolute scoring: score = raw_score (no min-max normalization)
+    for p in merged:
+        p["score"] = p.get("raw_score", 0)
     merged.sort(key=lambda p: p.get("score", 0), reverse=True)
 
     # Zotero push disabled
