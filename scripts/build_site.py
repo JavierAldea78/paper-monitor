@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build _site/ from papers.json: full corpus with consistent rescore + esta-semana split."""
+"""Build _site/: retroactive mustInclude filter + consistent rescore + full corpus."""
 import json, csv, os, sys, datetime
 
 if not os.path.exists('papers.json'):
@@ -9,9 +9,41 @@ if not os.path.exists('papers.json'):
 d = json.load(open('papers.json'))
 TODAY_YEAR = datetime.date.today().year
 
+# ── Load mustInclude requirements from watchtags.csv ──────────────────────────
+tag_must: dict[str, list[str]] = {}
+if os.path.exists('watchtags.csv'):
+    with open('watchtags.csv', newline='', encoding='utf-8') as f:
+        for row in csv.DictReader(f):
+            if row.get('active', 'true').strip().lower() == 'false':
+                continue
+            must = [m.strip() for m in row.get('mustInclude', '').split(',') if m.strip()]
+            tag_must[row['tag'].strip()] = must
+    print(f'Loaded {len(tag_must)} active tags from watchtags.csv')
 
+# ── Retroactively apply mustInclude hard filter to existing corpus ────────────
+# Papers from old fetches had mustInclude as a soft bonus; here we enforce it
+# so spuriously-assigned tags are removed before scoring.
+fixed = 0
+for p in d:
+    old_tags = p.get('matched_tags') or []
+    if not old_tags or not tag_must:
+        continue
+    text = (p.get('title', '') + ' ' + (p.get('abstract') or '')).lower()
+    new_tags = []
+    for tag in old_tags:
+        must = tag_must.get(tag, [])
+        if must and not all(m.lower() in text for m in must):
+            continue  # tag was spuriously assigned — strip it
+        new_tags.append(tag)
+    if len(new_tags) != len(old_tags):
+        p['matched_tags'] = new_tags
+        p['must_match']   = any(bool(tag_must.get(t)) for t in new_tags)
+        fixed += 1
+print(f'Retroactive mustInclude fix: {fixed} papers had spurious tags removed')
+
+
+# ── Rescore ───────────────────────────────────────────────────────────────────
 def rescore(paper: dict) -> int:
-    """Consistent scoring: papers with 0 matched tags score 0."""
     n_tags = len(paper.get('matched_tags') or [])
     if n_tags == 0:
         return 0
@@ -39,6 +71,7 @@ for p in d:
 
 d.sort(key=lambda p: p.get('score', 0), reverse=True)
 
+# ── Write outputs ─────────────────────────────────────────────────────────────
 os.makedirs('_site', exist_ok=True)
 json.dump(d, open('_site/papers.json', 'w'), ensure_ascii=False)
 
@@ -59,4 +92,7 @@ with open('_site/papers.csv', 'w', newline='', encoding='utf-8') as f:
         w.writerow(row)
 
 relevant = sum(1 for p in d if p['score'] > 0)
-print(f'corpus: {len(d)} | con tags (score>0): {relevant} | esta semana: {len(new_papers)} ({latest})')
+top = d[0] if d else {}
+print(f'corpus: {len(d)} | con score>0: {relevant} | esta semana: {len(new_papers)} ({latest})')
+print(f'Top paper: score={top.get("score",0)} | {top.get("title","")[:80]}')
+print(f'Top tags: {top.get("matched_tags",[])}')
