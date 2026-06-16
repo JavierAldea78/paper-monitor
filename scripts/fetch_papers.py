@@ -707,7 +707,9 @@ def _is_recent_enough(paper: dict) -> bool:
 
 
 def score_paper(paper: dict, n_tags: int) -> int:
-    """Return raw (uncapped) relevance score. Normalization happens later."""
+    """Return raw relevance score. Papers with no matched tags score 0."""
+    if n_tags == 0:
+        return 0
     s = min(n_tags * 15, 60)                           # tag relevance  (0-60)
     try:                                                # recency        (0-25)
         py = int((paper.get("pub_date","") or paper.get("year",""))[:4])
@@ -845,22 +847,19 @@ def main():
             batch.extend(lens)
             time.sleep(DELAY_LENS)
 
-        # mustInclude: soft bonus (+10 pts at scoring) instead of hard exclusion filter
+        # mustInclude: hard filter — paper must satisfy ALL must terms to receive this tag
         must = tag_info["mustInclude"]
-        if must:
-            for p in batch:
-                haystack = (p.get("title","") + " " + p.get("abstract","")).lower()
-                if all(m.lower() in haystack for m in must):
-                    ndoi_tmp = _norm_doi(p.get("doi",""))
-                    k = ndoi_tmp if ndoi_tmp else f"__notitle__{p.get('title','')[:80].lower()}"
-                    if k:
-                        must_index[k] = True
 
         for p in batch:
             ndoi = _norm_doi(p.get("doi",""))
             key  = ndoi if ndoi else f"__notitle__{p.get('title','')[:80].lower()}"
             if not key:
                 continue
+            if must:
+                haystack = (p.get("title","") + " " + p.get("abstract","")).lower()
+                if not all(m.lower() in haystack for m in must):
+                    continue  # paper doesn't satisfy mustInclude — skip this tag
+                must_index[key] = True
             p["domain"] = domain
             p["folder"] = folder
             if key not in tag_index:
@@ -904,16 +903,11 @@ def main():
     else:
         print(f"No existing papers.json found — writing fresh file\n")
 
-    # Ensure every paper has a raw_score (sync score=raw_score for all, including legacy)
+    # Force rescore every paper with current logic (n_tags=0 → score=0)
     for p in merged:
-        if "raw_score" not in p:
-            tags_for = p.get("matched_tags") or []
-            p["raw_score"] = score_paper(p, len(tags_for))
-        p["score"] = p["raw_score"]
-
-    # Absolute scoring: score = raw_score (no min-max normalization)
-    for p in merged:
-        p["score"] = p.get("raw_score", 0)
+        tags_for = p.get("matched_tags") or []
+        p["raw_score"] = score_paper(p, len(tags_for))
+        p["score"]     = p["raw_score"]
     merged.sort(key=lambda p: p.get("score", 0), reverse=True)
 
     # Zotero push disabled
