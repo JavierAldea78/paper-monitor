@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build _site/ from papers.json: full corpus with relevance rescore + esta-semana split."""
+"""Build _site/ from papers.json: full corpus with consistent rescore + esta-semana split."""
 import json, csv, os, sys, datetime
 
 if not os.path.exists('papers.json'):
@@ -9,20 +9,11 @@ if not os.path.exists('papers.json'):
 d = json.load(open('papers.json'))
 TODAY_YEAR = datetime.date.today().year
 
-# Papers not mentioning ANY of these food/beverage/alcohol terms score 0,
-# regardless of how many tags they matched or how many citations they have.
-FOOD_TERMS = {
-    'beer', 'brewery', 'brewer', 'brewing', 'lager', 'ale', 'stout',
-    'wort', 'malt', 'malting', 'hops', 'barley', 'ferment',
-    'dealcohol', 'alcohol', 'ethanol', 'beverage', 'drink',
-    'wine', 'cider', 'spirits', 'distill', 'keg', 'draught', 'draft',
-}
-
 
 def rescore(paper: dict) -> int:
+    """Consistent scoring: papers with 0 matched tags score 0."""
     n_tags = len(paper.get('matched_tags') or [])
-    text   = (paper.get('title', '') + ' ' + (paper.get('abstract') or '')).lower()
-    if not any(t in text for t in FOOD_TERMS):
+    if n_tags == 0:
         return 0
     s = min(n_tags * 15, 60)
     try:
@@ -68,4 +59,4 @@ with open('_site/papers.csv', 'w', newline='', encoding='utf-8') as f:
         w.writerow(row)
 
 relevant = sum(1 for p in d if p['score'] > 0)
-print(f'corpus: {len(d)} | relevant (score>0): {relevant} | esta semana: {len(new_papers)} ({latest})')
+print(f'corpus: {len(d)} | con tags (score>0): {relevant} | esta semana: {len(new_papers)} ({latest})')
