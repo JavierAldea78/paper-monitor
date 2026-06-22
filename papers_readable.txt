@@ -1,5 +1,5 @@
 TECH VIGILANCE MONITOR - MSM R&D
-Last updated: 2026-06-15
+Last updated: 2026-06-22
 Total papers: 500
 
 ========================================
@@ -34,15 +34,6 @@ JOURNAL: Current microbiology
 YEAR: 2026
 DOI: https://doi.org/10.1007/s00284-026-04986-z
 ABSTRACT: This study aimed to evaluate the biofunctional and selective anticancer potential of cell-free supernatants obtained from Lactiplantibacillus plantarum S61 fermented on two carbon sources: glucose (Glu) and xylooligosaccharides (XOS). High-performance liquid chromatography (HPLC) analysis revealed significant production of vitamin B2 (8.66 ± 0.11 and 8.05 ± 0.06 mg/L for Glc and XOS,…
-
----
-
-PAPER: Gut microbiome-mediated bioactive ingredients and health benefits of medicinal and edible fermented products: A comprehensive review.
-AUTHORS: Liu Chuntian, Zhang Song, Yue Qiulin
-JOURNAL: Folia microbiologica
-YEAR: 2026
-DOI: https://doi.org/10.1007/s12223-026-01468-4
-ABSTRACT: Fermented foods and beverages represent dynamic biological ecosystems that integrate microbial communities, bioactive metabolites, and host interactions to promote health across nutritional, functional, and therapeutic domains. This comprehensive narrative review synthesizes current evidence on medicinal and edible fermented products, focusing on their bioactive generation, molecular mechanisms,…
 
 ---
 
@@ -147,15 +138,6 @@ ABSTRACT: This study evaluates the impact of thermal processing and fermentation
 
 ---
 
-PAPER: IntAct-U-ExM enables super-resolution imaging of isoform-specific actin networks across species.
-AUTHORS: Dhar A, Dey S, Mullick S et al.
-JOURNAL: 
-YEAR: 2026
-DOI: https://doi.org/10.1371/journal.pbio.3003832
-ABSTRACT: Expansion microscopy (ExM) has revolutionized super-resolution imaging in cell biology due to its simple and inexpensive workflow. The use of ExM has revealed several novel insights into the nanoscale architectures of cellular protein complexes, especially the microtubule cytoskeleton in model and non-model systems. Despite tremendous progress in expansion microscopy protocols that preserve…
-
----
-
 PAPER: Dynamic diversification of lignan metabolism in sesame via coordinated oxygenation and glucosylation across germination.
 AUTHORS: Harada E, Ohba Y, Ono E et al.
 JOURNAL: 
@@ -219,15 +201,6 @@ ABSTRACT: Water deficit is considered one of the most significant factors limiti
 
 ---
 
-PAPER: Redox signals and oxidative stress in the control of mitochondrial protein import.
-AUTHORS: Hasberg L, Lauterbach VK, Ochsenreiter T et al.
-JOURNAL: 
-YEAR: 2026
-DOI: https://doi.org/10.1002/pro.70665
-ABSTRACT: Mitochondrial protein import is essential for organelle biogenesis and cellular homeostasis. It operates in an environment that is intrinsically shaped by redox chemistry. Mitochondria are major sources of reactive oxygen species (ROS), which arise as by-products of oxidative phosphorylation. Cells therefore maintain sophisticated ROS-handling systems, including compartmentalized antioxidant…
-
----
-
 PAPER: Significance of GSH and H&lt;sub&gt;2&lt;/sub&gt;S regulation for cancer: an intricate interplay between diet, microbiota, metabolic reprogramming, and immune health.
 AUTHORS: Majumder A, Majumder S, Bano S et al.
 JOURNAL: 
@@ -273,15 +246,6 @@ ABSTRACT: Pseudomonas aeruginosa is an opportunistic pathogen responsible for se
 
 ---
 
-PAPER: Antioxidant, antibacterial, in vitro, and in silico α-glucosidase inhibition activities and chemical profiling of Usnea cornuta Korb.
-AUTHORS: Karki D, Phunyal A, Lamichhane TR et al.
-JOURNAL: 
-YEAR: 2026
-DOI: https://doi.org/10.1371/journal.pone.0351423
-ABSTRACT: The total phenolic content and flavonoid content of the Usnea cornuta extract were evaluated as 210.31 ± 2.87 mg GAE/g and 22.42 ± 0.78 mg QE/g, respectively. The crude extract exhibited strong antioxidant activity (IC50: 32.91 ± 1.27 µg/mL) and notable anti-diabetic effects via α-glucosidase inhibition, with IC50 values of 2.59 ± 2.23 µg/mL for the dichloromethane extract. LC-MS analysis…
-
----
-
 PAPER: Green Biosynthesis of Bioactive Streptomyces Metabolites Using Edible Mushrooms: Implications for Glycemic Control and Hepatic Protection in Diabetic Rats.
 AUTHORS: Nageye YA, Ali AS, Bello KE.
 JOURNAL: 
@@ -324,15 +288,6 @@ JOURNAL: eLife
 YEAR: 2026
 DOI: https://doi.org/10.7554/elife.101517
 ABSTRACT: Bacteria precisely regulate the place and timing of their cell division. One of the best-understood systems for division site selection is the Min system in <i>Escherichia coli</i>. In <i>E. coli</i>, the Min system displays remarkable pole-to-pole oscillation, creating a time-averaged minimum at the cell's geometric center, which marks the future division site. Interestingly, the Gram-positive…
-
----
-
-PAPER: Optimization of solid-state fermentation process of diets and its effects on growth performance and intestinal function in growing pigs.
-AUTHORS: Ji M, Liu J, Wang Q et al.
-JOURNAL: Animal microbiome
-YEAR: 2026
-DOI: https://doi.org/10.1186/s42523-026-00540-1
-ABSTRACT: Biological fermentation can improve animal growth performance and meat quality by optimizing feed nutritional properties. However, the complex fermentation parameters require further systematic optimization. This study aimed to establish and optimize a solid-state fermentation (SSF) process, evaluate changes in the feed microbial community and flavor metabolites, and investigate…
 
 ---
 
@@ -678,24 +633,6 @@ ABSTRACT: The ketogenic diet (KD) is increasingly recognized as a promising ther
 
 ---
 
-PAPER: Reshaping of the electron transport chain and carbon metabolism by low-loading Fe₃O₄@PU for enhanced phenolic compounds degradation in an algal-bacterial biofilm system.
-AUTHORS: Fu Yanan, Zhuang Haifeng, Shi Jingxin
-JOURNAL: Journal of hazardous materials
-YEAR: 2026
-DOI: https://doi.org/10.1016/j.jhazmat.2026.142207
-ABSTRACT: While previous algal-bacterial biofilm systems without magnetite have shown limited resilience to high concentration phenolic compounds, this study demonstrates that introducing low loading (5%) nano-Fe₃O₄ substantially enhances degradation stability by optimizing electron transfer pathways. Four algal-bacterial reactors with varying Fe₃O₄ loadings (5-50%) were constructed using polyurethane…
-
----
-
-PAPER: Hydrocinnamic Acid From Candida albicans: Isolation, Characterization, and Antibacterial Activity Against Multidrug-Resistant Bacteria.
-AUTHORS: Kaviraj M, Jayappriyan KR, Raja R.
-JOURNAL: 
-YEAR: 2026
-DOI: https://doi.org/10.1002/bmc.70505
-ABSTRACT: Microbial secondary metabolites remain an important source of structurally diverse bioactive compounds with huge therapeutic potential. Yeasts, particularly Candida albicans, possess remarkable metabolic plasticity; thus, it paves the way for identifying antibacterial substances from their extracellular metabolome as it remains underexplored. In the present study, a semi-preparative…
-
----
-
 PAPER: Engineering Cellobiose Phosphorylase toward Lactose with Its Application to the Biosynthesis of Lacto-N-Biose.
 AUTHORS: Fang Hao, Li Yuan, Cheng Haotian et al.
 JOURNAL: Journal of agricultural and food chemistry
@@ -786,15 +723,6 @@ ABSTRACT: The aim of this study was to investigate the molecular mechanisms by w
 
 ---
 
-PAPER: Three novel flavonoid glycosides from Zanthoxylum bungeanum: Isolation, identification and in vitro metabolism by intestinal microbiota for potential food development.
-AUTHORS: Li Aijun, He Zhao, Li Yalan
-JOURNAL: Food research international (Ottawa, Ont.)
-YEAR: 2026
-DOI: https://doi.org/10.1016/j.foodres.2026.118989
-ABSTRACT: To explore the bioactive flavonoid components in Zanthoxylum bungeanum pericarp and their intestinal functional characteristics, while supporting its development as a functional food ingredient, this study employed preparative high-performance liquid chromatography (Pre-HPLC)/analytical high-performance liquid chromatography (HPLC) for separation, combined with ultra-performance liquid…
-
----
-
 PAPER: Bidirectional modulation of microbial communities by tea polyphenols and gallic acid enhances quality in dry fermented sausages.
 AUTHORS: Xia Yumeng, Kuda Takashi, Zhou Qin
 JOURNAL: Food research international (Ottawa, Ont.)
@@ -858,21 +786,84 @@ ABSTRACT: We evaluated five Lachancea thermotolerans strains (F108, F111, A54, L
 
 ---
 
-PAPER: Safe and resource-aware microbial design for food production.
-AUTHORS: Oh Juyoung, Jiménez José I, Kim Juhyun
-JOURNAL: Current opinion in biotechnology
-YEAR: 2026
-DOI: https://doi.org/10.1016/j.copbio.2026.103529
-ABSTRACT: Precision fermentation is redefining microbial food manufacturing by enabling programmable biosynthesis of nutrients and functional ingredients. Despite this progress, industrial-scale deployment is limited by metabolic burden, growth-production trade-offs, biosafety concerns, and the costs of downstream processing. Conventional intracellular systems inherently generate host-derived impurities…
+PAPER: Soil-borne diseases in medicinal plants: linking allelopathy and host immunity to microbiome-based interventions
+AUTHORS: Quan W, Qi Y, Liu Y et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
 
 ---
 
-PAPER: Ulvan acts as a prebiotic polysaccharide enhancing the production of indoles and short-chain fatty acids in vitro: a metabolomics study.
-AUTHORS: Zonfrillo Beatrice, M S Ambrosio Carmen, Mulinacci Nadia et al.
-JOURNAL: Food chemistry
+PAPER: RNA-protein complexes as key regulators of plant secondary metabolism: Biophysical interactions and functional significance
+AUTHORS: Ugwu O, Ugwu M, Onohuean H et al.
+JOURNAL: 
 YEAR: 2026
-DOI: https://doi.org/10.1016/j.foodchem.2026.149100
-ABSTRACT: This study investigated the fermentability and prebiotic potential of ulvan, a sulfated polysaccharide from Ulva lactuca L., using an in vitro human colonic fermentation model. Targeted metabolomics quantified SCFA and tryptophan-derived metabolites to assess saccharolytic activity and fiber-driven modulation of amino acid metabolism. Ulvan supplementation significantly stimulated SCFA…
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Probiotic-driven modifications in structural properties enhance protein digestibility and amino acid availability in yogurt
+AUTHORS: Yu C, Li S, Qin X et al.
+JOURNAL: 
+YEAR: 2026
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Comparative Genomic and Metabolomic Characterization of Lactiplantibacillus plantarum LP140 and Bifidobacterium breve BB010 Reveals Distinct Extracellular Metabolic Signatures with Potential Relevance to Gut–Brain Axis-Associated Functions
+AUTHORS: Aleksandrzak-Piekarczyk T, Szczepankowska AK, Radkiewicz M
+JOURNAL: 
+YEAR: 2026
+DOI: https://doi.org/10.21203/rs.3.rs-9465199/v1
+ABSTRACT: <title>Abstract</title>  <p>  Background.  The microbiota-gut-brain axis is increasingly recognized as an important route through which intestinal bacteria may influence neurophysiology, behavior, and mental health. In this context, psychobiotics are defined as strains capable of affecting gut-brain signaling through the production or modulation of neuroactive, metabolic, and immunoregulatory…
+
+---
+
+PAPER: Biomass and precision fermentation inputs for cultivated meat: Advances, sustainability, food safety, and techno-economic perspectives.
+AUTHORS: Manzoki Maria Clara, Weber Mariana Zanlorenzi, Dos Santos Costa Gabriela
+JOURNAL: Food research international (Ottawa, Ont.)
+YEAR: 2026
+DOI: https://doi.org/10.1016/j.foodres.2026.118904
+ABSTRACT: Fermentation technologies such as biomass and precision fermentation are emerging as scalable routes to supply key inputs for cultivated meat (CM) production. This review synthesizes scientific literature together with an industry landscape analysis to critically evaluate how fermentation-derived ingredients can reduce CM costs, improve scalability, and enhance product quality. We first position…
+
+---
+
+PAPER: Integrative genomics reveals Pichia kluyveri's potential for enhanced flavor compounds production during alcoholic fermentation.
+AUTHORS: Huang Lingxuan, Yang Chao, Ge Qian et al.
+JOURNAL: Food microbiology
+YEAR: 2026
+DOI: https://doi.org/10.1016/j.fm.2025.105007
+ABSTRACT: Aroma formation during alcoholic fermentation is largely driven by yeast metabolism. Non-Saccharomyces strains have attracted increasing attention for their ability to enhance flavor diversity and sensory complexity. In this study, three non-Saccharomyces strains-Hanseniaspora uvarum QTX22, Metschnikowia pulcherrima YC-15, and Pichia kluyveri QTX15-were isolated from Marselan wine. Whole-genome…
+
+---
+
+PAPER: Modernizing mageu fermentation through the use of defined Lactobacillaceae starter cultures with potential functional applications
+AUTHORS: Hartzenberg-Aeroe K, Kullin B, Passmore J et al.
+JOURNAL: 
+YEAR: 2026
+DOI: https://doi.org/10.21203/rs.3.rs-9605081/v1
+ABSTRACT: <title>Abstract</title>  <p>  Mageu is a non-alcoholic fermented cereal beverage widely consumed in Southern Africa. It is traditionally produced via spontaneous fermentation using inocula originating from a variety of sources, but is increasingly manufactured using defined starter cultures to improve product consistency, safety, and shelf-life. As part of ongoing efforts to modernize traditional…
+
+---
+
+PAPER: Efficient production of l-tryptophan by dynamic regulation of the intracellular l-Gln:l-Ser ratio in Escherichia coli.
+AUTHORS: Zhou Qiang, Jiang Yuchen, Liu Jia et al.
+JOURNAL: Bioresource technology
+YEAR: 2026
+DOI: https://doi.org/10.1016/j.biortech.2026.135025
+ABSTRACT: l-Tryptophan (l-Trp), an essential amino acid for humans and animals, is extensively used in the pharmaceutical, food, and feed industries. In order to further increase the production efficiency of l-Trp in E. coli, the metabolic bottlenecks (phosphoenolpyruvate, shikimate, l-Glutamine, and l-Serine) were identified by integrating intracellular metabolite profiling and transcriptional analysis.…
+
+---
+
+PAPER: Analysis of different fermentation processes of jujube-hawthorn fermented beverage based on untargeted metabolomics and GC-MS.
+AUTHORS: Xing Zhibin, Li Yueyao, Huang Hao et al.
+JOURNAL: Food research international (Ottawa, Ont.)
+YEAR: 2026
+DOI: https://doi.org/10.1016/j.foodres.2026.118919
+ABSTRACT: In this study, we compared two processes: "Lactobacillus single fermentation 36 h→ inactivation→yeast re-fermentation (InLA)" and "Lactobacillus-yeast simultaneous co-fermentation (LSA)," using jujube and hawthorn composite juice as the substrate. We applied non-targeted liquid chromatography tandem mass spectrometry (LC-MS/MS), gas chromatography mass spectrometry (GC-MS), and kyoto encyclopedia…
 
 ---
 
@@ -907,15 +898,6 @@ ABSTRACT: Anaerobic digestion (AD) of agro-industrial residues supports the gree
 
 ---
 
-PAPER: Oligosaccharide prebiotics in functional foods and therapeutics: innovations and challenges.
-AUTHORS: Sandra KS, Vithalkar MP, Beere V et al.
-JOURNAL: 3 Biotech
-YEAR: 2026
-DOI: https://doi.org/10.1007/s13205-026-04776-1
-ABSTRACT: Oligosaccharide prebiotics, such as inulin, fructooligosaccharides (FOS), and galactooligosaccharides (GOS), have demonstrated significant effects on gut microbiota and host health across in vitro, animal, and clinical studies. These studies consistently report an increase in beneficial bacteria, particularly Bifidobacterium and Lactobacillus, leading to higher production of short-chain fatty…
-
----
-
 PAPER: The Gut-Brain Axis in Comorbidity of Inflammatory Bowel Disease and Anxiety/Depression: Mechanisms, Controversies, and Future Directions.
 AUTHORS: Cui Y, Huang Y.
 JOURNAL: 
@@ -925,30 +907,12 @@ ABSTRACT: Inflammatory bowel disease (IBD), including Crohn's disease (CD), ulce
 
 ---
 
-PAPER: Application of biosensors in research of traditional Chinese medicine: a systematic review.
-AUTHORS: Du S, Zhang F, Yan X et al.
-JOURNAL: Chinese medicine
-YEAR: 2026
-DOI: https://doi.org/10.1186/s13020-026-01417-w
-ABSTRACT: As advanced analytical tools, biosensors combine biological recognition elements with physicochemical transducers, enabling the sensitive and selective detection of target analytes. As research in traditional Chinese medicine (TCM) continues to deepen and shift toward holistic and functional evaluation, biosensors offer significant promise due to their high sensitivity, strong specificity, high…
-
----
-
 PAPER: Production of anti-inflammatory and antidiabetic oligosaccharides from okra mucilage through one-step microbial fermentation.
 AUTHORS: Ahmad A, Khan IU, Jamil Y et al.
 JOURNAL: PloS one
 YEAR: 2026
 DOI: https://doi.org/10.1371/journal.pone.0351134
 ABSTRACT: Plant-based natural products are increasingly being explored as safer and more sustainable alternatives than synthetic drugs for controlling globally rising chronic health conditions, including inflammation and diabetes. Microbial fermentation has long been used to enhance the value and bioactivity of natural products. In this study, we produced bioactive oligosaccharides from okra (Abelmoschus…
-
----
-
-PAPER: Molecularly Imprinted Polymer (MIP)-Based Electrochemical Sensors for Pharmaceutical Detection in Wastewater: Imprinting Strategies, Analytical Performance, and Challenges.
-AUTHORS: Mnyandu H, Mahlambi P, Vestergaard MC.
-JOURNAL: Sensors (Basel, Switzerland)
-YEAR: 2026
-DOI: https://doi.org/10.3390/s26113600
-ABSTRACT: Molecularly imprinted polymers (MIPs) have emerged as robust and versatile recognition elements for electrochemical sensing due to their high chemical and mechanical stability, cost-effective fabrication, and excellent selectivity toward target analytes. In recent years, MIP-based electrochemical sensors have gained significant attention for the detection of pharmaceutical contaminants in…
 
 ---
 
@@ -1024,15 +988,6 @@ ABSTRACT: <h4>Background</h4>Sleep is crucial for recovery and optimal performan
 
 ---
 
-PAPER: Efficient hydrolysis of glycosides by Pichia kudriavzevii with high-activity β-glucosidase: a critical role in enhancing terpene aroma in beer.
-AUTHORS: Yuan Lin, Hou Xiaoping, He Yang et al.
-JOURNAL: Food chemistry
-YEAR: 2026
-DOI: https://doi.org/10.1016/j.foodchem.2026.149138
-ABSTRACT: Beer aroma is strongly influenced by terpenes, many of which exist in hops as non-volatile glycosides. β-Glucosidase (BGL) can release these bound terpenes, but its role in brewing remains underexplored. In this study, twelve non-Saccharomyces yeasts were screened, and Pichia kudriavzevii KD4 was identified as the best BGL producer. Co-fermentation with Saccharomyces cerevisiae US05 under…
-
----
-
 PAPER: Real-Time Biomass Estimation in High-Density Yeast Fermentations Using Soft Sensor Modeling.
 AUTHORS: Del Hierro Ana G, Checa-Barrera José Luis, Moreno-Cid Juan A et al.
 JOURNAL: Biotechnology and bioengineering
@@ -1051,15 +1006,6 @@ ABSTRACT: The anaerobic/aerobic/anoxic (AOA) process involves the inevitable con
 
 ---
 
-PAPER: Synergistic effects of simultaneous and sequential fermentation by non-Saccharomyces yeasts and lactic acid bacteria on nutritional and aroma profiles of low-alcohol pomegranate beverages.
-AUTHORS: Feng Sinuo, Bi Pengfei, Yan Wanju
-JOURNAL: Journal of the science of food and agriculture
-YEAR: 2026
-DOI: https://doi.org/10.1002/jsfa.70563
-ABSTRACT: <h4>Background</h4>Mixed-culture fermentation improves polyphenol accumulation and aroma biosynthesis in fruit beverages through microbial synergism. The strain-specific and inoculation time-dependent effects of such synergism, however, remain unexplored in pomegranate beverage fermentation.<h4>Results</h4>Two indigenous non-Saccharomyces yeasts were combined with two lactic acid bacteria (LAB)…
-
----
-
 PAPER: Emerging Waste Valorization Pathway with Aerobic Granular Sludge: Prospective Life Cycle Assessment for Türkiye.
 AUTHORS: Fereidani Bahar M, Yilmaz Gulsum, Eljamal Ramadan
 JOURNAL: Bioresource technology
@@ -1075,15 +1021,6 @@ JOURNAL: Bioresource technology
 YEAR: 2026
 DOI: https://doi.org/10.1016/j.biortech.2026.134413
 ABSTRACT: Microbial electrolysis cells (MECs) offer a promising approach for wastewater treatment while enabling the simultaneous production of hydrogen or other high-value compounds. Nonetheless, bioelectrochemical technologies, particularly microbial electrolysis cells, have not yet reached commercial viability. This study investigates the critical influence of architecture on flat-plate MEC performance…
-
----
-
-PAPER: Effect of packaging-induced oxygen microenvironments on the viability and metabolism of Lactobacillus paracasei in yogurt.
-AUTHORS: Sun Tao, Ren Siying, Ouyang Jiaqi
-JOURNAL: Food chemistry
-YEAR: 2026
-DOI: https://doi.org/10.1016/j.foodchem.2026.149078
-ABSTRACT: This study developed stirred probiotic yogurt co-fermented with Lactobacillus paracasei MBH3-2 and evaluated the protective effects of packaging materials with different oxygen transmission rates (OTR) on yogurt during storage. The addition of Lactobacillus paracasei MBH3-2 shortened fermentation time, improved physicochemical properties, and promoted the accumulation of functional metabolites.…
 
 ---
 
@@ -1129,6 +1066,15 @@ JOURNAL: Bioresource technology
 YEAR: 2026
 DOI: https://doi.org/10.1016/j.biortech.2026.134994
 ABSTRACT: Narirutin, a bioactive flavanone-7-O-disaccharide with antioxidant and lipid-lowering properties, is conventionally obtained via plant extraction, which suffers from low yields and seasonal dependence. In this study, we engineered Saccharomyces cerevisiae for de novo narirutin biosynthesis by partitioning the biosynthetic pathway into discrete functional modules for a stepwise optimization.…
+
+---
+
+PAPER: Influence of Wort Composition and Fermentation Parameters on Metabolic Activity of Non-Saccharomyces Yeast in Non-Alcoholic and Low-Alcohol Brewing
+AUTHORS: Mohini Basu, Ryan J. Elias, Darrell W. Cockburn
+JOURNAL: Beverages
+YEAR: 2026
+DOI: https://doi.org/10.3390/beverages12030033
+ABSTRACT: As consumer attitudes shift, non-alcoholic and low-alcohol beers (NABLABs) have grown rapidly in popularity. This has driven interest in biological production methods that avoid the cost and flavor damage associated with post-fermentation dealcoholization. This review focuses on how barley wort composition and process conditions shape the metabolism of maltose- and maltotriose-negative…
 
 ---
 
@@ -1339,15 +1285,6 @@ ABSTRACT: This study introduced freeze-withering to resolve the conflict in trad
 
 ---
 
-PAPER: Fast and Sensitive Measurement of Off-Flavors in Recirculating Aquaculture Systems.
-AUTHORS: Noguera PM, Holt S, Podduturi R et al.
-JOURNAL: 
-YEAR: 2026
-DOI: https://doi.org/10.1002/rcm.70085
-ABSTRACT: <h4>Rationale</h4>Geosmin and 2-methylisoborneol (2-MIB) are odor-active compounds responsible for earthy off-flavors in fish, creating significant quality concerns in recirculating aquaculture systems (RAS). Their extremely low odor thresholds make rapid and highly sensitive detection essential for maintaining product quality and consumer acceptance in aquaculture production.<h4>Methods</h4>A…
-
----
-
 PAPER: &lt;i&gt;Lavandula angustifolia&lt;/i&gt; as a dual pharmacological system: from essential oil to polyphenol-rich biomass.
 AUTHORS: Nechepurenko V, Georgiyants V, Prokopenko Y et al.
 JOURNAL: 
@@ -1381,15 +1318,6 @@ JOURNAL: Foods (Basel, Switzerland)
 YEAR: 2026
 DOI: https://doi.org/10.3390/foods15112036
 ABSTRACT: Black rice is abundant in polyphenolic antioxidants, but conventional thermal processing degrades these heat-sensitive compounds, limiting their bioactivity. Although single-strain fermentation can improve the extraction of bioactive components, it remains challenging to simultaneously balance the flavor and bioactivity of fermented black rice products. Low-temperature co-fermentation with yeast…
-
----
-
-PAPER: Uncovering how selected potent bacteriocins reshape the broiler chicken gut microbiome in a PolyFermS continuous in vitro model.
-AUTHORS: Mamjoud A, Zirah S, Rebuffat S et al.
-JOURNAL: Journal of animal science and biotechnology
-YEAR: 2026
-DOI: https://doi.org/10.1186/s40104-026-01431-w
-ABSTRACT: <h4>Background</h4>Bacteriocins are promising alternatives to antibiotics in poultry production, offering pathogen control with minimal disruption to gut microbiota and reduced risk of resistance dissemination. This study compared the impact of three bacteriocins-microcin J25, nisin Z, and pediocin PA-1-against bacitracin as a positive control, specifically evaluating their effects on gut…
 
 ---
 
@@ -1501,15 +1429,6 @@ ABSTRACT: <h4>Background</h4>Marsupialization is a conservative treatment for od
 
 ---
 
-PAPER: Beyond metagenomics: culturomics uncovers aerobic and facultative anaerobic bacterial diversity in the camel gut.
-AUTHORS: Abedini R, Salekdeh GH, Hashemi M.
-JOURNAL: 
-YEAR: 2026
-DOI: https://doi.org/10.1186/s42523-026-00547-8
-ABSTRACT: While metagenomics has transformed our view of microbial ecosystems, culture-based methods remain indispensable for accessing microbial functionality and biotechnological potential. In this study, we applied a culturomics strategy to explore the diversity, abundance, and distribution of culturable aerobic and facultative anaerobic bacteria along the gastrointestinal tract of dromedary camels…
-
----
-
 PAPER: CLPX acquires an iron-sulfur cluster to sustain mitochondrial proteostasis in cancer cells.
 AUTHORS: Huang C, Zhang Y, Gao H et al.
 JOURNAL: 
@@ -1615,15 +1534,6 @@ JOURNAL:
 YEAR: 2026
 DOI: https://doi.org/10.3390/foods15112040
 ABSTRACT: Obesity and its metabolic complications represent a major global health challenge, and food-derived bioactive peptides are emerging as promising dietary interventions. In this study, two hemp seed protein-derived tetrapeptides with pancreatic lipase (PL) and cholesterol esterase (CE) inhibitory activity, APAM and RLPA, were co-administered with a high-fat diet (HFD) to male C57BL/6J mice at 25…
-
----
-
-PAPER: From Intention to Execution: Pre-Race Nutrition Behaviours, Influences, and Performance Outcomes in Female Endurance Athletes at the IRONMAN World Championships.
-AUTHORS: Fortis HO, Whitehead AE, Cronin CJ et al.
-JOURNAL: 
-YEAR: 2026
-DOI: https://doi.org/10.1002/ejsc.70193
-ABSTRACT: Endurance competition preparation involves complex psychological, logistical, and sociocultural factors. This study investigated the pre-race nutrition practices of female endurance athletes, by applying a newly developed extended Theory of Planned Behaviour, including behavioural execution to the framework to capture real-world influences (ETPB-X). Using a convergent mixed-methods design, 27…
 
 ---
 
@@ -1843,15 +1753,6 @@ ABSTRACT: The emergence of novel pharmaceutical formulations requires the establ
 
 ---
 
-PAPER: Coupling of cargo to the autophagy receptor is a critical step in ER-phagy.
-AUTHORS: Chen S, Banerjee S, Liu D et al.
-JOURNAL: Science advances
-YEAR: 2026
-DOI: https://doi.org/10.1126/sciadv.aee9856
-ABSTRACT: During cell stress, endoplasmic reticulum autophagy (ER-phagy) receptors remodel the ER by sequestering membrane proteins (cargo) into autophagosomes for degradation. The conserved ER-phagy receptor, Atg40, contains a motif that binds to Atg8 and a reticulon homology domain that is needed for vacuolar/lysosomal delivery. Cargo capture, however, requires the Atg40 binding partner Lst1/SEC24C. To…
-
----
-
 PAPER: Novel therapeutic strategies for osteoarthritis: from mechanistic insights to precision medicine.
 AUTHORS: Umar M, Wang Z, Li J et al.
 JOURNAL: 
@@ -2059,15 +1960,6 @@ ABSTRACT: The aim of this research was to identify the wealth of secondary metab
 
 ---
 
-PAPER: Embodied Intelligence for Soil Health toward Sustainable Smart Agriculture: Sensing the Soil with Flexible Geotextiles Sensors.
-AUTHORS: Yilmaz AF, Tekcin M, Kilic B et al.
-JOURNAL: 
-YEAR: 2026
-DOI: https://doi.org/10.1002/gch2.70117
-ABSTRACT: The integration of agriculture and Internet of Things (IoT) technology has transformed traditional farming into data-driven, automated, and highly interactive systems. Central to this evolution are sensor platforms that monitor soil conditions and environmental parameters such as moisture, temperature, pH, nutrients, and pollutants. Recent progress in flexible electronics and smart functional…
-
----
-
 PAPER: Safety evaluation of the food enzyme glucan 1,4-α-glucosidase from the non-genetically modified &lt;i&gt;Aspergillus niger&lt;/i&gt; strain AE-GN.
 AUTHORS: EFSA Panel on Food Enzymes (FEZ), Zorn H, Barat Baviera JM et al.
 JOURNAL: EFSA journal. European Food Safety Authority
@@ -2167,15 +2059,6 @@ ABSTRACT: <h4>Key message</h4>Cork oak aquaporins exhibit diverse functional rol
 
 ---
 
-PAPER: SUCNR1 coordinates metabolic flux, mitochondrial function, and nutrient-dependent adaptation in hepatocytes.
-AUTHORS: Marsal-Beltran A, Salmerón-Pelado L, Ribas-Latre A et al.
-JOURNAL: 
-YEAR: 2026
-DOI: https://doi.org/10.1126/sciadv.aec8873
-ABSTRACT: Succinate, a mitochondrial metabolite, also functions as an extracellular signal through its receptor succinate receptor 1 (SUCNR1), coordinating responses to nutrient availability. The physiological role of SUCNR1 within hepatocytes, however, is unclear. We show that hepatic succinate levels and <i>Sucnr1</i> expression are dynamically regulated by nutritional status. Mice lacking <i>Sucnr1</i>…
-
----
-
 PAPER: Disrupting phage liquid crystalline droplets restores antibiotic susceptibility in Pseudomonas aeruginosa biofilms.
 AUTHORS: Tarafder AK, Graham M, Davis LK et al.
 JOURNAL: 
@@ -2221,24 +2104,6 @@ ABSTRACT: Food allergy, a worldwide health problem due to its rising prevalence,
 
 ---
 
-PAPER: A biodegradable low-voltage soft actuator with exceptional energy density and ultrafast response.
-AUTHORS: Shen W, Xu J, Wang F et al.
-JOURNAL: 
-YEAR: 2026
-DOI: https://doi.org/10.1126/sciadv.aec5692
-ABSTRACT: Soft actuators that integrate biodegradability, responsiveness to human-safe stimuli, and high actuation performance are highly desirable for next-generation biomedical devices. However, current systems fail to realize these attributes within a single platform. Here, we propose a microfibrillated cellulose (MFC)-based soft actuator incorporating a poly(ethylene glycol) (PEG) network to suppress…
-
----
-
-PAPER: Detection of a Target Nucleic Acid by Ligation-Assisted Fluorescence Enhancement of a Peptide Nucleic Acid (PNA) Twin Probe via Disulfide Binding.
-AUTHORS: Ouchi Y, Ishii K, Sato Y et al.
-JOURNAL: 
-YEAR: 2026
-DOI: https://doi.org/10.1002/bip.70105
-ABSTRACT: The development of methods for detecting specific nucleic acids is important for early diagnosis and treatment of diseases at the genetic level. We have developed a pair of pyrene (Pyr)-modified peptide nucleic acids (PNAs), PNA twin probe, as a tool for such detection. In this study, we prepared Pyr-PNAs containing chloroacetyl (-COCH<sub>2</sub>Cl) or thiol (-SH) groups at the termini by…
-
----
-
 PAPER: The Nutri-Exposome Intelligence Framework: Integrating Multi-Omics, Machine Learning, and Digital Nutrition for Precision Chronic Disease Prevention.
 AUTHORS: Ang MY, Choo SW.
 JOURNAL: 
@@ -2254,15 +2119,6 @@ JOURNAL:
 YEAR: 2026
 DOI: https://doi.org/10.3390/s26113603
 ABSTRACT: Recent advances in eye-tracking technologies have fostered growing interest in their integration with acoustic research for investigating auditory perception and human behavioral responses. This study presents a structured literature review of recent developments at the intersection of eye tracking and acoustics, with the aim of analyzing how eye-movement data can support the interpretation of…
-
----
-
-PAPER: Empowering rural governance with digital technology: Deep learning models for automated detection of rural buildings using remote sensing images.
-AUTHORS: Zhong J, Xie Y, Li L et al.
-JOURNAL: 
-YEAR: 2026
-DOI: https://doi.org/10.1371/journal.pone.0351311
-ABSTRACT: Building detection from drone imagery represents a transformative approach to rural governance by enabling precise spatial data acquisition for critical applications including illegal construction monitoring, disaster assessment, and cadastral mapping. However, automated detection systems face persistent challenges including extreme scale variations in rural buildings, complex background…
 
 ---
 
@@ -2284,15 +2140,6 @@ ABSTRACT: Wheat (<i>Triticum aestivum</i> L.), a key grain food crop worldwide, 
 
 ---
 
-PAPER: Restoration of endogenous electric fields with a glucose-powered symbiotic bioabsorbable bandage for diabetic wound healing.
-AUTHORS: Xu Lingling, Wang Engui, Ying Ming et al.
-JOURNAL: Science advances
-YEAR: 2026
-DOI: https://doi.org/10.1126/sciadv.aed9445
-ABSTRACT: Endogenous electric fields (EFs) are essential for tissue regeneration but are diminished under hyperglycemia conditions, thereby impeding diabetic wound healing. Here, we report a biodegradable, glucose-powered electronic fabric bandage (GEB) that restores wound-edge electrical fields and enables closed-loop wound healing. To avoid compromising clinical applicability, we integrated all…
-
----
-
 PAPER: Advances in Electrofusion Welding Technology for Polymeric Pipelines: From Process Optimization to Mechanism-Driven Control.
 AUTHORS: Hong B, Sun Z, Wu Z et al.
 JOURNAL: Polymers
@@ -2311,15 +2158,6 @@ ABSTRACT: The convergence of Software-Defined Networking (SDN) and Blockchain (B
 
 ---
 
-PAPER: Advances in molecular breeding of medicinal plants.
-AUTHORS: Wang Y, Jia X, Sun C et al.
-JOURNAL: 
-YEAR: 2026
-DOI: https://doi.org/10.1186/s43897-026-00252-9
-ABSTRACT: Medicinal plants are rich in bioactive constituents and are extensively utilized in the healthcare sector, holding significant value for both industrial and daily applications. In the context of economic development and escalating environmental challenges, there is an increasing societal demand for medicinal plants with superior quality and enhanced environmental adaptability. Molecular breeding…
-
----
-
 PAPER: Identification of genes controlling grain size in barley through RNA-seq and weighted gene co-expression network analysis.
 AUTHORS: Xie R, Wang Y, Yang M et al.
 JOURNAL: 
@@ -2335,15 +2173,6 @@ JOURNAL: EFSA journal. European Food Safety Authority
 YEAR: 2026
 DOI: https://doi.org/10.2903/j.efsa.2026.10129
 ABSTRACT: The food enzyme β-glucosidase (β-d-glucoside glucohydrolase; EC 3.2.1.21) is produced with the genetically modified <i>Trichoderma reesei</i> strain DP-Nyk114 by Genencor International B.V. The genetic modifications do not give rise to safety concerns. The food enzyme was considered free from viable cells of the production organism and its DNA. It is intended to be used in two food manufacturing…
-
----
-
-PAPER: The expanding role of protease therapeutics (2012-2026): from replacement therapies to immune system modulation and beyond.
-AUTHORS: Nelson SE, Martinusen SG, Pho R et al.
-JOURNAL: 
-YEAR: 2026
-DOI: https://doi.org/10.1042/bcj20260152
-ABSTRACT: Proteases are powerful therapeutic agents, offering unique advantages over conventional small molecules and biologics through their ability to directly and precisely cleave and (de)activate their protein targets. Since the early 1990s, FDA-approved protease therapeutics have served as replacement therapies for hematological disorders, as enzyme supplements for digestive disorders, and as…
 
 ---
 
@@ -2452,15 +2281,6 @@ JOURNAL:
 YEAR: 2026
 DOI: https://doi.org/10.7554/elife.111544
 ABSTRACT: Size is a fundamental property of cells that influences many aspects of their physiology. This is because cell size sets the scale for all subcellular components and drives changes in the composition of the proteome. Given that large and small cells differ in their biochemical composition, we hypothesized that they should also differ in how they respond to signals and make decisions. Here, we…
-
----
-
-PAPER: Circadian-Related Serotonin/Melatonin Level Modulates Cisplatin Ototoxicity Susceptibility Depended on NOS3-NO Pathway.
-AUTHORS: Qiu S, Cai S, Xie R et al.
-JOURNAL: 
-YEAR: 2026
-DOI: https://doi.org/10.1111/jpi.70154
-ABSTRACT: Hearing impairment is attributed to factors such as age, genetic predisposition, and environmental influences, among which environmental factors are considered modifiable. Among various environmental factors, the role of poor lifestyle habits is particularly critical, yet the specific mechanisms by which they contribute to hearing damage remain unclear. This study reveals that dysregulated…
 
 ---
 
@@ -3265,51 +3085,6 @@ ABSTRACT: The geraniol-derived (seco)iridoid skeleton serves as a fundamental pr
 
 ---
 
-PAPER: Dynamic yet functionally convergent microbial communities enable robust ammonia removal during long-term operation of a granular sludge bioreactor.
-AUTHORS: Zhang Yihui, Zou Xin, Yao Yiduo et al.
-JOURNAL: Environmental research
-YEAR: 2026
-DOI: https://doi.org/10.1016/j.envres.2026.124457
-ABSTRACT: The study investigates the long-term operation and optimization of mature leachate treatment, emphasizing ammonia removal amid seasonal influent variations. A granular sludge bioreactor was operated for over 600 days to assess its feasibility, stability, and response to seasonal fluctuations in leachate quality. Key performance parameters, including ammonia (NH4+-N), nitrite (NO2--N), and nitrate…
-
----
-
-PAPER: Treatment of waste activated sludge and the enhancement mechanism for electron transfer in an osmotic microbial fuel cell.
-AUTHORS: Li Shilong, Qi Lin, Gao Qiusheng et al.
-JOURNAL: Water research
-YEAR: 2026
-DOI: https://doi.org/10.1016/j.watres.2026.125808
-ABSTRACT: The osmotic microbial fuel cell (OsMFC) is a novel technology that can achieve electricity generation and water recovery while stabilizing and dewatering waste activated sludge (WAS). By examining electricity generation, WAS stabilization, microbial community shifts, meta-transcriptomic changes, and the enhancement mechanism of electron transfer, this study demonstrated significant advantages of…
-
----
-
-PAPER: Oxytocin attenuates fear learning via enhancing somatostatin interneuron-mediated local GABAergic inhibition in the prelimbic cortex.
-AUTHORS: Xu H, Li Y, Cui X et al.
-JOURNAL: 
-YEAR: 2026
-DOI: https://doi.org/10.1126/sciadv.aef8400
-ABSTRACT: Acute stress exposure can trigger post-traumatic stress disorder (PTSD). Prophylactic interventions may enhance psychological resilience against PTSD in high-risk occupations. Here, we demonstrate that pretreating with intranasal oxytocin exerts prolonged yet reversible attenuation of fear learning via oxytocin receptors (OxtRs) expressed in prelimbic cortex (PL). Crucially, both local PL…
-
----
-
-PAPER: Integrated assembly the multifunctional composite films using carbon dots greenly synthesized in situ on cellulose nanofibers for active fruit preservation.
-AUTHORS: Lan Lijuan, Cao Jiazhen, Li Zichen et al.
-JOURNAL: Food chemistry
-YEAR: 2026
-DOI: https://doi.org/10.1016/j.foodchem.2026.149119
-ABSTRACT: Cellulose nanofiber (CNF) is an excellent template, while Carbon dots (CDs), as zero-dimensional nanomaterials with outstanding characteristics, offer potential when composited with CNF. However, conventional synthesis of CDs/CNF composites suffer from inefficiency and poor interfacial compatibility. In this study, an innovative, green and efficient approach to synthesize CDs/CNF composite films…
-
----
-
-PAPER: Advancements in Microbial Applications for Sustainable Food Production.
-AUTHORS: Vermelho AB, Cardoso VDS, Domingos LTS et al.
-JOURNAL: 
-YEAR: 2025
-DOI: https://doi.org/10.3390/foods14193427
-ABSTRACT: This review consolidates recent advancements in microbial biotechnology for sustainable food systems. It focuses on the fermentation processes used in this sector, emphasizing precision fermentation as a source of innovation for alternative proteins, fermented foods, and applications of microorganisms and microbial bioproducts in the food industry. Additionally, it explores food preservation…
-
----
-
 PAPER: Updated trends in the global prevalence and burden of mental disorders, 1990-2023: a systematic analysis for the Global Burden of Disease Study 2023.
 AUTHORS: 
 JOURNAL: Lancet (London, England)
@@ -3382,15 +3157,6 @@ ABSTRACT: This study optimized ultrasound (US) parameters (duration, power, temp
 
 ---
 
-PAPER: Development, functional profiling, and probiotic evaluation of indigenous LAB from Nigerian fermented foods: Antimicrobial mechanisms, in vivo validation, and applications in food preservation and mycotoxin risk reduction.
-AUTHORS: Mafe Alice Njolke, Makut Makwin Danladi, Owuna Jibril Egwu et al.
-JOURNAL: World journal of microbiology & biotechnology
-YEAR: 2026
-DOI: https://doi.org/10.1007/s11274-026-05051-4
-ABSTRACT: Indigenous fermented foods are rich sources of functionally diverse lactic acid bacteria (LAB) and associated microorganisms with relevance to food safety, health promotion and sustainable bioprocessing. This study aimed to evaluate the probiotic potential of bacterial isolates recovered from selected Nigerian fermented foods. Bacterial isolates were molecularly identified by 16S rRNA gene…
-
----
-
 PAPER: Biofouling control by quorum quenching bacteria in membrane bioreactors for high strength wastewater treatment with doubled flux.
 AUTHORS: Wang Li, Zhang Meng, Xu Hui et al.
 JOURNAL: Journal of environmental sciences (China)
@@ -3418,15 +3184,6 @@ ABSTRACT: Short-chain fatty acids present relevant function in the human body as
 
 ---
 
-PAPER: Changes in ginseng wine flavor characteristics during fermentation with Saccharomyces cerevisiae.
-AUTHORS: Yao Shen, Li Yang, Zeng Xianwei et al.
-JOURNAL: Food chemistry
-YEAR: 2026
-DOI: https://doi.org/10.1016/j.foodchem.2026.149148
-ABSTRACT: Fermentation affects ginseng wine flavors. In this study, the kinetic profiles of volatile and non-volatile flavor compounds generated during the fermentation of ginseng wine were monitored by two-dimensional gas chromatography-time-of-flight mass spectrometry and liquid chromatography-mass spectrometry. A sensory analysis revealed that the sample fermented for 7 days had the best flavor balance…
-
----
-
 PAPER: Metabolic engineering strategies for neuroactive postbiotic production: Current progress and perspectives.
 AUTHORS: Basak Nitai
 JOURNAL: Journal of microbiological methods
@@ -3445,24 +3202,6 @@ ABSTRACT: This study presents the fabrication of arrowroot starch (ARS)-based bi
 
 ---
 
-PAPER: NiAl-LDH nanocomposite: a promising platform for non-enzymatic electrochemical detection of nicotinic acid in food samples.
-AUTHORS: Hyder Ali, Arain Muhammad Balal, Baig Jameel Ahmed et al.
-JOURNAL: Food chemistry
-YEAR: 2026
-DOI: https://doi.org/10.1016/j.foodchem.2026.149174
-ABSTRACT: Nicotinic acid (NA), a derivative of pyridine carboxylic acid, is a natural compound found in the vitamin B complex. It serves as an essential nutrient for humans and animals and is widely recognized for its role as an antilipidemic agent. This study aims to report on the development of a highly sensitive electrochemical sensor for the detection of NA using a glassy carbon electrode (GCE)…
-
----
-
-PAPER: Atomically dispersed Ru on 3D ordered macroporous In2O3 for highly sensitive electrochemical detection of organophosphate pesticides via enzyme inhibition.
-AUTHORS: Liang Na, Han Dongmei, Wang Zhihua et al.
-JOURNAL: Talanta
-YEAR: 2026
-DOI: https://doi.org/10.1016/j.talanta.2026.130140
-ABSTRACT: The detection of trace organophosphorus (OPs) pesticides is crucial yet remains challenging for environmental monitoring and food safety. Although enzyme-based electrochemical sensors provide good selectivity, their sensitivity is often limited by inefficient electron transfer and poor mass transport. Herein, we report a novel strategy that synergistically integrates a three-dimensionally ordered…
-
----
-
 PAPER: Transcription Factors: A Promising Third-Generation Core Sensing Element for Developing Low-Cost, On-Site Rapid Detection Technologies for Food Contaminants.
 AUTHORS: Mao Wenhui, Hu Liangshu, He Miao et al.
 JOURNAL: Journal of agricultural and food chemistry
@@ -3472,71 +3211,8 @@ ABSTRACT: Biosensors couple biological recognition elements with signal transduc
 
 ---
 
-PAPER: Development, Optimization, and Application of an Episomal Plasmid System for Rhodotorula toruloides.
-AUTHORS: Shi Longyuan, Xu Hao, Zhao Huimin
-JOURNAL: Metabolic engineering
-YEAR: 2026
-DOI: https://doi.org/10.1016/j.ymben.2026.102489
-ABSTRACT: Rhodotorula toruloides is an emerging oleaginous yeast with strong potential as a microbial cell factory for the production of acetyl-CoA-derived bioproducts. However, engineering of this organism has been limited by the absence of a functional episomal plasmid system, a foundational genetic tool for rapid gene expression, pathway testing, and CRISPR-based genome engineering. Here, we report the…
-
----
-
-PAPER: An Umbrella Review of Systematic Reviews of School-Based Nutrition Interventions to Determine Outcomes Used and Their Measurement Tools.
-AUTHORS: Olgacher D, Aldukair S, Clarke M et al.
-JOURNAL: 
-YEAR: 2026
-DOI: https://doi.org/10.1093/nutrit/nuaf144
-ABSTRACT: <h4>Context</h4>School-based nutrition interventions have the potential to promote dietary behaviors and other outcomes among children and adolescents. However, inconsistent reporting of outcomes and measurement tools limits evidence synthesis and the identification of effective intervention strategies.<h4>Objective</h4>This umbrella review aimed to synthesize the range of outcomes related to…
-
----
-
-PAPER: Dicaffeoylquinic acid alleviates alcoholic liver disease by targeting PLA2G4B and inhibiting the MAPK signaling pathway
-AUTHORS: Wang L, Wang H, Miao Y et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
 PAPER: Sulfoxaflor biodegradation: environmental fate, degrading microorganisms, and mechanisms of nitrile hydratase-mediated catalysis
 AUTHORS: Mou S, Li F, Guo J et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Upcycling of Commercial Biobased Polyester BioplasticsTurning Used or Spoiled Materials into Added-Value Products
-AUTHORS: 
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Advancements in diagnosis, preventive care, and future directions in the holistic management of pediatric asthma
-AUTHORS: Guo W, Li K.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Degradable Vinyl-Based Polymers by Radical Ring-Opening Polymerization: A User Guide
-AUTHORS: Luzel B, Kouider S, D’Agosto F et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Mixed-microbe solid-state fermentation modulates the physicochemical and aroma profiles of Eucommia ulmoides leaf
-AUTHORS: Gu B, Zhang W, Guo B et al.
 JOURNAL: 
 YEAR: 
 DOI: 
@@ -3562,53 +3238,8 @@ ABSTRACT:
 
 ---
 
-PAPER: Integrative metabolomics and molecular networking reveal the progressive metabolic continuum of resin formation in Dracaena cochinchinensis wood
-AUTHORS: Chen M, Cui Y, Su J et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: A holistic review of fatherhood in humans and non-human animals: mechanisms of fatherhood, effects on fathers themselves, and interactions of fathers with others
-AUTHORS: Bales K, Finnerty-Haggerty A, Guan J et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
 PAPER: Biomedical Technologies for Androgenic Alopecia Treatment: Advance, Mechanism and Future Direction
 AUTHORS: Cao X, Wu L, Wang J et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Effects of heat-treated Lactobacillus gasseri CP2305 on brain oscillatory activity and mental stress in healthy adults: a double-blind, randomized, crossover, placebo-controlled trial
-AUTHORS: Tanihiro R, Hosaka R, Sawada D et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Influence of oven-drying pre-treatment on the metabolic profile of extracts from brewer’s spent grains
-AUTHORS: Minestrini M, Zorzan S, Iken M et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Liraglutide and Dapagliflozin Synergistically Reshape Gut Microbiota and Metabolic Profiles to Ameliorate Type‑2 Diabetes in Mice
-AUTHORS: 
 JOURNAL: 
 YEAR: 
 DOI: 
@@ -3625,78 +3256,6 @@ ABSTRACT:
 
 ---
 
-PAPER: Navigating dose-effect complexities and challenges in cannabinoid therapy for aging-related neurobiological changes
-AUTHORS: Tudorancea I, Filipiuc L, Vieru D et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Potassium channel-targeted therapy in reducing vascular complications in diabetes mellitus: novel insights
-AUTHORS: Rajkovic J, Ribic A, Rekovic L et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Atractylenolide III for central nervous system disorders: a review of multi-target mechanisms and therapeutic potential
-AUTHORS: Li H, Zeng N, Ge L et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: GABA-mediated regulation of lipid metabolism: a conserved relation with diverse physiological significances
-AUTHORS: Pradhan S, Nava S, Hill K et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Alhagi honey polysaccharide ameliorates carbon tetrachloride-induced liver fibrosis via modulating the gut microbiota-liver metabolism axis
-AUTHORS: Song J, Zhao X, Cao L et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Jiangzhi ruanmai recipe alleviates atherosclerosis in ApoE−/− mice by regulating cholesterol metabolism involved in gut microbiota remodeling
-AUTHORS: Xie G, Zhang L, Yan A et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Microglial metabolic reprogramming drives the therapeutic effects of bavachinin on brain network function and memory in Alzheimer’s disease
-AUTHORS: Zou Y, Lin Y, Zhang C et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Nanoporous-based biomaterials in biomedical applications: from fundamentals and biosensing to drug delivery, wound healing, and tissue engineering
-AUTHORS: Saadatidizaji Z, Zare I, Zhang M et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
 PAPER: Fermentation with Lactobacillus reuteri and Lachancea fermentati improves the bioactivity and flavor-sensory characteristics of Rosa roxburghii Tratt. juice
 AUTHORS: Wang J, Zhu Q, Yu M et al.
 JOURNAL: 
@@ -3706,100 +3265,10 @@ ABSTRACT:
 
 ---
 
-PAPER: Enzymatic Synthesis of Aroma Ester Catalyzed by Lipases Immobilized on Activated Carbon Derived from Fermented Cocoa Bean Shells
-AUTHORS: Gonçalves M, Sampaio I, Oliveira P et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Forensic Tracing of Unknown Compounds at the Human–Environment Interface: An All-in-One LC–HRMS Strategy Guided by a Curated Methodological Database
-AUTHORS: MUNOZ A, BROTIER J, BARTHE L et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Characterization and antibacterial efficacy of Streptomyces sp. NELs-40 against Staphylococcus aureus
-AUTHORS: Rajaofera M, Li X, Wang W et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Bacterial cell-free supernatants as metabolite-based biostimulants for alleviating salinity stress in plants
-AUTHORS: Alrasheed R, Naamala J, Subramanian S et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: A review of pretreatment methods and detection techniques for nonylphenol
-AUTHORS: Yao H, Yu J, Xu J.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Reductive soil disinfestation alleviates continuous cropping obstacles in tobacco by reshaping microbial communities and improving soil properties in karst regions
-AUTHORS: Ding M, Shang N, Gong B et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: The intricate interplay of microbial metabolomics and carcinogenesis: a spotlight on mechanistic pathways, clinical implications and methodological challenges
-AUTHORS: Eysha M, Fouani M, Munir M et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Integrative multi-omics reveals genetic and transcriptomic determinants of aroma formation during alcoholic fermentation in Saccharomyces cerevisiae
-AUTHORS: Kim I, Kim S, Lee S et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
 PAPER: Upcycling clarified and decolorized red beet waste into a sustainable glucose syrup alternative for ice cream production
 AUTHORS: ElObeid T, Atalar İ, Tüzün B et al.
 JOURNAL: 
 YEAR: 2026
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Biocontrol potential of endophytic bacteria against Fusarium wilt pathogen (Fusariumoxysporum f. sp. ciceris) in chickpea
-AUTHORS: Likhita J, Arya M, Singh Y et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: The dialogue between breast cancer and microorganisms
-AUTHORS: Zeng Y, Jiang Y, Huang Y et al.
-JOURNAL: 
-YEAR: 
 DOI: 
 ABSTRACT: 
 
@@ -3823,53 +3292,8 @@ ABSTRACT:
 
 ---
 
-PAPER: Type A and D Clostridium perfringens with unique genetic evolution characteristics cause mortality in juvenile Bactrian camels
-AUTHORS: Ma W, Li Y, Yao H et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Deciphering macrophage molecular responses to Porphyromonas gingivalis outer membrane vesicles through combined immunoassay and Raman spectroscopic analyses
-AUTHORS: Matsuo Y, Son A, Gentile S et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Effects of feeding pelleted complete diets containing palm fronds on growth performance, nutrient digestibility, intraruminal fermentation, rumen histomorphology, carcass traits, and economic profitability in Awassi lambs
-AUTHORS: Alharthi A, Al-Baadani H, Alghonaim A et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Quality analysis of jujube wines as affected by jujube varieties for material
-AUTHORS: Yin R, Liang Z.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
 PAPER: Evaluating Cordyceps militaris capsules on post-bronchodilator FEV1 decline in patients with COPD: a study protocol for double-blind, randomized, placebo-controlled trial
 AUTHORS: Lin S, Liao T, Fan F et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Sustainable microalgae-based Docosahexaenoic Acid–Silver nanoparticles for biomedical applications
-AUTHORS: Ahmad A, Chokshi K, Anjum D et al.
 JOURNAL: 
 YEAR: 
 DOI: 
@@ -3886,87 +3310,6 @@ ABSTRACT:
 
 ---
 
-PAPER: Humic substances mitigate physiological and biochemical responses to waterlogging stress in snake cucumber (Cucumis melo var. flexuosus)
-AUTHORS: Ekinci M, Ors S, Turan M et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Synergistic effects of Bifidobacterium animalis subsp. lactis Ca360 and zinc sulfate on zinc transport, oxidative stress, and intestinal inflammation in zinc-deficient mice
-AUTHORS: Wang H, Yang J, Wu L et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Seasonal variation in fertility and milk production in dairy cattle under Mediterranean climate
-AUTHORS: D'hallewin J, Darabighane B, Frau A et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Assessing Biomass-Based Methanol Production via Electrified Gasification and Solar-Assisted CO2 Utilization
-AUTHORS: Jadoon U, Bhatnagar P, Flórez-Orrego D et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Genomic profiling of ESBL/AmpC-producing Escherichia coli from backyard poultry: resistome, virulome, plasmidome, and CRISPR-Cas insights
-AUTHORS: Nagaraja P, Mitra S, Murugesan D et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Long COVID as a network disorder: a mechanism-anchored framework for biological stratification and therapeutic targeting
-AUTHORS: Groysman R.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Control of residual maltose in low-alcohol beer produced by non-Saccharomyces yeast with enzymatic treatment
-AUTHORS: Basu M, Voloshchuk N, Simmons J et al.
-JOURNAL: 
-YEAR: 2026
-DOI: 
-ABSTRACT: Non-alcoholic and low-alcohol beer (NABLAB) production by maltose-negative non-Saccharomyces yeast (NSY) runs the risk of excessive sweetness due to the high residual maltose in the finished beer which may overshadow the unique flavors produced by the NSY. The goal of this study was to modify the fermentable sugar profile in wort to better suit maltose-negative NSY, resulting in low residual…
-
----
-
-PAPER: Engineering Pichia pastoris as a Heterologous Platform for Non-Ribosomal Peptide Biosynthesis of the β‑Lactam Intermediate δ‑(l‑α-Aminoadipyl)‑l‑cysteinyl‑d‑valine (ACV)
-AUTHORS: Jogi S, Jagtap R, Subrahmanyam Y et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Advances in post-translational and epigenetic modification of hyperuricemia-to-gout progression: mechanisms and therapeutic targets
-AUTHORS: Fu W, Xu X, Li X et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
 PAPER: Extraction method shapes the structure and fermentation behavior of white kidney bean episperm polysaccharides in gut microbiota of the elderly
 AUTHORS: Hu Y, Li X, Duan C et al.
 JOURNAL: 
@@ -3976,143 +3319,8 @@ ABSTRACT:
 
 ---
 
-PAPER: Managing the rumen hydrogen economy to improve feed efficiency and climate-smart livestock production
-AUTHORS: Kiadii O, Li L.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Reframing precision nutrition in irritable bowel syndrome: a mechanism-informed conceptual framework for responder prediction and clinical translation
-AUTHORS: Zhou Y, Li Z, Chu Y et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Function of molecular-weight-optimized Astragalus polysaccharides in cisplatin-caused acute kidney injury: mechanisms centered on gut microbiota regulation and precise treatment approaches
-AUTHORS: Li H, Li H, Wu R et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: The role of gut dysbiosis in endocrine and metabolic derangements of chronic kidney disease: mechanisms, controversies, and future perspectives
-AUTHORS: Ouyang Z, Hu W, Zhu F et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Multi-omics reveals circadian regulation of bone homeostasis by gut microbiota metabolites: mechanisms and chronotherapeutic implications
-AUTHORS: Liu M, Gong J, Liu Y et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Functional redundancy as a stabilizing principle in bacterial communities under antibiotic perturbation: mechanisms, trade-offs, and emerging frameworks
-AUTHORS: Ge J.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Root morphogenetic responses to waterlogging stress in plants: from structural reconfiguration to molecular regulatory mechanisms
-AUTHORS: Sha S, Zeng C, Shang X et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
 PAPER: Microbiome-orchestrated cross-organ immunity in autoimmunity: from metabolites to therapeutic targets
 AUTHORS: Rao X, Zou L, Cai X et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Synergistic effects of probiotics and low-FODMAP diet on clinical and inflammatory outcomes in ulcerative colitis: a retrospective cohort study
-AUTHORS: Jia S, Yu X, Bao B et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: The respiratory microbiome influences the occurrence of respiratory diseases in children
-AUTHORS: Zheng K, Zhou S, Liao S et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Probiotics: multifunctional microorganisms for human health and biotechnological applications
-AUTHORS: Ali M, Srivastava A, Arora P.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: The microbial nexus: linking arsenic biogeochemistry with greenhouse gas emissions
-AUTHORS: Wu Z, Li M, Liu C et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Ramadan intermittent fasting and the gut microbiome: modulation of diversity and implications for metabolic health
-AUTHORS: Shahbazi S, Aminzadeh S, Taati Moghadam M et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Breastfeeding and prevention of childhood obesity: a narrative review of behavioral, hormonal, and microbiome programming
-AUTHORS: Abu Dheir N, Radwan H, Hasan H et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: The microbiota–metabolite–immune axis in colorectal cancer: mechanistic insights and emerging clinical applications
-AUTHORS: Sun B, Wang T.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Gut microbial metabolites in colorectal cancer: dual roles in tumorigenesis, immune crosstalk, and therapeutic innovation
-AUTHORS: Jin Y, Zhu H, Fan J et al.
 JOURNAL: 
 YEAR: 
 DOI: 
@@ -4129,105 +3337,6 @@ ABSTRACT:
 
 ---
 
-PAPER: Dietary supplementation with postbiotics from Bifidobacterium animalis safely enhances multifunctional health in adult beagle dogs
-AUTHORS: Ma M, Zhang Y, Wang H et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: The landscape of cellular immune alteration in systemic lupus erythematosus
-AUTHORS: Xiao J, Duan L, Yang J et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Faecalibacterium prausnitzii ameliorates sepsis-induced acute lung injury via gut-lung axis by regulating arachidonic acid-LXA4-Nrf2-HO-1 pathway and restoring gut microecology
-AUTHORS: Feng X, Xu P, Li H et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Physical exercise therapy as an anti-aging strategy for osteosarcopenia: a narrative review
-AUTHORS: Liu T, Zhang P, Dong W et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Molecular mechanisms and structure—activity relationships of natural polysaccharides in ameliorating type 2 diabetes mellitus: a comprehensive review
-AUTHORS: Zhou Y, Yang R, Wang Q et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Mitochondrial dysfunction in Alzheimer’s disease: connecting pathophysiology with neuroimaging
-AUTHORS: Hu J, Lai J, Zhang B et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Metal-polyphenol nanomedicines for malignant tumor therapy
-AUTHORS: Li Z, Xin H, Chen J et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Exploring olive mill wastewater as a reservoir of antimicrobial and antioxidant compounds: insights from a cross-regional Moroccan study
-AUTHORS: Faiz K, Ghaffouli C, Assou S et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Mitochondrial dysfunction in Alzheimer’s disease: targeting the powerhouse with nanomedicine
-AUTHORS: Kang C, Zhou X, Li B et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Plant-derived bioactives, the gut–brain axis, and neurodegenerative diseases: mechanistic roles of diet–microbiota interactions
-AUTHORS: Reynolds A, Glenn E, Lavoie B et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: NLR inflammasome pathways: key targets for pathogenesis and therapy of metabolic diseases
-AUTHORS: Zhou J, Yang R, Zhu W et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
 PAPER: Berberis turcomanica berries: an integrated evaluation of antioxidant, enzyme inhibitory, and antimicrobial activities, phytochemical profile and in silico analysis
 AUTHORS: Korpayev S, Buluz E, Glamočlija J et al.
 JOURNAL: 
@@ -4237,8 +3346,8 @@ ABSTRACT:
 
 ---
 
-PAPER: Hydrogel-based neural engineering for skin wound healing
-AUTHORS: Zhang Y, Liu X, Wu G.
+PAPER: Extracellular vesicles in atopic dermatitis: unraveling pathogenic mediators and engineering therapeutic vectors
+AUTHORS: Tang W, Liao C, Xu H et al.
 JOURNAL: 
 YEAR: 
 DOI: 
@@ -4246,8 +3355,8 @@ ABSTRACT:
 
 ---
 
-PAPER: Integrating evidence-based lifestyle and adjunct therapies for long-term management of polycystic ovary syndrome: mechanistic insights and clinical implications
-AUTHORS: Nandagopal P, Jayakrishnan G, Varghese Kaithamattathil A et al.
+PAPER: Chloroplasts as ingredients for food: a review
+AUTHORS: Gray D, Sutcharit P, Wattanakul J et al.
 JOURNAL: 
 YEAR: 
 DOI: 
@@ -4255,8 +3364,8 @@ ABSTRACT:
 
 ---
 
-PAPER: Advances in antioxidant activities of edible mushroom polysaccharides: status, influencing factors, mechanisms, and applications
-AUTHORS: Zhu Y, He P, Zhao R et al.
+PAPER: Unlocking the future of food with the new paradigm of plant-based proteins
+AUTHORS: De Feo M, Conte A, Del Nobile M.
 JOURNAL: 
 YEAR: 
 DOI: 
@@ -4264,8 +3373,8 @@ ABSTRACT:
 
 ---
 
-PAPER: NovaBone Bioactive Glass for Oral Bone Regeneration: Mechanisms, Innovations, and Clinical Outcomes
-AUTHORS: Khan M, Mujawar A, Agrawal A et al.
+PAPER: Fabrication and characterization of an activated carbon–chitosan–graphene oxide hybrid membrane with hierarchical porosity for the simultaneous adsorptive removal of ciprofloxacin antibiotic and hazardous heavy metals from polluted water systems
+AUTHORS: El-Shalakany H, Samir I, Mubarak M.
 JOURNAL: 
 YEAR: 
 DOI: 
@@ -4273,8 +3382,8 @@ ABSTRACT:
 
 ---
 
-PAPER: Synthesis and In Vitro/In silico Evaluation of Novel 2‑Aryl-6-carboxamide-Substituted Benzoxazole Derivatives with Anticancer Effects and mTOR Inhibitory Potential
-AUTHORS: Hepokur C, Aykaç O, Misir S et al.
+PAPER: Semi-continuous adsorption-biocatalysis systems using waste-derived biochar functionalized with laccase for diclofenac removal from wastewater
+AUTHORS: Gouveia R, Almeida Â, Sousa É et al.
 JOURNAL: 
 YEAR: 
 DOI: 
@@ -4282,8 +3391,863 @@ ABSTRACT:
 
 ---
 
-PAPER: Preclinical Theranostic Study of 68Ga/177Lu/225Ac-Labeled Bicyclic Peptides Targeting Nectin‑4 in Lung Cancer
-AUTHORS: Chen H, Wan Y, Feng W et al.
+PAPER: Rebuilding the degenerative disc microenvironment: mesenchymal stem cells, exosomes, and bioengineered scaffolds
+AUTHORS: Guo D, Xiao L, Li H et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Parabolic flight induces site specific microbiome changes in women
+AUTHORS: Mathyk B, Shukla R, Kumar V et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: The 2R, 3R isomer of 2, 3-butanediol prevents weight gain and decreases plasma glucose concentration of mice fed a fat-enriched diet
+AUTHORS: Veeravalli S, Poolman T, Everett J et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Ball-milled zinc nickel sulfide nanostructures on nickel substrate for enhanced electrochemical methanol sensing
+AUTHORS: Roushdy N, Ramadan M, Yousef S et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Mo2CTx MXene-based non-enzymatic electrochemical sensor for selective detection of hydrogen peroxide in colorectal cancer cells
+AUTHORS: Venkataraman S, Magesh V, Govindasamy C et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: From microtissues to macro solutions – The future of scalable and automated cartilage tissue engineering
+AUTHORS: Menssen D, Vasilopoulou A, Abinzano F et al.
+JOURNAL: 
+YEAR: 2026
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: AI-Enabled Flexible Sensing Skin for Next-Generation Aircraft: Toward Embodied Intelligence
+AUTHORS: Ji J, Pan Y, Zhang Z et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Multimodal animal health monitoring in extensive livestock production systems
+AUTHORS: Zhao X, Liao Q, Wang D et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Transdisciplinary fetal-neonatal neurology training integrates women’s and children’s health with life-course brain capital strategies: a narrative review
+AUTHORS: Scher M, Adalat S, Eyre H et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Workload analysis of pilot steep turn maneuvers using SR20 aircraft and EEG data
+AUTHORS: Yuan J, Luo S, Zhang C et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Thermal stress-induced metabolic reprogramming in two hard coral species
+AUTHORS: Montalbetti E, Aramini T, Bonanomi M et al.
+JOURNAL: 
+YEAR: 2026
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Chitosan-confined selenium–silver nanohybrids enable redox-modulated mitochondrial apoptosis and survival improvement in experimental hepatocellular carcinoma
+AUTHORS: Hassan Y, Elawady D, Wanas A et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Rhizosphere microbiome dynamics and plant adaptation to abiotic stress in major oilseed crops: a review
+AUTHORS: Daurova A, Daurov D, Sapakhova Z et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Protective effects of three natural extracts on ovalbumin-induced intestinal and skin damage in felines via the gut-skin axis: An in vitro study
+AUTHORS: 
+JOURNAL: 
+YEAR: 2026
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Chronic hyperglycemia induces macrophage iron accumulation and promotes Mycobacterium tuberculosis virulence
+AUTHORS: Chaubey G, Dilawari R, Modanwal R et al.
+JOURNAL: 
+YEAR: 2026
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Artificial intelligence in optimizing antimicrobial therapy for gastro-renal disorders
+AUTHORS: Stoia O, Anderco P, Badiu T et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Overcoming immunotherapy resistance in triple-negative breast cancer: a critical review of mast cell plasticity, metabolic reprogramming, and organoid models
+AUTHORS: He K, Yang S, Zhang K et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: The dual-sensitive period gut-brain crosstalk, neuroinflammation, and the biological roots of adolescent depression
+AUTHORS: Shi Y, Ma Q.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Oxidative stress response of Saccharomyces cerevisiae exposed to different molecular weight of polycyclic aromatic hydrocarbons
+AUTHORS: Takam P, Charerntantanakul W, Sillapawattana P.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Protective effects of multi-strain probiotics against polystyrene nanoplastic-induced parotid gland toxicity: role of NRF2/HO-1 and NF-κB pathways
+AUTHORS: Kozan G, Üstündağ H, Kara A.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Photodynamic-Nano synergistic strategies for food preservation: Mechanisms, applications, and safety challenges.
+AUTHORS: Qin Yanbin, Tan Yuxuan, Zhang Shaojie
+JOURNAL: Food research international (Ottawa, Ont.)
+YEAR: 2026
+DOI: https://doi.org/10.1016/j.foodres.2026.118979
+ABSTRACT: Foodborne pathogens, microbial spoilage, and antimicrobial resistance continue to challenge food safety and shelf-life management, and the performance and acceptability of conventional chemical preservation can be limited in some applications. Photodynamic inactivation (PDI) uses photosensitizers (PS) to generate reactive oxygen species (ROS) under light, enabling non-thermal microbial…
+
+---
+
+PAPER: Insights into photosynthetic bacteria-bioaugmented wastewater treatment systems: Low-carbon performance and microbial synergistic mechanisms.
+AUTHORS: Yu Peihan, Han Ke, Zhang Jian
+JOURNAL: Bioresource technology
+YEAR: 2026
+DOI: https://doi.org/10.1016/j.biortech.2026.134428
+ABSTRACT: Photosynthetic bacteria (PSB) are regarded as promising bioaugmentation agents to assist the conventional activated sludge (CAS) wastewater treatment process in achieving low-carbon benefits, but the performance and microbial mechanisms remain poorly understood. This study selected Rhodopseudomonas palustris to develop bioaugmented (PSB-CAS) systems, evaluated their low-carbon potential under…
+
+---
+
+PAPER: Optimization of cryopreservation protocols for cold-adapted yeasts relevant to the brewing industry.
+AUTHORS: Caruso María Agustina, Santos María Victoria, Vilacoba Elisabet
+JOURNAL: Cryobiology
+YEAR: 2026
+DOI: https://doi.org/10.1016/j.cryobiol.2026.105630
+ABSTRACT: Most studies on yeast cryopreservation have focused on Saccharomyces cerevisiae; therefore, long-term viability and stability of wild strains from other yeast species remain uncertain. Standard protocols typically use glycerol as a cryoprotectant and a CoolCell® container to maintain slow cooling rates. However, limited evidence exists regarding the efficacy of glycerol and the advantages of…
+
+---
+
+PAPER: Synergistic enhancement of nitrogen and phosphorus removal by Pseudomonas sp. GD01 through g-C3N4 photocatalysis: performance and mechanisms.
+AUTHORS: Wang Yishu, Wang Xiujie, Chen Huixuan
+JOURNAL: Bioresource technology
+YEAR: 2026
+DOI: https://doi.org/10.1016/j.biortech.2026.134420
+ABSTRACT: A novel heterotrophic nitrification-aerobic denitrification (HNAD) strain, GD01, with concomitant phosphorus removal capability, was isolated from activated sludge and identified as Pseudomonas. Under aerobic conditions, this strain achieved high removal efficiencies of NH<sub>4</sub><sup>+</sup>-N, TN, and PO<sub>4</sub><sup>3-</sup>-P, reaching 99%, 96.1%, and 96.2% at t = 24 h, with…
+
+---
+
+PAPER: A bioelectrocatalytic glucose oxidation cascade for energy-efficient electrocatalysis applications.
+AUTHORS: Zhang Yuxia, Zhang Yili, Zheng Yan et al.
+JOURNAL: Bioelectrochemistry (Amsterdam, Netherlands)
+YEAR: 2026
+DOI: https://doi.org/10.1016/j.bioelechem.2025.109198
+ABSTRACT: Hydrogen energy and metal-air batteries, particularly zinc-air batteries (ZABs), have garnered significant interest as clean energy vectors and energy storage devices, respectively. However, their efficiency is constrained by the high overpotential and sluggish kinetics associated with the oxygen evolution reaction (OER). In this study, we propose a green and efficient bioelectrocatalytic cascade…
+
+---
+
+PAPER: Controlled biosynthesis of curdlan oligosaccharides with tunable degree of polymerization and their prebiotic effects on gut microbiota.
+AUTHORS: Pan Yaping, Wang Yuying, Liu Zhilei et al.
+JOURNAL: Bioresource technology
+YEAR: 2026
+DOI: https://doi.org/10.1016/j.biortech.2026.135020
+ABSTRACT: Curdlan oligosaccharides (GOS) possess unique physiological and biochemical activities. In this study, an enzyme-assisted coupled fermentation system was developed to efficiently produce GOS with a controllable degree of polymerization (DP) by adjusting the supplemental concentration of endo-β-1,3-glucanase (BGN). By adding 5-15% BGN, GOS with molecular weights (Mw) ranging from 5104 Da to…
+
+---
+
+PAPER: Multi-dimensional metabolic engineering and enzyme engineering in Escherichia coli for highly efficient biosynthesis of 2,5-furandicarboxylic acid.
+AUTHORS: Cui Yanan, Zhang Peiyi, Miao Renjie et al.
+JOURNAL: Bioresource technology
+YEAR: 2026
+DOI: https://doi.org/10.1016/j.biortech.2026.134989
+ABSTRACT: 2,5-Furandicarboxylic acid (FDCA) is a key monomer widely used in the plastic, dye, pharmaceutical, pesticide and resin industries. Presently, its biosynthesis via microbial fermentation is severely limited by the cytotoxicity of substrate 5-hydroxymethylfurfural (HMF). In this study, using Escherichia coli as a host, efficient biosynthesis of FDCA was achieved through multi-step metabolic…
+
+---
+
+PAPER: Progress on the formation, quantification, and elimination of off-flavor compounds in non-distilled alcoholic beverages.
+AUTHORS: Zhang Shuya, Hou Xiaoping, Zhao Yuxiang et al.
+JOURNAL: Journal of the science of food and agriculture
+YEAR: 2026
+DOI: https://doi.org/10.1002/jsfa.70310
+ABSTRACT: Off-flavor compounds are commonly detected in various non-distilled alcoholic beverages, including beer, wine, rice wine, and sake. These chemicals, such as aldehydes, ethers, biogenic amines, bitter peptides, and sulfur compounds, have significant influences on the quality and price of commercial products. Thus, understanding their precursors and formation is important to maintain their…
+
+---
+
+PAPER: Nanotechnology for ischemic stroke treatment: addressing challenges across stroke management stages
+AUTHORS: Wu Y, Wang L, Zou C et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Metabolomic signatures mediate the association between physical frailty and metabolic dysfunction-associated steatotic liver disease: a prospective cohort study
+AUTHORS: Li D, Bo Y, Chen Y et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Multimodal neuroimaging of alcohol use: from acute neurochemical effects to chronic brain network reorganization and precision treatment targets
+AUTHORS: Ferrando R.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Associations between prevalent unhealthy lifestyles and the gut microbiota: a comprehensive multi-database bibliometric analysis of pathogenic mechanisms and clinical trajectories
+AUTHORS: Zhou X, Chen J, Hu C et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Biocontrol strategies for fungal diseases of Ganoderma lucidum: from antagonistic microbes and synthetic communities to intelligent technologies
+AUTHORS: Chang X, Jiang X, Wang K et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Forest bathing (Shinrin-Yoku) as an integrative strategy for mental and cardiovascular health: a quasi-experimental study in Brazil
+AUTHORS: Franco Netto G, Bilibio M, Andrade A et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Building youth power and environmental health literacy with environmental justice communities in rural Arizona
+AUTHORS: Palawat K, Borkan W, Buxner S et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Perfluorooctanesulfonic acid contributes to primary open-angle glaucoma in a FABP4-Dependent manner: a novel mechanism for environmental risk of glaucoma
+AUTHORS: Lin J, Zhang Y, Li Y et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Systemic toxicity and immunotoxicity studies of glucose oxidase-loaded extracellular vesicles derived from lung cancer cells
+AUTHORS: Grudzinski I, Bamburowicz-Klimkowska M, Sochanowicz B et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Triglyceride-lowering therapies for hepatic steatosis: mechanisms, efficacy, and clinical perspectives
+AUTHORS: Tamehri Zadeh S, Toth P, Banach M.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Exploring potential value of neutrophil extracellular traps in major depressive disorder
+AUTHORS: Shi Y, Zhang G, Ji Y et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Transcutaneous auricular vagus nerve stimulation attenuates depressive-like behaviors via enhancing neuroplasticity and regulating the ALK5/Smad2/3/Gadd45β signaling pathway in rats with post-stroke depression
+AUTHORS: Yang Q, Zhou Y, Tang H et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Interfacial Thermodynamics of Ti3C2Tx MXene-PVDF-PTFE Triple Interface Systems for Hierarchical Membrane Distillation
+AUTHORS: Merugu S, Thakur A, Anasori B et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Application of neuromodulation techniques in irritable bowel syndrome
+AUTHORS: Zhang Y, Gao L, Zhang X et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Recent advances in the role of selenium and nanoselenium in modulating plant defense under biotic and abiotic stresses
+AUTHORS: Akhter F, Rashid S, Ridwan Q et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Highly efficient chitinase production from Chitinibacter mangrovi FCG-7T and immunomodulatory efficacy of generated GlcNAc in cyclophosphamide-induced immunosuppression
+AUTHORS: Chen L, Wang J, Zhang Z et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Magnetic thermoradiotherapy for lung cancer: evaluation in A549−based preclinical models
+AUTHORS: Stawarska A, Bamburowicz-Klimkowska M, Kasprzak A et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: A Corticotectal Pathway Regulates Vibrissal Somatosensory-Mediated Predatory Hunting Learning
+AUTHORS: Li Y, Chen G, Geng D et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Platelet-membrane-coated nanoparticles enable safe and targeted thrombolysis with preserved neurovascular integrity
+AUTHORS: Feng Z, Abiola O, Huang G et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Synergistic enhancement of matcha tea with strawberry (Qassim region) aqueous extracts: influence of extraction temperature on phytochemicals, vitamin C, and bioactivities
+AUTHORS: Aleid N, Alhomaid R, Ali R et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: SLC40A1 (iron transporter): mechanistic regulation, role in disease pathogenesis, and prospects for targeted therapy
+AUTHORS: Huang L, Pan L, Qin W et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Effects of magnesium potassium sulfate on Tibetan sheep quality and its volatile and non-volatile metabolic substances
+AUTHORS: Wang Y, Han L, Hou S et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Construction of a sensory quality evaluation model for tobacco leaves from Henan Province and its application in tobacco quality assessment
+AUTHORS: Xu X, Wang L, Hu J et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Organic formulation modulating crop health, yield and managing anthracnose-twister and Stemphylium blight of onion
+AUTHORS: Dutta R, K J, Kumar S et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Bioaugmentation as microbiome engineering: a framework for evaluating functional performance, persistence, and safety
+AUTHORS: Cycoń M.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: A comprehensive overview of strategies to improve blueberry fruit quality
+AUTHORS: Lopes T, Silva A, Vicente A et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Untargeted metabolomic profiling and genome mining of endophytic Stenotrophomonas maltophilia strain 3A reveal a rich source of bioactive secondary metabolites
+AUTHORS: Sahu P, Dhal K, Kale N et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Enhancing the hydrophobicity and mechanical integrity of lignocellulosic paper through synergistic integration of terpene-phenolic resin and phosphate waste rock
+AUTHORS: Bendalahcen O, Bouhfid R, Qaiss A et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Probiotics use environmentally friendly calcium lignosulfonate as an energy source to MICP-acting on concrete and soil remediation
+AUTHORS: Yan Z, Song F, Xu W et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: The gut-heart axis in heart failure: from bidirectional pathophysiological mechanisms to integrative therapeutic strategies
+AUTHORS: Rui X, Wu L, Ren H et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Impacts of off-flavor on microbial community structure, nutritional traits and metabolite profiles in whole-plant corn silage
+AUTHORS: Wang Z, Guo X, Shi Y et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Screening of flavor-enhancing yeast and its role in fig fermentation
+AUTHORS: Chen Z, Shentu Y, Li L et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Deciphering the role of the Sch9 serine/threonine kinase in Scedosporium apiospermum
+AUTHORS: Kabbara S, Yaakoub H, Bidon B et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Ferrous picolinate: a novel fortificant for sensitive dairy products
+AUTHORS: Habeych E, Merinat S, Sanchez-Bridge B et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Effect of dietary inclusion of hazelnut skin or hazelnut skin green extract on growth performance, carcass traits, and meat quality in heavy pigs
+AUTHORS: D’Ambra K, Trovato R, Cattivelli A et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Anthracycline-induced cardiorenal toxicity: from molecular mechanisms to clinical management
+AUTHORS: Jiao L, Yuan C, Wang L et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Impact of Ascophyllum nodosum extract biostimulants on nutrient use efficiency and seedling establishment in wheat and barley
+AUTHORS: Ikuyinminu E, Goñi O, Łangowski Ł et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Covalently silane-bridged e-graphene oxide nanosheets toward year-long dispersion-stable epoxy nanocomposites with superior corrosion protection
+AUTHORS: Pham A, Mai Q, Loan N et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Therapeutic effect of Tripterygium hypoglaucum (H. Lév.) Hutch. extract on psoriasis-like skin inflammation correlated with gut microbiota homeostasis in mice
+AUTHORS: Wang Z, Cui H, Huang H et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: The host ubiquitination system dynamically regulates the inflammatory response of macrophages to bacteria
+AUTHORS: Liu J, Li X, He L et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Integrating untargeted metabolomics and deep learning approaches to identify specific metabolic signatures and new mechanisms in unstable plaques
+AUTHORS: Ma J, Wang L, Qu X et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Hybrid Nanoporous Gold–Cyclodextrin Nanosponge Platforms for Enhanced Model Contaminant Detection
+AUTHORS: Matencio A, Scaglione F, Birolo M et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Development of new quinoline-triazole based hybrids: synthesis, nano-encapsulation, DFT calculations, and evaluation of antidiabetic and antioxidant activity
+AUTHORS: Elhalmoushy F, Abd Al Moaty M, Hegazy A et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Paclitaxel-eluting silicone airway stent with sustained drug release and potent anti-fibrotic activity
+AUTHORS: Ding M, Song J, Zhao C et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Particle–Nanofiber Superstructures
+AUTHORS: Zhao B, Greca L, Mattos B.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Fundamental Limitation: How Through-Thickness Heterogeneity in Laser-Reduced Graphene Oxide Compromises Sensor Stability
+AUTHORS: Russell R, Medeiros A, Rowley A et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Hierarchically porous activated carbon derived from Lansium domesticum peel via hydrothermal-H3PO4 activation for enhanced methylene blue removal: adsorption behavior, advanced modeling and mechanistic insights
+AUTHORS: Huong Do T, Nguyen N, Mai X et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Editorial: Advanced biocatalysts for sustainable chemical synthesis
+AUTHORS: Verma M, Yildirim D, Boddy C.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Development of ovine hepatic organoids: a powerful in vitro platform to reduce the number of experimental animals used in metabolism and nutrition assays
+AUTHORS: González-Montero M, Criado M, Alonso M et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Covalent engineering of a phenanthroline-modified NH2-MIL-53(Al) MOF for the dual-mode sensing of As3+ and Fe2+ in complex environmental and dietary matrices
+AUTHORS: Al-Qahtani S, Al-Senani G, Bukhari A et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Chemiluminescence Detection of Hydrogen Peroxide with a Polymer of an Intrinsic Microporosity Solid State Emitter
+AUTHORS: Phokhabut S, Kanyanee T, Zachariadis M et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Designed to Heat and React: Fast Microwave-Engineered Iron Oxide Nanoflowers with Controlled Anisotropy for Magnetic Induction-Assisted Oxidation Processes
+AUTHORS: Herrera-Aquino R, Nuñez N, Magro R et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Mitochondria-associated membranes in heart failure: from molecular mechanisms to therapeutic targets
+AUTHORS: Li S, Lian Y, Lai X et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Bi3O4Br nanosheets immobilized in chitosan microspheres as efficient and recyclable hybrid catalysts for water treatment
+AUTHORS: Ait Yachou H, Brik A, El Kadiri M et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: A rhein-integrated hydrogel dressing with antibacterial, antioxidant and pH-responsive colorimetric properties
+AUTHORS: Kou M, Wang D, Zhang J et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Citric acid-modulated carbon dots derived from black tea waste for multifunctional food packaging: anti-counterfeiting and UV-protective preservation
+AUTHORS: Liu Y, Li J, Xiao Y et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Advanced behavioral malware detection: a comprehensive MLOps framework with federated learning and real-time drift detection
+AUTHORS: El-Hajj M, Zeineddine M.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Patient-specific digital twins in aortic disease: integrating computational hemodynamics, immune profiling, and precision endovascular strategy
+AUTHORS: Dinc R, Ardic N.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: From cognition to response: clinical challenges, antibiotic resistance mechanisms, and prevention and control strategies of Elizabethkingia meningoseptica infections
+AUTHORS: Zhang Q, Cong S, Wang Y.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: The biological characteristics of tertiary lymphoid structures in head and neck cancer
+AUTHORS: Bai S, Wei Y, Liu F et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Cancer metabolism: from the Warburg effect to precision therapy
+AUTHORS: Wang C, Wang J, Miao L et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Enhancement of genetic potential for soil carbon and nitrogen cycling by organic fertilizer substitution improves the ecological environment for licorice cultivation
+AUTHORS: Liao G, Xiao J, Zhang B et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Lead exposure increases the risk of retinal vein occlusion: a population-based analysis and investigation of PRICKLE4/PLCXD1-mediated endothelial cell mechanisms
+AUTHORS: Yang S, Xu L, Chen T et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Identifying microbial biomarkers of neurodegeneration: a comparative study in Alzheimer’s and Parkinson’s disease
+AUTHORS: De Jaegher S, Pinzauti D, D’Aguanno M et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Timing–dependent responses of Fusarium graminearum suppression and malting quality in barley following PSP1 elicitor application
+AUTHORS: Martínez M, Izquierdo J, Arrigoni A et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Untargeted metabolomics of mature sorghum [Sorghum bicolor (L.) Moench] grain reveals metabolites associated with antimicrobial activity against Clostridium perfringens
+AUTHORS: Conti M, Ballén-Taborda C, Broeckling C et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Research advances in the application of microfluidic chip technology for rapid detection of antibiotic-resistant bacteria
+AUTHORS: Xia L, Tang C, Tong D et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Preclinical screening models in anticancer drug development: strengths, limitations, and translational challenges
+AUTHORS: Yadav R, Singh S, Kumar S et al.
 JOURNAL: 
 YEAR: 
 DOI: 
@@ -4347,15 +4311,6 @@ ABSTRACT: The bio-recyclability of polylactic acid (PLA) is hampered by deficien
 ========================================
 DOMAIN: Water & Environment
 ========================================
-
-PAPER: Anaerobic digestion of recalcitrant organics and emerging contaminants in pharmaceutical wastewater for carbon neutrality and bioresource recovery: A critical review.
-AUTHORS: Niu Xinru, Zhang Tao, Xu Yao et al.
-JOURNAL: Bioresource technology
-YEAR: 2026
-DOI: https://doi.org/10.1016/j.biortech.2026.135094
-ABSTRACT: Pharmaceutical wastewater is characterized by complex composition, high toxicity, and a high proportion of recalcitrant organics. Conventional treatment processes, such as the activated sludge process, often suffer from high energy consumption, substantial carbon emissions, and limited resource recovery. To address the challenges posed by recalcitrant organics and emerging contaminants in…
-
----
 
 PAPER: Photothermal Coupled Catalytic Water Decontamination and Solar Ammonia Recovery.
 AUTHORS: Liang Jun, Tian Zhen, Sun Chen et al.
@@ -4501,15 +4456,6 @@ ABSTRACT: Advanced primary treatment diverts particulates from wastewater for re
 
 ---
 
-PAPER: Functional Nitrile Ether Additives for High-Energy-Density Lithium Metal Batteries: Multiscale Mechanism Study on Cyanide Substitution Regulation.
-AUTHORS: Zeng Jia, Li Zixiang, Lin Peinan et al.
-JOURNAL: The journal of physical chemistry. B
-YEAR: 2026
-DOI: https://doi.org/10.1021/acs.jpcb.6c01898
-ABSTRACT: As lithium-ion batteries advance toward higher voltages and energy densities, traditional carbonate-based electrolytes not only undergo oxidative decomposition under high pressure but also induce structural degradation of cathode materials and destabilization of the electrode-electrolyte interface (CEI), severely limiting battery cycle life and safety. To address these challenges, this study…
-
----
-
 PAPER: A novel electrochemical sensing with MIP for highly selective and sensitive determination of anticancer drug erlotinib.
 AUTHORS: Erdogan-Kablan Sevilay, Cetinkaya Ahmet, Unal M Altay et al.
 JOURNAL: Journal of pharmaceutical and biomedical analysis
@@ -4519,11 +4465,65 @@ ABSTRACT: The sensitive and selective determination of targeted anticancer drugs
 
 ---
 
-PAPER: Enhanced co-removal of nutrients and glyphosate from rural sewage in siphon-driven constructed wetlands: Optimization and mechanisms.
-AUTHORS: Zhao Yanhui, Li Yingfei, Zheng Yu et al.
-JOURNAL: Water research
+PAPER: Development of ordered mesoporous carbon-based electrodes for the electrocatalytic oxidation of furfural
+AUTHORS: Squillaci P, Chillè D, Papanikolaou G et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Efficient removal of mercury(ii) ions using glutamic acid modified metal–organic frameworks: adsorption models, thermodynamics, and parameter optimization
+AUTHORS: Guesmi A, Algethami F, Ben Hamadi N et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Interfacial engineering of 2D CoNi-MOF aerogel/carbon nanofiber hybrids for enhanced superoxide anion detection.
+AUTHORS: Shi Zhuanzhuan, Gu Shuang, Wei Ruoyu
+JOURNAL: Mikrochimica acta
 YEAR: 2026
-DOI: https://doi.org/10.1016/j.watres.2026.125812
-ABSTRACT: Constructed wetlands (CWs) often suffer from limited carbon/oxygen availability and poorly controlled redox conditions, constraining pollutant removal from rural sewage. Hence, siphon-driven CWs (S-CWs) were optimized for the co-removal of the typical rural pollutant glyphosate (N-(phosphonomethyl)glycine, PMG) and typical wastewater pollutants (carbon (C), nitrogen (N), phosphorus (P)). S-CWs…
+DOI: https://doi.org/10.1007/s00604-026-08141-0
+ABSTRACT: Superoxide anion (O<sub>2</sub><sup>•-</sup>) plays a crucial role in various biological processes. However, its excess can induce oxidative stress, cause cell damage, and promote diseases. Achieving ultra-sensitive detection of O<sub>2</sub><sup>•-</sup> remains a significant challenge. Herein, a nanocomposite that integrates two-dimensional (2D) CoNi metal-organic framework nanosheets…
+
+---
+
+PAPER: Ethanol pre-fermentation of food waste in anaerobic digestion to enhance biogas production and digestate quality.
+AUTHORS: Farid Soban, Ni Ji-Qin, Zeb Iftikhar
+JOURNAL: Bioresource technology
+YEAR: 2026
+DOI: https://doi.org/10.1016/j.biortech.2026.134985
+ABSTRACT: Ethanol pre-fermentation (EP) of substrates with yeast before anaerobic digestion (AD) mitigates organic overload during acidogenesis by favoring ethanol formation over volatile fatty acids. However, studies on EP-treated food waste (EP-FW) often overlook the influence of the substrate-to-inoculum ratio (SIR) on digester stability and biogas yield. While the biofertilizer role of yeast is…
+
+---
+
+PAPER: CO2-Induced Reverse Lattice Oxygen Spillover on Pt/CeO2 Enables Sulfur-Resistant Dry Reforming of Methane.
+AUTHORS: Liu Jun, Deng Jiang, Zheng Jiajia et al.
+JOURNAL: Angewandte Chemie (International ed. in English)
+YEAR: 2026
+DOI: https://doi.org/10.1002/anie.1664469
+ABSTRACT: Overcoming sulfur poisoning in dry reforming of methane (DRM), which is a critical process for biogas upgrading, is particularly challenging. In this study, we illustrate that a reverse lattice oxygen spillover (RLOS) from CeO2 to Pt on the Pt-O-Ce interface, induced by CO2, can oxidize S into SO2, aiding in the removal of S deposits. A low oxygen migration barrier at the Pt-O-Ce interface and…
+
+---
+
+PAPER: Recycling lithium-ion batteries to regenerate graphite, silicon, and Si/C composite anodes: Review of advances between 2015 and 2025.
+AUTHORS: Yaqub Muhammad, Geon Ju Byeong, Lee Wontae
+JOURNAL: Waste management & research : the journal of the International Solid Wastes and Public Cleansing Association, ISWA
+YEAR: 2026
+DOI: https://doi.org/10.1177/0734242x261452175
+ABSTRACT: The increasing deployment of lithium-ion batteries in electric vehicles, stationary energy systems, and consumer electronics has intensified the need for efficient recycling technologies to mitigate their environmental and economic impacts. Although recycling efforts have conventionally focused on cathode recovery, the growing adoption of silicon-enhanced anodes and the large mass fraction of…
+
+---
+
+PAPER: Enhanced bicarbonate electrolysis using bipolar membranes with accelerated water dissociation.
+AUTHORS: Wang Mengjing, Xing Kewen, Pan Binbin et al.
+JOURNAL: Journal of colloid and interface science
+YEAR: 2026
+DOI: https://doi.org/10.1016/j.jcis.2026.140790
+ABSTRACT: Bicarbonate electrolysis connects CO<sub>2</sub> capture and electrochemical reduction by directly converting bicarbonate as the captured form of CO<sub>2</sub> into valuable chemicals and fuels, potentially reducing the energy required for CO<sub>2</sub> conversion. This process typically relies on bipolar membranes (BPMs), whose sluggish water dissociation (WD) kinetics unfortunately demand…
 
 ---
