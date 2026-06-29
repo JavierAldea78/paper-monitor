@@ -1,5 +1,5 @@
 TECH VIGILANCE MONITOR - MSM R&D
-Last updated: 2026-06-22
+Last updated: 2026-06-29
 Total papers: 500
 
 ========================================
@@ -18,6 +18,15 @@ ABSTRACT: The demand for β-thymidine primarily stems from its role as a raw mat
 ========================================
 DOMAIN: Biotech Applied
 ========================================
+
+PAPER: Gluten Analysis and Regulation: Scientific, Analytical, and Economic Dimensions of Gluten-Free Assurance.
+AUTHORS: Popping B, Bartsch D, Besler-Scharf M et al.
+JOURNAL: 
+YEAR: 2026
+DOI: https://doi.org/10.1111/1541-4337.70516
+ABSTRACT: Gluten-free regulations require analytical systems that can reliably measure gluten in wheat, rye, and barley, and, in some jurisdictions, in oats across diverse food ingredients and processed foods. Examples include baked goods, fermented products such as beer, and extruded snack foods, where processing can alter gluten extractability and antibody recognition. This review examines the…
+
+---
 
 PAPER: Effect of different carbon allotropes for electrochemical glucose detection.
 AUTHORS: Couto Rui, Alves Joaquim, Duarte Abel et al.
@@ -126,15 +135,6 @@ JOURNAL: Biotechnology advances
 YEAR: 2026
 DOI: https://doi.org/10.1016/j.biotechadv.2026.108928
 ABSTRACT: Biofilm-based food fermentations require carriers that retain viable production microorganisms while remaining compatible with sensory quality, cleanability, regeneration and food-contact safety. This review analyses lignocellulosic and cellulose-derived carrier classes as engineered food-contact interfaces rather than as a single undifferentiated group of "wood-derived" materials. Native wood…
-
----
-
-PAPER: Metabolomic insights reveal bioactive enhancement in fermented oat-based beverages via Lactobacillus plantarum.
-AUTHORS: Castillo Aly, Capietti Matteo, Megias Cristina et al.
-JOURNAL: Food & function
-YEAR: 2026
-DOI: https://doi.org/10.1039/d6fo00493h
-ABSTRACT: This study evaluates the impact of thermal processing and fermentation with <i>Lactobacillus plantarum</i> on the bioactive composition and metabolic profile modulation of an oat-based (<i>Avena sativa</i>) beverage. An oat base beverage (OBB), a heat-treated variant (OBB-H) and, based on this, a fermented drink (OBB-F) were produced. Processing-induced changes were monitored using global…
 
 ---
 
@@ -633,12 +633,12 @@ ABSTRACT: The ketogenic diet (KD) is increasingly recognized as a promising ther
 
 ---
 
-PAPER: Engineering Cellobiose Phosphorylase toward Lactose with Its Application to the Biosynthesis of Lacto-N-Biose.
-AUTHORS: Fang Hao, Li Yuan, Cheng Haotian et al.
-JOURNAL: Journal of agricultural and food chemistry
+PAPER: Traditional Fermented Dairy Products as Reservoirs of Bifidobacterium With Probiotic Potential: From Microbial Diversity to Functional Characterization.
+AUTHORS: Habiba MU, Rahman MM, Augustin MA et al.
+JOURNAL: 
 YEAR: 2026
-DOI: https://doi.org/10.1021/acs.jafc.6c03691
-ABSTRACT: Lacto-<i>N</i>-biose I (LNB), a core structural unit of human milk oligosaccharides, was usually fermented by microbial cell factories because its biosynthesis involved the supplies of ATP and UDP-sugars. Here we designed an <i>in vitro</i> ATP- and UDP-sugar-free enzymatic pathway for the biosynthesis of LNB from lactose and <i>N</i>-acetylglucosamine (GlcNAc). <i>Thermoclostridium caenicola</i>…
+DOI: https://doi.org/10.1111/1541-4337.70540
+ABSTRACT: Traditional fermented dairy products (TFDPs) are complex microbial ecosystems that may serve as reservoirs of many microorganisms, including those with probiotic potential such as Bifidobacterium species and lactobacilli. Although bifidobacteria are widely used as probiotic microorganisms in defined formulations, their occurrence, persistence, and functional relevance within TFDPs remain…
 
 ---
 
@@ -3202,15 +3202,6 @@ ABSTRACT: This study presents the fabrication of arrowroot starch (ARS)-based bi
 
 ---
 
-PAPER: Transcription Factors: A Promising Third-Generation Core Sensing Element for Developing Low-Cost, On-Site Rapid Detection Technologies for Food Contaminants.
-AUTHORS: Mao Wenhui, Hu Liangshu, He Miao et al.
-JOURNAL: Journal of agricultural and food chemistry
-YEAR: 2026
-DOI: https://doi.org/10.1021/acs.jafc.5c14507
-ABSTRACT: Biosensors couple biological recognition elements with signal transducers to provide rapid, low-cost alternatives to conventional food analysis. Beyond antibodies and aptamers, transcription factors (TFs) are emerging as highly sensitive recognition modules because they deliver intrinsic transcriptional signal amplification. TF-based sensors are effective for food-relevant small molecules and…
-
----
-
 PAPER: Sulfoxaflor biodegradation: environmental fate, degrading microorganisms, and mechanisms of nitrile hydratase-mediated catalysis
 AUTHORS: Mou S, Li F, Guo J et al.
 JOURNAL: 
@@ -4248,6 +4239,15 @@ ABSTRACT:
 
 PAPER: Preclinical screening models in anticancer drug development: strengths, limitations, and translational challenges
 AUTHORS: Yadav R, Singh S, Kumar S et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: AI-driven insights into protein misfolding and innate immunity in neurodegenerative diseases
+AUTHORS: Deng H, Cao J, Wu Y et al.
 JOURNAL: 
 YEAR: 
 DOI: 
