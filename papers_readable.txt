@@ -1,5 +1,5 @@
 TECH VIGILANCE MONITOR - MSM R&D
-Last updated: 2026-06-29
+Last updated: 2026-07-06
 Total papers: 500
 
 ========================================
@@ -21,7 +21,7 @@ DOMAIN: Biotech Applied
 
 PAPER: Gluten Analysis and Regulation: Scientific, Analytical, and Economic Dimensions of Gluten-Free Assurance.
 AUTHORS: Popping B, Bartsch D, Besler-Scharf M et al.
-JOURNAL: 
+JOURNAL: Comprehensive reviews in food science and food safety
 YEAR: 2026
 DOI: https://doi.org/10.1111/1541-4337.70516
 ABSTRACT: Gluten-free regulations require analytical systems that can reliably measure gluten in wheat, rye, and barley, and, in some jurisdictions, in oats across diverse food ingredients and processed foods. Examples include baked goods, fermented products such as beer, and extruded snack foods, where processing can alter gluten extractability and antibody recognition. This review examines the…
@@ -635,7 +635,7 @@ ABSTRACT: The ketogenic diet (KD) is increasingly recognized as a promising ther
 
 PAPER: Traditional Fermented Dairy Products as Reservoirs of Bifidobacterium With Probiotic Potential: From Microbial Diversity to Functional Characterization.
 AUTHORS: Habiba MU, Rahman MM, Augustin MA et al.
-JOURNAL: 
+JOURNAL: Comprehensive reviews in food science and food safety
 YEAR: 2026
 DOI: https://doi.org/10.1111/1541-4337.70540
 ABSTRACT: Traditional fermented dairy products (TFDPs) are complex microbial ecosystems that may serve as reservoirs of many microorganisms, including those with probiotic potential such as Bifidobacterium species and lactobacilli. Although bifidobacteria are widely used as probiotic microorganisms in defined formulations, their occurrence, persistence, and functional relevance within TFDPs remain…
@@ -988,6 +988,15 @@ ABSTRACT: <h4>Background</h4>Sleep is crucial for recovery and optimal performan
 
 ---
 
+PAPER: Rice as an adjunct in brewing beer: mini-review.
+AUTHORS: Molligoda Vimukthi, Anwar Muhammad Junaid
+JOURNAL: Journal of the science of food and agriculture
+YEAR: 2026
+DOI: https://doi.org/10.1002/jsfa.70386
+ABSTRACT: Beer is a popular drink consumed worldwide, traditionally produced from malted barley. However, high prices and limited barley production due to environmental factors have led to the use of adjuncts as an alternative starch source in brewing. Rice has become an increasingly promising adjunct due to its neutral flavor, low lipid content, cost-effectiveness, and gluten-free nature. In addition to…
+
+---
+
 PAPER: Real-Time Biomass Estimation in High-Density Yeast Fermentations Using Soft Sensor Modeling.
 AUTHORS: Del Hierro Ana G, Checa-Barrera José Luis, Moreno-Cid Juan A et al.
 JOURNAL: Biotechnology and bioengineering
@@ -1066,15 +1075,6 @@ JOURNAL: Bioresource technology
 YEAR: 2026
 DOI: https://doi.org/10.1016/j.biortech.2026.134994
 ABSTRACT: Narirutin, a bioactive flavanone-7-O-disaccharide with antioxidant and lipid-lowering properties, is conventionally obtained via plant extraction, which suffers from low yields and seasonal dependence. In this study, we engineered Saccharomyces cerevisiae for de novo narirutin biosynthesis by partitioning the biosynthetic pathway into discrete functional modules for a stepwise optimization.…
-
----
-
-PAPER: Influence of Wort Composition and Fermentation Parameters on Metabolic Activity of Non-Saccharomyces Yeast in Non-Alcoholic and Low-Alcohol Brewing
-AUTHORS: Mohini Basu, Ryan J. Elias, Darrell W. Cockburn
-JOURNAL: Beverages
-YEAR: 2026
-DOI: https://doi.org/10.3390/beverages12030033
-ABSTRACT: As consumer attitudes shift, non-alcoholic and low-alcohol beers (NABLABs) have grown rapidly in popularity. This has driven interest in biological production methods that avoid the cost and flavor damage associated with post-fermentation dealcoholization. This review focuses on how barley wort composition and process conditions shape the metabolism of maltose- and maltotriose-negative…
 
 ---
 
@@ -4255,6 +4255,24 @@ ABSTRACT:
 
 ---
 
+PAPER: Problems in the use of chemical and functional nomenclatures for steroids in human physiology, biology and pharmacology
+AUTHORS: Honour J.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Oral microbiota alterations in radiographic axial spondyloarthritis
+AUTHORS: Abuova A, Meiramova A, Zueva Y et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
 ========================================
 DOMAIN: Byproducts & Circularity
 ========================================
@@ -4311,15 +4329,6 @@ ABSTRACT: The bio-recyclability of polylactic acid (PLA) is hampered by deficien
 ========================================
 DOMAIN: Water & Environment
 ========================================
-
-PAPER: Photothermal Coupled Catalytic Water Decontamination and Solar Ammonia Recovery.
-AUTHORS: Liang Jun, Tian Zhen, Sun Chen et al.
-JOURNAL: Environmental science & technology
-YEAR: 2026
-DOI: https://doi.org/10.1021/acs.est.6c04414
-ABSTRACT: Selective resource recovery from waste streams is essential for sustainable nitrogen management. However, conventional ammonia recovery from ammonium (NH<sub>4</sub><sup>+</sup>)-and volatile organic compound (VOC)-containing wastewater is highly energy-intensive, and VOC-NH<sub>3</sub> coevaporation further undermines product purity. Here we report an advanced oxidation processes-interfacial…
-
----
 
 PAPER: Electrochemical oxidation pathways and sludge valorization for detoxification of real chemical industry wastewater: Performance, energy consumption and circular economy perspective.
 AUTHORS: Ateş Sinan, Ateş Ayşe Elif
@@ -4408,15 +4417,6 @@ JOURNAL:
 YEAR: 2026
 DOI: https://doi.org/10.1186/s11671-026-04616-4
 ABSTRACT: This study examines the outcome of heat generation on thermophoretic particle deposition in Co<sub>3</sub>O<sub>4</sub>/HFE-7100 nanofluid flowing past a vertical cylinder in a permeable media under local thermal non-equilibrium conditions employing an ANN coupled with a Bayesian-regularized back-propagation algorithm. For contrast, a simplified mathematical formulation is also used to examine…
-
----
-
-PAPER: Enhancing nitrogen conservation in aerobic composting through microbial and material interventions: Implications for carbon neutrality.
-AUTHORS: Zheng Nina, Liu Jiawei, Xu Haolian
-JOURNAL: Waste management (New York, N.Y.)
-YEAR: 2026
-DOI: https://doi.org/10.1016/j.wasman.2026.115619
-ABSTRACT: Nitrogen loss during aerobic composting remains a critical barrier that hinders high-efficiency compost and less greenhouse gas emissions. This review systematically summarizes recent advances in nitrogen conservation strategies with an emphasis on microbial regulation, material-based optimization, and process regulation. Microbial inoculants such as Bacillus, Pseudomonas, and Azotobacter can…
 
 ---
 
