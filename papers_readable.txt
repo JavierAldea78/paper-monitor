@@ -1,5 +1,5 @@
 TECH VIGILANCE MONITOR - MSM R&D
-Last updated: 2026-07-06
+Last updated: 2026-07-13
 Total papers: 500
 
 ========================================
@@ -774,6 +774,15 @@ JOURNAL: Journal of animal science and biotechnology
 YEAR: 2026
 DOI: https://doi.org/10.1186/s40104-026-01408-9
 ABSTRACT: <h4>Background</h4>Gamma-aminobutyric acid (GABA) influences metabolic homeostasis, immune function, and lactation performance. Typically, GABA is administered exogenously, but this approach is limited by intake variability and cost. Alternatively, silage inoculated with high GABA-producing Lentilactobacillus buchneri YM9 enriches the silage with GABA and ensures more uniform dietary delivery.…
+
+---
+
+PAPER: Precision fermentation and recombinant proteins as enabling technologies for scalable cellular agriculture.
+AUTHORS: Jadhav Neha K, Magdum Aditya B, Shinde Kapil V et al.
+JOURNAL: Preparative biochemistry & biotechnology
+YEAR: 2026
+DOI: https://doi.org/10.1080/10826068.2026.2693878
+ABSTRACT: Cellular agriculture has emerged as a promising strategy for producing animal-derived food components through controlled biological processes while reducing the environmental and ethical burdens associated with conventional livestock production. Among its enabling technologies, precision fermentation and cultivated-cell systems offer complementary advantages but continue to face challenges…
 
 ---
 
@@ -4257,15 +4266,6 @@ ABSTRACT:
 
 PAPER: Problems in the use of chemical and functional nomenclatures for steroids in human physiology, biology and pharmacology
 AUTHORS: Honour J.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Oral microbiota alterations in radiographic axial spondyloarthritis
-AUTHORS: Abuova A, Meiramova A, Zueva Y et al.
 JOURNAL: 
 YEAR: 
 DOI: 
