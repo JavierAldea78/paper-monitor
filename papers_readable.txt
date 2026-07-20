@@ -1,5 +1,5 @@
 TECH VIGILANCE MONITOR - MSM R&D
-Last updated: 2026-07-13
+Last updated: 2026-07-20
 Total papers: 500
 
 ========================================
@@ -4264,15 +4264,6 @@ ABSTRACT:
 
 ---
 
-PAPER: Problems in the use of chemical and functional nomenclatures for steroids in human physiology, biology and pharmacology
-AUTHORS: Honour J.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
 ========================================
 DOMAIN: Byproducts & Circularity
 ========================================
@@ -4329,6 +4320,15 @@ ABSTRACT: The bio-recyclability of polylactic acid (PLA) is hampered by deficien
 ========================================
 DOMAIN: Water & Environment
 ========================================
+
+PAPER: Directional desorption-driven nutrient fractionation enables product-oriented recovery from MBR-treated digestate by solar-powered MCDI.
+AUTHORS: Qu Yuxin, Huang Dandan, Ko Jaehac et al.
+JOURNAL: Water research
+YEAR: 2026
+DOI: https://doi.org/10.1016/j.watres.2026.126486
+ABSTRACT: Recovering nutrients from real membrane bioreactor (MBR)-treated digestate remains challenging because strong ionic competition limits selective separation, while downstream product formation is highly sensitive to recovery-stream composition. Here, we developed an asymmetric membrane capacitive deionization (MCDI) platform that uses staged directional desorption to convert selective nutrient…
+
+---
 
 PAPER: Electrochemical oxidation pathways and sludge valorization for detoxification of real chemical industry wastewater: Performance, energy consumption and circular economy perspective.
 AUTHORS: Ateş Sinan, Ateş Ayşe Elif
