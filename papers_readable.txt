@@ -1,5 +1,5 @@
 TECH VIGILANCE MONITOR - MSM R&D
-Last updated: 2026-07-27
+Last updated: 2026-08-03
 Total papers: 500
 
 ========================================
@@ -25,15 +25,6 @@ JOURNAL: Comprehensive reviews in food science and food safety
 YEAR: 2026
 DOI: https://doi.org/10.1111/1541-4337.70516
 ABSTRACT: Gluten-free regulations require analytical systems that can reliably measure gluten in wheat, rye, and barley, and, in some jurisdictions, in oats across diverse food ingredients and processed foods. Examples include baked goods, fermented products such as beer, and extruded snack foods, where processing can alter gluten extractability and antibody recognition. This review examines the…
-
----
-
-PAPER: Effect of different carbon allotropes for electrochemical glucose detection.
-AUTHORS: Couto Rui, Alves Joaquim, Duarte Abel et al.
-JOURNAL: Analytical and bioanalytical chemistry
-YEAR: 2026
-DOI: https://doi.org/10.1007/s00216-026-06595-y
-ABSTRACT: The spread of point-of-care (PoC) glucose sensor technologies is crucial for effective diabetes management. In this context, we present a novel electrochemical biosensing platform that integrates various carbon allotropes-biographene (BGr), zinc oxide (ZnO)-modified multi-walled carbon nanotubes (MWCNT-ZnO), and biologically derived carbon dots (CDs)-in a polyaniline-based matrix (PANI) for…
 
 ---
 
@@ -1870,15 +1861,6 @@ ABSTRACT: Arbuscular mycorrhizal (AM) symbiosis is regulated by carotenoid-deriv
 
 ---
 
-PAPER: Mitochondria limit coenzyme Q export under cholesterol biosynthetic stress.
-AUTHORS: Ndoci Marjana, Bhattacharya Sharanya, Agrawal Ishita et al.
-JOURNAL: The Journal of cell biology
-YEAR: 2026
-DOI: https://doi.org/10.1083/jcb.202507174
-ABSTRACT: Coenzyme Q (CoQ) is a hydrophobic lipid primarily synthesized in the mitochondria, though it is also present in non-mitochondrial membranes. However, the metabolic pathways that regulate intracellular CoQ distribution are unknown. This study identifies a key role for the mevalonate pathway in regulating CoQ distribution. The mevalonate pathway synthesizes isopentenyl pyrophosphate (IPP) as the…
-
----
-
 PAPER: Improvement of cannabichromenic acid synthase activity and construction of recombinant yeast strain.
 AUTHORS: Wang Laifeng, Chi Jian, Jiang Danqi et al.
 JOURNAL: Archives of microbiology
@@ -3193,24 +3175,6 @@ ABSTRACT: Short-chain fatty acids present relevant function in the human body as
 
 ---
 
-PAPER: Metabolic engineering strategies for neuroactive postbiotic production: Current progress and perspectives.
-AUTHORS: Basak Nitai
-JOURNAL: Journal of microbiological methods
-YEAR: 2026
-DOI: https://doi.org/10.1016/j.mimet.2026.107571
-ABSTRACT: The gut-brain axis (GBA) is a bidirectional communication network regulated in part by gut microbial metabolites that influence neurological, metabolic, and behavioral functions. Among these metabolites, neuroactive postbiotics such as γ-aminobutyric acid (GABA), short-chain fatty acids (SCFAs), serotonin, dopamine, and indole derivatives, have emerged as promising candidates for gut-brain…
-
----
-
-PAPER: Cumin seed oil-enriched starch films with non-Fickian diffusion controlled release for smart packaging: Enhancing microbial safety and extending shelf-life of fresh meat.
-AUTHORS: Mathew Divya, Muhammed Shamil K V, Thomas Benny et al.
-JOURNAL: International journal of biological macromolecules
-YEAR: 2026
-DOI: https://doi.org/10.1016/j.ijbiomac.2026.152907
-ABSTRACT: This study presents the fabrication of arrowroot starch (ARS)-based bionanocomposite films, plasticized with glycerol, reinforced with nanocellulose (NC), and enriched with cumin seed oil (CSO), aimed at sustainable, smart food packaging applications. The optimized formulation (F4: 15% glycerol, 7.5% NC, 5% CSO) demonstrated significantly enhanced structural, barrier, bioactive, and mechanical…
-
----
-
 PAPER: Sulfoxaflor biodegradation: environmental fate, degrading microorganisms, and mechanisms of nitrile hydratase-mediated catalysis
 AUTHORS: Mou S, Li F, Guo J et al.
 JOURNAL: 
@@ -4264,6 +4228,51 @@ ABSTRACT:
 
 ---
 
+PAPER: Problems in the use of chemical and functional nomenclatures for steroids in human physiology, biology and pharmacology
+AUTHORS: Honour J.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Oral microbiota alterations in radiographic axial spondyloarthritis
+AUTHORS: Abuova A, Meiramova A, Zueva Y et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Systems perspectives on pediatric otitis media: environmental exposures, genetic susceptibility, and biomarker-guided interventions
+AUTHORS: Yu Y, Yuan R, Zhang J et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Precision oncology at the nanoscale: nano-optical biosensors for early cancer detection
+AUTHORS: Hassan Y, El-Tantawi H, Ali I et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Organic acids target key virulence factors of Aeromonas hydrophila to reduce infection in vitro
+AUTHORS: Morariu F, Balta I, Stef L et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
 ========================================
 DOMAIN: Byproducts & Circularity
 ========================================
@@ -4498,15 +4507,6 @@ JOURNAL: Bioresource technology
 YEAR: 2026
 DOI: https://doi.org/10.1016/j.biortech.2026.134985
 ABSTRACT: Ethanol pre-fermentation (EP) of substrates with yeast before anaerobic digestion (AD) mitigates organic overload during acidogenesis by favoring ethanol formation over volatile fatty acids. However, studies on EP-treated food waste (EP-FW) often overlook the influence of the substrate-to-inoculum ratio (SIR) on digester stability and biogas yield. While the biofertilizer role of yeast is…
-
----
-
-PAPER: CO2-Induced Reverse Lattice Oxygen Spillover on Pt/CeO2 Enables Sulfur-Resistant Dry Reforming of Methane.
-AUTHORS: Liu Jun, Deng Jiang, Zheng Jiajia et al.
-JOURNAL: Angewandte Chemie (International ed. in English)
-YEAR: 2026
-DOI: https://doi.org/10.1002/anie.1664469
-ABSTRACT: Overcoming sulfur poisoning in dry reforming of methane (DRM), which is a critical process for biogas upgrading, is particularly challenging. In this study, we illustrate that a reverse lattice oxygen spillover (RLOS) from CeO2 to Pt on the Pt-O-Ce interface, induced by CO2, can oxidize S into SO2, aiding in the removal of S deposits. A low oxygen migration barrier at the Pt-O-Ce interface and…
 
 ---
 
