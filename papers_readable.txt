@@ -1,5 +1,5 @@
 TECH VIGILANCE MONITOR - MSM R&D
-Last updated: 2026-08-03
+Last updated: 2026-08-10
 Total papers: 500
 
 ========================================
@@ -765,6 +765,24 @@ JOURNAL: Journal of animal science and biotechnology
 YEAR: 2026
 DOI: https://doi.org/10.1186/s40104-026-01408-9
 ABSTRACT: <h4>Background</h4>Gamma-aminobutyric acid (GABA) influences metabolic homeostasis, immune function, and lactation performance. Typically, GABA is administered exogenously, but this approach is limited by intake variability and cost. Alternatively, silage inoculated with high GABA-producing Lentilactobacillus buchneri YM9 enriches the silage with GABA and ensures more uniform dietary delivery.…
+
+---
+
+PAPER: Safe and resource-aware microbial design for food production.
+AUTHORS: Oh Juyoung, Jiménez José I, Kim Juhyun
+JOURNAL: Current opinion in biotechnology
+YEAR: 2026
+DOI: https://doi.org/10.1016/j.copbio.2026.103529
+ABSTRACT: Precision fermentation is redefining microbial food manufacturing by enabling programmable biosynthesis of nutrients and functional ingredients. Despite this progress, industrial-scale deployment is limited by metabolic burden, growth-production trade-offs, biosafety concerns, and the costs of downstream processing. Conventional intracellular systems inherently generate host-derived impurities…
+
+---
+
+PAPER: Microbial Production of Alternative Proteins for Food Applications: Advances, Industrial Challenges, and Regulatory Status.
+AUTHORS: Lu Z, Chen Z, Yang D et al.
+JOURNAL: 
+YEAR: 2026
+DOI: https://doi.org/10.1111/1541-4337.70584
+ABSTRACT: The escalating global population and the environmentally inefficient nature of livestock-based protein production are intensifying demand for sustainable and scalable protein alternatives. Microbial biosynthesis, employing engineered cell factories, represents a pivotal strategy for producing functional proteins with a reduced ecological footprint. This review comprehensively examines the…
 
 ---
 
@@ -3175,6 +3193,15 @@ ABSTRACT: Short-chain fatty acids present relevant function in the human body as
 
 ---
 
+PAPER: Synergistic antimicrobial and barrier enhancement in mushroom extract-loaded gelatin-chitosan films reinforced with tannic acid and curcumin for fresh chicken shelf-life extension.
+AUTHORS: Singh Tanu, Verma Piyush, Deol Preiti et al.
+JOURNAL: International journal of biological macromolecules
+YEAR: 2026
+DOI: https://doi.org/10.1016/j.ijbiomac.2026.153991
+ABSTRACT: The escalating need for biodegradable packaging has driven search for sustainable alternatives to synthetic plastics for efficient food products packaging. This research presents a functional gelatin (Gl)-tannic acid (TA)-coated chitosan (Ch) based composite film incorporating mushroom extract (ME) and curcumin extract (CE), which was developed for fresh chicken preservation in refrigerated…
+
+---
+
 PAPER: Sulfoxaflor biodegradation: environmental fate, degrading microorganisms, and mechanisms of nitrile hydratase-mediated catalysis
 AUTHORS: Mou S, Li F, Guo J et al.
 JOURNAL: 
@@ -4239,33 +4266,6 @@ ABSTRACT:
 
 PAPER: Oral microbiota alterations in radiographic axial spondyloarthritis
 AUTHORS: Abuova A, Meiramova A, Zueva Y et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Systems perspectives on pediatric otitis media: environmental exposures, genetic susceptibility, and biomarker-guided interventions
-AUTHORS: Yu Y, Yuan R, Zhang J et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Precision oncology at the nanoscale: nano-optical biosensors for early cancer detection
-AUTHORS: Hassan Y, El-Tantawi H, Ali I et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Organic acids target key virulence factors of Aeromonas hydrophila to reduce infection in vitro
-AUTHORS: Morariu F, Balta I, Stef L et al.
 JOURNAL: 
 YEAR: 
 DOI: 
