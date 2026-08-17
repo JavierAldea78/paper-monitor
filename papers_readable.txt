@@ -1,5 +1,5 @@
 TECH VIGILANCE MONITOR - MSM R&D
-Last updated: 2026-08-10
+Last updated: 2026-08-17
 Total papers: 500
 
 ========================================
@@ -768,21 +768,21 @@ ABSTRACT: <h4>Background</h4>Gamma-aminobutyric acid (GABA) influences metabolic
 
 ---
 
-PAPER: Safe and resource-aware microbial design for food production.
-AUTHORS: Oh Juyoung, Jiménez José I, Kim Juhyun
-JOURNAL: Current opinion in biotechnology
-YEAR: 2026
-DOI: https://doi.org/10.1016/j.copbio.2026.103529
-ABSTRACT: Precision fermentation is redefining microbial food manufacturing by enabling programmable biosynthesis of nutrients and functional ingredients. Despite this progress, industrial-scale deployment is limited by metabolic burden, growth-production trade-offs, biosafety concerns, and the costs of downstream processing. Conventional intracellular systems inherently generate host-derived impurities…
-
----
-
 PAPER: Microbial Production of Alternative Proteins for Food Applications: Advances, Industrial Challenges, and Regulatory Status.
 AUTHORS: Lu Z, Chen Z, Yang D et al.
 JOURNAL: 
 YEAR: 2026
 DOI: https://doi.org/10.1111/1541-4337.70584
 ABSTRACT: The escalating global population and the environmentally inefficient nature of livestock-based protein production are intensifying demand for sustainable and scalable protein alternatives. Microbial biosynthesis, employing engineered cell factories, represents a pivotal strategy for producing functional proteins with a reduced ecological footprint. This review comprehensively examines the…
+
+---
+
+PAPER: Safe and resource-aware microbial design for food production.
+AUTHORS: Oh Juyoung, Jiménez José I, Kim Juhyun
+JOURNAL: Current opinion in biotechnology
+YEAR: 2026
+DOI: https://doi.org/10.1016/j.copbio.2026.103529
+ABSTRACT: Precision fermentation is redefining microbial food manufacturing by enabling programmable biosynthesis of nutrients and functional ingredients. Despite this progress, industrial-scale deployment is limited by metabolic burden, growth-production trade-offs, biosafety concerns, and the costs of downstream processing. Conventional intracellular systems inherently generate host-derived impurities…
 
 ---
 
