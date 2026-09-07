@@ -1,5 +1,5 @@
 TECH VIGILANCE MONITOR - MSM R&D
-Last updated: 2026-08-31
+Last updated: 2026-09-07
 Total papers: 500
 
 ========================================
@@ -79,15 +79,6 @@ JOURNAL: NPJ science of food
 YEAR: 2026
 DOI: https://doi.org/10.1038/s41538-026-00916-2
 ABSTRACT: Fermented food microbial ecosystems are dynamic and shaped by microbes, substrates, and environments, but traditional spontaneous fermentation causes variability in quality and safety, limiting standardization. This review highlighted multi-omics integration to comprehensively characterize microbial composition, dynamics, interactions, metabolites, and phages, and summarized regulation strategies…
-
----
-
-PAPER: Effects of Lactiplantibacillus plantarum 16 fermentation on antioxidant capacity and bitterness of enzymatically hydrolyzed skim milk.
-AUTHORS: Xu Haiyan, Jiang Yi, Li Qiming et al.
-JOURNAL: Journal of dairy science
-YEAR: 2026
-DOI: https://doi.org/10.3168/jds.2025-28084
-ABSTRACT: Lactic acid bacteria fermentation can enhance the probiotic properties of foods and ameliorate their bitterness. This study investigated the possible mechanism by which Lactiplantibacillus plantarum 16 fermentation enhances the antioxidant capacity of enzymatically hydrolyzed skim milk (ESM) while ameliorating its bitterness. The results showed that fermentation with L. plantarum 16 significantly…
 
 ---
 
@@ -624,6 +615,15 @@ ABSTRACT: The ketogenic diet (KD) is increasingly recognized as a promising ther
 
 ---
 
+PAPER: Microbial Production of Alternative Proteins for Food Applications: Advances, Industrial Challenges, and Regulatory Status.
+AUTHORS: Lu Zewei, Chen Zhuoer, Yang Dianqi et al.
+JOURNAL: Comprehensive reviews in food science and food safety
+YEAR: 2026
+DOI: https://doi.org/10.1111/1541-4337.70584
+ABSTRACT: The escalating global population and the environmentally inefficient nature of livestock-based protein production are intensifying demand for sustainable and scalable protein alternatives. Microbial biosynthesis, employing engineered cell factories, represents a pivotal strategy for producing functional proteins with a reduced ecological footprint. This review comprehensively examines the…
+
+---
+
 PAPER: Traditional Fermented Dairy Products as Reservoirs of Bifidobacterium With Probiotic Potential: From Microbial Diversity to Functional Characterization.
 AUTHORS: Habiba MU, Rahman MM, Augustin MA et al.
 JOURNAL: Comprehensive reviews in food science and food safety
@@ -684,15 +684,6 @@ JOURNAL: BMC microbiology
 YEAR: 2026
 DOI: https://doi.org/10.1186/s12866-026-05190-6
 ABSTRACT: Valorizing mature, dry corn straw into nutritional animal feed is constrained by its recalcitrant lignocellulosic matrix, while conventional silage methods face stability and logistical limitations. Existing enzymatic and bacterial approaches often lack synergistic efficacy and fail to mitigate pathogen risk in dry biomass systems. We engineered a two-stage fungal-enzymatic fermentation strategy…
-
----
-
-PAPER: Efficient synthesis of 15α-hydroxysteroid derivatives by Fusarium redolens.
-AUTHORS: Sun Tong, Wang Yu, Chen Xi
-JOURNAL: Steroids
-YEAR: 2026
-DOI: https://doi.org/10.1016/j.steroids.2026.109803
-ABSTRACT: Microbial hydroxylation of steroids at specific positions offers a sustainable and selective strategy for the synthesis of pharmacologically valuable derivatives. Through microorganism screening, the strain Fusarium redolens exhibited the highest catalytic efficiency toward androst-4-en-3,17-dione (AD) and enabled the selective synthesis of 15α-hydroxylated derivatives. Under optimized…
 
 ---
 
@@ -768,12 +759,12 @@ ABSTRACT: <h4>Background</h4>Gamma-aminobutyric acid (GABA) influences metabolic
 
 ---
 
-PAPER: Microbial Production of Alternative Proteins for Food Applications: Advances, Industrial Challenges, and Regulatory Status.
-AUTHORS: Lu Z, Chen Z, Yang D et al.
-JOURNAL: 
+PAPER: Effects of Lactiplantibacillus plantarum 16 fermentation on antioxidant capacity and bitterness of enzymatically hydrolyzed skim milk.
+AUTHORS: Xu Haiyan, Jiang Yi, Li Qiming et al.
+JOURNAL: Journal of dairy science
 YEAR: 2026
-DOI: https://doi.org/10.1111/1541-4337.70584
-ABSTRACT: The escalating global population and the environmentally inefficient nature of livestock-based protein production are intensifying demand for sustainable and scalable protein alternatives. Microbial biosynthesis, employing engineered cell factories, represents a pivotal strategy for producing functional proteins with a reduced ecological footprint. This review comprehensively examines the…
+DOI: https://doi.org/10.3168/jds.2025-28084
+ABSTRACT: Lactic acid bacteria fermentation can enhance the probiotic properties of foods and ameliorate their bitterness. This study investigated the possible mechanism by which Lactiplantibacillus plantarum 16 fermentation enhances the antioxidant capacity of enzymatically hydrolyzed skim milk (ESM) while ameliorating its bitterness. The results showed that fermentation with L. plantarum 16 significantly…
 
 ---
 
@@ -792,15 +783,6 @@ JOURNAL: Preparative biochemistry & biotechnology
 YEAR: 2026
 DOI: https://doi.org/10.1080/10826068.2026.2693878
 ABSTRACT: Cellular agriculture has emerged as a promising strategy for producing animal-derived food components through controlled biological processes while reducing the environmental and ethical burdens associated with conventional livestock production. Among its enabling technologies, precision fermentation and cultivated-cell systems offer complementary advantages but continue to face challenges…
-
----
-
-PAPER: Assessment of the enological potential of several strains of Lachancea thermotolerans. A proteomic approach.
-AUTHORS: Carrera Mónica, Calo-Mata Pilar, Barros-Velázquez Jorge et al.
-JOURNAL: Food chemistry
-YEAR: 2026
-DOI: https://doi.org/10.1016/j.foodchem.2026.149983
-ABSTRACT: We evaluated five Lachancea thermotolerans strains (F108, F111, A54, L31-Blizz™, Laktia™) with divergent acidification capacities from an enological perspective, focusing on their ability to control wine pH through lactate production and sensory impact using quantitative label-free proteomics. A total of 3588 non-redundant proteins were identified. L. thermotolerans, known for its thermotolerance…
 
 ---
 
@@ -1012,15 +994,6 @@ JOURNAL: Journal of the science of food and agriculture
 YEAR: 2026
 DOI: https://doi.org/10.1002/jsfa.70386
 ABSTRACT: Beer is a popular drink consumed worldwide, traditionally produced from malted barley. However, high prices and limited barley production due to environmental factors have led to the use of adjuncts as an alternative starch source in brewing. Rice has become an increasingly promising adjunct due to its neutral flavor, low lipid content, cost-effectiveness, and gluten-free nature. In addition to…
-
----
-
-PAPER: Real-Time Biomass Estimation in High-Density Yeast Fermentations Using Soft Sensor Modeling.
-AUTHORS: Del Hierro Ana G, Checa-Barrera José Luis, Moreno-Cid Juan A et al.
-JOURNAL: Biotechnology and bioengineering
-YEAR: 2026
-DOI: https://doi.org/10.1002/bit.70266
-ABSTRACT: Accurate biomass monitoring remains a bottleneck in industrial fermentation, where conventional offline methods, gravimetric dry cell weight (DCW) and spectrophotometric optical density at 600 nm (OD<sub>600</sub>), are incompatible with real-time process control. Online optical probes operating at 860 nm (OD<sub>860</sub>) provide continuous, non-invasive monitoring, but their signals become…
 
 ---
 
@@ -4273,6 +4246,42 @@ ABSTRACT:
 
 ---
 
+PAPER: Systems perspectives on pediatric otitis media: environmental exposures, genetic susceptibility, and biomarker-guided interventions
+AUTHORS: Yu Y, Yuan R, Zhang J et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Precision oncology at the nanoscale: nano-optical biosensors for early cancer detection
+AUTHORS: Hassan Y, El-Tantawi H, Ali I et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Organic acids target key virulence factors of Aeromonas hydrophila to reduce infection in vitro
+AUTHORS: Morariu F, Balta I, Stef L et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Maternal exposure to the thyroperoxidase-inhibiting pesticide amitrole induces hypothyroidism and developmental neurotoxicity in the rat brain
+AUTHORS: Ramhøj L, Ardenkjær-Skinnerup J, Davidsen N et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
 ========================================
 DOMAIN: Byproducts & Circularity
 ========================================
@@ -4498,15 +4507,6 @@ JOURNAL: Mikrochimica acta
 YEAR: 2026
 DOI: https://doi.org/10.1007/s00604-026-08141-0
 ABSTRACT: Superoxide anion (O<sub>2</sub><sup>•-</sup>) plays a crucial role in various biological processes. However, its excess can induce oxidative stress, cause cell damage, and promote diseases. Achieving ultra-sensitive detection of O<sub>2</sub><sup>•-</sup> remains a significant challenge. Herein, a nanocomposite that integrates two-dimensional (2D) CoNi metal-organic framework nanosheets…
-
----
-
-PAPER: Ethanol pre-fermentation of food waste in anaerobic digestion to enhance biogas production and digestate quality.
-AUTHORS: Farid Soban, Ni Ji-Qin, Zeb Iftikhar
-JOURNAL: Bioresource technology
-YEAR: 2026
-DOI: https://doi.org/10.1016/j.biortech.2026.134985
-ABSTRACT: Ethanol pre-fermentation (EP) of substrates with yeast before anaerobic digestion (AD) mitigates organic overload during acidogenesis by favoring ethanol formation over volatile fatty acids. However, studies on EP-treated food waste (EP-FW) often overlook the influence of the substrate-to-inoculum ratio (SIR) on digester stability and biogas yield. While the biofertilizer role of yeast is…
 
 ---
 
