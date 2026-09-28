@@ -1,5 +1,5 @@
 TECH VIGILANCE MONITOR - MSM R&D
-Last updated: 2026-09-21
+Last updated: 2026-09-28
 Total papers: 500
 
 ========================================
@@ -3166,6 +3166,15 @@ ABSTRACT: Short-chain fatty acids present relevant function in the human body as
 
 ---
 
+PAPER: Pomegranate peel-derived nanocellulose and polyphenol extract for active packaging: Combined effects with γ- and low-energy X-ray irradiation in ready-to-eat ham preservation.
+AUTHORS: Baraketi S, Sharaby MR, Mariño-Cortegoso S et al.
+JOURNAL: International journal of biological macromolecules
+YEAR: 2026
+DOI: https://doi.org/10.1016/j.ijbiomac.2026.154594
+ABSTRACT: Pomegranate peel, an industrial by-product, was valorized as a source of polyphenols and cellulose derivatives, including cellulose nanocrystals (CNCs) and cellulose nanofibrils (CNFs), to develop bioactive nanocomposite films. Extracts from three varieties, Bni Khaled (PPBK), Gabsi (PPG), and Ghardimaa (PPGD) were screened, and the PPG extract exhibited the highest antioxidant activity (IC₅₀:…
+
+---
+
 PAPER: Synergistic antimicrobial and barrier enhancement in mushroom extract-loaded gelatin-chitosan films reinforced with tannic acid and curcumin for fresh chicken shelf-life extension.
 AUTHORS: Singh Tanu, Verma Piyush, Deol Preiti et al.
 JOURNAL: International journal of biological macromolecules
@@ -4266,15 +4275,6 @@ ABSTRACT:
 
 PAPER: Organic acids target key virulence factors of Aeromonas hydrophila to reduce infection in vitro
 AUTHORS: Morariu F, Balta I, Stef L et al.
-JOURNAL: 
-YEAR: 
-DOI: 
-ABSTRACT: 
-
----
-
-PAPER: Maternal exposure to the thyroperoxidase-inhibiting pesticide amitrole induces hypothyroidism and developmental neurotoxicity in the rat brain
-AUTHORS: Ramhøj L, Ardenkjær-Skinnerup J, Davidsen N et al.
 JOURNAL: 
 YEAR: 
 DOI: 
