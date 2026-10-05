@@ -1,5 +1,5 @@
 TECH VIGILANCE MONITOR - MSM R&D
-Last updated: 2026-09-28
+Last updated: 2026-10-05
 Total papers: 500
 
 ========================================
@@ -108,15 +108,6 @@ JOURNAL: Food research international (Ottawa, Ont.)
 YEAR: 2026
 DOI: https://doi.org/10.1016/j.foodres.2026.118898
 ABSTRACT: Sichuan paocai is a traditional Chinese fermented vegetable whose characteristic aroma is strongly influenced by volatile sulfur-containing compounds (VSCs). Among them, 3-(methylthio)-1-propanol and 2-(methylthio)ethanol are key odor-active components, yet their biosynthetic mechanisms and microbial drivers in paocai remain poorly understood. In this study, an integrated metatranscriptomic,…
-
----
-
-PAPER: Lignocellulosic and cellulose-derived carriers in biofilm-based food fermentations: Food-contact design, hydrodynamics and validation.
-AUTHORS: Macior-Łannik Angelika, Migut Dagmara, Ruchała Justyna
-JOURNAL: Biotechnology advances
-YEAR: 2026
-DOI: https://doi.org/10.1016/j.biotechadv.2026.108928
-ABSTRACT: Biofilm-based food fermentations require carriers that retain viable production microorganisms while remaining compatible with sensory quality, cleanability, regeneration and food-contact safety. This review analyses lignocellulosic and cellulose-derived carrier classes as engineered food-contact interfaces rather than as a single undifferentiated group of "wood-derived" materials. Native wood…
 
 ---
 
@@ -651,15 +642,6 @@ ABSTRACT: The radical nitric oxide (·NO) is short-lived but has imprinted itsel
 
 ---
 
-PAPER: Enhanced anaerobic treatment of coal chemical wastewater using iron- and carbon-based materials: Efficiency optimization, response strategy, and enhancement mechanism.
-AUTHORS: Wang Zhu, Liu Yongjun, Yang Lu et al.
-JOURNAL: Bioresource technology
-YEAR: 2026
-DOI: https://doi.org/10.1016/j.biortech.2026.135104
-ABSTRACT: Coal chemical wastewater contains complex and highly biotoxic compounds that inhibit anaerobic microbial activity, leading to unstable system performance. This study evaluated the effects of magnetic biochar, biochar, magnetite, iron, and biochar-magnetite composites on enhancing system resilience and pollutant removal. The magnetic biochar-amended system achieved the highest treatment…
-
----
-
 PAPER: Assessment of molecular interactions and anti-inflammatory activity of fermented camel milk-derived peptides in RAW macrophages.
 AUTHORS: Padhiyar Prashantkumar Natubhai, Basaiawmoit Bethsheba, Mankad Pooja M et al.
 JOURNAL: Amino acids
@@ -738,15 +720,6 @@ JOURNAL: Enzyme and microbial technology
 YEAR: 2026
 DOI: https://doi.org/10.1016/j.enzmictec.2026.110837
 ABSTRACT: Urolithins are metabolites derived from ellagic acid, a compound that is present in many plants, including pomegranate, via the action of gut microorganisms. Among them, urolithin A exhibits antioxidant and anti-inflammatory activity and promotes autophagy, making it a potential contributor to human health. Enterocloster bolteae JCM 12243T, isolated from human feces, is able to convert urolithin…
-
----
-
-PAPER: Hydrogen and methane production characteristics and toxic component degradation behaviors of microbial electrolysis cells treating hydrothermal wastewater.
-AUTHORS: Zhao Zhenghui, Wang Yating, Wang Chunbai et al.
-JOURNAL: Bioresource technology
-YEAR: 2026
-DOI: https://doi.org/10.1016/j.biortech.2026.134973
-ABSTRACT: Hydrothermal carbonization (HTC) effectively processes high-moisture biomass but generates wastewater rich in toxic organic compounds like phenols, furans, and nitrogen-heterocycles, which severely inhibit anaerobic digestion (AD) and limit resource and energy recovery from wastewater. Microbial electrolysis cell (MEC) offers a promising alternative by enhancing electron transfer to recalcitrant…
 
 ---
 
@@ -846,15 +819,6 @@ JOURNAL:
 YEAR: 2026
 DOI: https://doi.org/10.21203/rs.3.rs-9605081/v1
 ABSTRACT: <title>Abstract</title>  <p>  Mageu is a non-alcoholic fermented cereal beverage widely consumed in Southern Africa. It is traditionally produced via spontaneous fermentation using inocula originating from a variety of sources, but is increasingly manufactured using defined starter cultures to improve product consistency, safety, and shelf-life. As part of ongoing efforts to modernize traditional…
-
----
-
-PAPER: Efficient production of l-tryptophan by dynamic regulation of the intracellular l-Gln:l-Ser ratio in Escherichia coli.
-AUTHORS: Zhou Qiang, Jiang Yuchen, Liu Jia et al.
-JOURNAL: Bioresource technology
-YEAR: 2026
-DOI: https://doi.org/10.1016/j.biortech.2026.135025
-ABSTRACT: l-Tryptophan (l-Trp), an essential amino acid for humans and animals, is extensively used in the pharmaceutical, food, and feed industries. In order to further increase the production efficiency of l-Trp in E. coli, the metabolic bottlenecks (phosphoenolpyruvate, shikimate, l-Glutamine, and l-Serine) were identified by integrating intracellular metabolite profiling and transcriptional analysis.…
 
 ---
 
@@ -997,15 +961,6 @@ ABSTRACT: Beer is a popular drink consumed worldwide, traditionally produced fro
 
 ---
 
-PAPER: Analysis of aeration patterns on carbon source utilization characteristics in anaerobic/aerobic/anoxic process for low C/N municipal wastewater.
-AUTHORS: Zhang Yuhang, Gao Xinjie, An Zeming et al.
-JOURNAL: Bioresource technology
-YEAR: 2026
-DOI: https://doi.org/10.1016/j.biortech.2026.135100
-ABSTRACT: The anaerobic/aerobic/anoxic (AOA) process involves the inevitable consumption of intracellular carbon sources during the aerobic phase, which limits the nitrogen removal efficiency of subsequent endogenous denitrification. Therefore, elucidating the effects of different aeration patterns on endogenous metabolic mechanisms and microbial interactions is crucial. In this study, the characteristics…
-
----
-
 PAPER: Emerging Waste Valorization Pathway with Aerobic Granular Sludge: Prospective Life Cycle Assessment for Türkiye.
 AUTHORS: Fereidani Bahar M, Yilmaz Gulsum, Eljamal Ramadan
 JOURNAL: Bioresource technology
@@ -1057,15 +1012,6 @@ JOURNAL: Environmental research
 YEAR: 2026
 DOI: https://doi.org/10.1016/j.envres.2026.124242
 ABSTRACT: The anaerobic ammonium oxidation (anammox) process can effectively remove nitrogen under anaerobic conditions. However, the successful rapid start-up of anammox systems remains a critical challenge, primarily because anammox bacteria are slow growers. Thus, this study investigated the reactivation and performance recovery of anammox-hydroxyapatite (anammox-HAP) granules after six months of…
-
----
-
-PAPER: Modular pathway engineering enables gram-scale de novo biosynthesis of narirutin in yeast.
-AUTHORS: Lu Qiyuan, Zhang Honghao, Tan Xinjia et al.
-JOURNAL: Bioresource technology
-YEAR: 2026
-DOI: https://doi.org/10.1016/j.biortech.2026.134994
-ABSTRACT: Narirutin, a bioactive flavanone-7-O-disaccharide with antioxidant and lipid-lowering properties, is conventionally obtained via plant extraction, which suffers from low yields and seasonal dependence. In this study, we engineered Saccharomyces cerevisiae for de novo narirutin biosynthesis by partitioning the biosynthetic pathway into discrete functional modules for a stepwise optimization.…
 
 ---
 
@@ -3589,24 +3535,6 @@ ABSTRACT: Hydrogen energy and metal-air batteries, particularly zinc-air batteri
 
 ---
 
-PAPER: Controlled biosynthesis of curdlan oligosaccharides with tunable degree of polymerization and their prebiotic effects on gut microbiota.
-AUTHORS: Pan Yaping, Wang Yuying, Liu Zhilei et al.
-JOURNAL: Bioresource technology
-YEAR: 2026
-DOI: https://doi.org/10.1016/j.biortech.2026.135020
-ABSTRACT: Curdlan oligosaccharides (GOS) possess unique physiological and biochemical activities. In this study, an enzyme-assisted coupled fermentation system was developed to efficiently produce GOS with a controllable degree of polymerization (DP) by adjusting the supplemental concentration of endo-β-1,3-glucanase (BGN). By adding 5-15% BGN, GOS with molecular weights (Mw) ranging from 5104 Da to…
-
----
-
-PAPER: Multi-dimensional metabolic engineering and enzyme engineering in Escherichia coli for highly efficient biosynthesis of 2,5-furandicarboxylic acid.
-AUTHORS: Cui Yanan, Zhang Peiyi, Miao Renjie et al.
-JOURNAL: Bioresource technology
-YEAR: 2026
-DOI: https://doi.org/10.1016/j.biortech.2026.134989
-ABSTRACT: 2,5-Furandicarboxylic acid (FDCA) is a key monomer widely used in the plastic, dye, pharmaceutical, pesticide and resin industries. Presently, its biosynthesis via microbial fermentation is severely limited by the cytotoxicity of substrate 5-hydroxymethylfurfural (HMF). In this study, using Escherichia coli as a host, efficient biosynthesis of FDCA was achieved through multi-step metabolic…
-
----
-
 PAPER: Progress on the formation, quantification, and elimination of off-flavor compounds in non-distilled alcoholic beverages.
 AUTHORS: Zhang Shuya, Hou Xiaoping, Zhao Yuxiang et al.
 JOURNAL: Journal of the science of food and agriculture
@@ -4282,6 +4210,96 @@ ABSTRACT:
 
 ---
 
+PAPER: Maternal exposure to the thyroperoxidase-inhibiting pesticide amitrole induces hypothyroidism and developmental neurotoxicity in the rat brain
+AUTHORS: Ramhøj L, Ardenkjær-Skinnerup J, Davidsen N et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Mechanism of Inonotus hispidus in suppressing renal cell carcinoma proliferation via regulation of the PI3K/AKT/mTOR pathway
+AUTHORS: Wei Y, Liu H, Wang A et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Next-generation full-thickness human skin models produced using 3D electrospun scaffolds and animal-component-free culture media
+AUTHORS: Hayden P, Chakravarty J, Hodroj R et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Comparative phytochemical, antioxidant, and hemostatic studies of leaf and stem extracts of Rhazya stricta Decne. in human plasma and human peripheral blood mononuclear cells in vitro
+AUTHORS: Hamed A, Mohamed A, Ben Aissa M et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Multi-omics insights into spondyloarthritis and psoriatic arthritis: integrating genomics, transcriptomics, proteomics, and the microbiome for immunological and clinical translation
+AUTHORS: Zhu M, Li R, Wu S et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Dietary polysaccharides in the management of inflammatory bowel disease: recent advances
+AUTHORS: Yang S, Wu J, Xiang J et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Interaction ecology and functional stability: a mechanistic framework for managing plant microbiomes in drylands
+AUTHORS: Sami A, Mao W, Wang Q et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Extracellular vesicle–associated and non–vesicle-associated microRNAs for early breast cancer detection: a systematic review
+AUTHORS: Romero Urrego J, Parra-López C, Isaza‐Ruget M et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Consolidation and Permeability of the B1 and D1 Gas Hydrate Bearing Sands and Associated Seal Sediments of the Extended-Duration Gas Production Test Site on the Alaska North Slope
+AUTHORS: Tepecik I, Seol Y, Waite W et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
+PAPER: Characterization and pathogenic mechanisms of a Klebsiella aerogenes strain isolated from a deceased ground thrush
+AUTHORS: Sun M, Yang Y, Zhao C et al.
+JOURNAL: 
+YEAR: 
+DOI: 
+ABSTRACT: 
+
+---
+
 ========================================
 DOMAIN: Byproducts & Circularity
 ========================================
@@ -4465,15 +4483,6 @@ ABSTRACT: This review provides a systematic analysis of ten spices representing 
 
 ---
 
-PAPER: Continuous backwash media filtration for advanced primary treatment and resource recovery from wastewater.
-AUTHORS: Khuntia Himanshu K, Tilmans Sebastien
-JOURNAL: Bioresource technology
-YEAR: 2026
-DOI: https://doi.org/10.1016/j.biortech.2026.135107
-ABSTRACT: Advanced primary treatment diverts particulates from wastewater for resource recovery, reducing aeration energy demand and sludge production in secondary treatment. This study assessed the long-term performance of a pilot-scale (104-193 m<sup>3</sup>/d) high-rate primary treatment system integrating a rotating belt filter (RBF) for coarse solids capture, followed by a continuous backwash media…
-
----
-
 PAPER: A novel electrochemical sensing with MIP for highly selective and sensitive determination of anticancer drug erlotinib.
 AUTHORS: Erdogan-Kablan Sevilay, Cetinkaya Ahmet, Unal M Altay et al.
 JOURNAL: Journal of pharmaceutical and biomedical analysis
@@ -4507,15 +4516,6 @@ JOURNAL: Mikrochimica acta
 YEAR: 2026
 DOI: https://doi.org/10.1007/s00604-026-08141-0
 ABSTRACT: Superoxide anion (O<sub>2</sub><sup>•-</sup>) plays a crucial role in various biological processes. However, its excess can induce oxidative stress, cause cell damage, and promote diseases. Achieving ultra-sensitive detection of O<sub>2</sub><sup>•-</sup> remains a significant challenge. Herein, a nanocomposite that integrates two-dimensional (2D) CoNi metal-organic framework nanosheets…
-
----
-
-PAPER: Recycling lithium-ion batteries to regenerate graphite, silicon, and Si/C composite anodes: Review of advances between 2015 and 2025.
-AUTHORS: Yaqub Muhammad, Geon Ju Byeong, Lee Wontae
-JOURNAL: Waste management & research : the journal of the International Solid Wastes and Public Cleansing Association, ISWA
-YEAR: 2026
-DOI: https://doi.org/10.1177/0734242x261452175
-ABSTRACT: The increasing deployment of lithium-ion batteries in electric vehicles, stationary energy systems, and consumer electronics has intensified the need for efficient recycling technologies to mitigate their environmental and economic impacts. Although recycling efforts have conventionally focused on cathode recovery, the growing adoption of silicon-enhanced anodes and the large mass fraction of…
 
 ---
 
